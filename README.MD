@@ -1,12 +1,16 @@
-## Hello thank you kindly for checking out this little project. 
-
-#### requirements:  
+## PyEncode a simple CLI encoder / decoder  
+As of right now the only thing this can do is encode / decode to and from hex.  
+  
+#### Requirements:  
 Python3
+  
+#### Future plans:  
+  - Add more encoders and decoders  
 
 #### Install:  
 1.) Clone the repo  
 ```
-gh repo clone CythesOut/pyencode
+gh repo clone CythesOut/PyEncode
 ```
 2.) cd into the directory  
 ```

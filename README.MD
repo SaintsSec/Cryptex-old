@@ -32,6 +32,7 @@ sudo cp cryptex.py /usr/bin
 ```
 set system alias(BASH | ZSH):  
 ```
+cd
 sudo nano ~/.zshrc
 #alternatively you can edit bashrc as well: sudo nano ~/.bashrc
 #Add this line to the bottom of the file.

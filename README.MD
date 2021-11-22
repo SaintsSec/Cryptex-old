@@ -13,7 +13,8 @@ change permissions to +x on pyencode.py
 Move pyencode.py to /usr/bin  
 set system alias:  
 ```
-alias pyencSode="python3 /usr/bin/pyencode.py
+alias pyencode="python3 /usr/bin/pyencode.py
 ```  
-You should now be able to run the script by simply typing **pyencode**
+You should now be able to run the script by simply typing **pyencode**  
+  
 Enjoy!

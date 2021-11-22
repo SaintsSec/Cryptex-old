@@ -1,14 +1,14 @@
 ## Hello thank you kindly for checking out this little project. 
 
-requirements:  
+#### requirements:  
 Python3
 
-Install:  
+#### Install:  
 1.) Clone the repo  
 2.) cd into the directory  
 3.) python3 pyencode.py
 
-Optional:  
+##### Optional:  
 change permissions to +x on pyencode.py  
 Move pyencode.py to /usr/bin  
 set system alias:  

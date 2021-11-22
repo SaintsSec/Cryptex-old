@@ -14,7 +14,7 @@ gh repo clone CythesOut/Crypt
 ```
 2.) cd into the directory  
 ```
-cd pyencode/
+cd Crypt/
 ```
 3.) run the script  
 ```

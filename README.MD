@@ -10,7 +10,7 @@ Python3
 #### Install:  
 1.) Clone the repo  
 ```
-gh repo clone CythesOut/PyEncode
+gh repo clone CythesOut/Crypt
 ```
 2.) cd into the directory  
 ```

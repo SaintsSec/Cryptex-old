@@ -1,5 +1,4 @@
 import os
-
 """
 TODO Error Checking | IE: If the user fat fingers 
 something it will warn that the encryption is not valid

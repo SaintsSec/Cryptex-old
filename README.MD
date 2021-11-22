@@ -1,4 +1,4 @@
-## PyEncode a simple CLI encoder / decoder  
+## Crypt a simple CLI encoder / decoder  
 As of right now the only thing this can do is encode / decode to and from hex.  
   
 #### Requirements:  

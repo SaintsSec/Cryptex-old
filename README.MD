@@ -1,4 +1,4 @@
-## Crypt a simple CLI encoder / decoder  
+## Cryptex a simple CLI encoder / decoder  
 As of right now the only thing this can do is encode / decode to and from hex.  
   
 #### Requirements:  
@@ -10,30 +10,34 @@ Python3
 #### Install:  
 1.) Clone the repo  
 ```
-gh repo clone CythesOut/Crypt
+gh repo clone CythesOut/Cryptex
 ```
 2.) cd into the directory  
 ```
-cd Crypt/
+cd Cryptex/
 ```
 3.) run the script  
 ```
-python3 pyencode.py
+python3 cryptex.py
 ```
 
 ##### Optional:  
-change permissions to +x on pyencode.py  
+change permissions to +x on cryptex.py  
 ```
-sudo chmod +x pyecode.py
+sudo chmod +x cryptex.py
 ```
-Copy pyencode.py into /usr/bin  
+Copy cryptex.py into /usr/bin  
 ```
-sudo cp pyencode.py /usr/bin
+sudo cp cryptex.py /usr/bin
 ```
-set system alias:  
+set system alias(BASH | ZSH):  
 ```
-alias pyencode="python3 /usr/bin/pyencode.py
+cd
+sudo nano ~/.zshrc
+#alternatively you can edit bashrc as well: sudo nano ~/.bashrc
+#Add this line to the bottom of the file.
+alias cryptex="python3 /usr/bin/cryptex.py
 ```  
-You should now be able to run the script by simply typing **pyencode**  
+You should now be able to run the script by simply typing **cryptex**  
   
 **Enjoy!**

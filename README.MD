@@ -22,7 +22,7 @@ python3 cryptex.py
 ```
 
 ##### Optional:  
-change permissions to +x on pyencode.py  
+change permissions to +x on cryptex.py  
 ```
 sudo chmod +x cryptex.py
 ```

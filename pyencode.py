@@ -1,3 +1,4 @@
+import os
 ans=True
 while ans:
     print ("""
@@ -11,27 +12,35 @@ while ans:
     """)
     ans=input("What would you like to do? ") 
     if ans=="1": 
-        print("---------------------------\nText > HEX encoder!\n")
+        os.system("clear")
+        print("Text > HEX encoder!\n")
         text2hex = input("What would you like to encode:\n")
         hexIn = text2hex.encode("utf-8").hex()
         print("\nHere is your encoding: \n\n" + hexIn)
         input("\nPress enter to return to main menu...")
+        os.system("clear")
     elif ans=="2":
-        print("---------------------------\nHEX > Text encoder!\n")
+        os.system("clear")
+        print("HEX > Text encoder!\n")
         hex2txt = input("\nWhat would you like to convert:\n")
         textOut = bytes.fromhex(hex2txt).decode("utf-8")
         print("\nHere is your encoding: \n\n" + textOut)
         input("\nPress enter to return to main menu...")
+        os.system("clear")
     elif ans=="3":
+      os.system("clear")
       print("""
        --------------{Program Information}----------------
       Author: @CythesOut(https://twitter.com/CythesOut)
       Github: https://github.com/CythesOut
-      Description: A simple text to hex encoder / decoder. 
+      
+      Description: 
+      A simple text to hex encoder / decoder. 
       I might do more with it later.
       -----------------------------------------------------
       """) 
       input("\nPress enter to return to main menu...")
+      os.system("clear")
     elif ans=="4":
       print("\n Goodbye\n\n")
       exit() 

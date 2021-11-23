@@ -1,7 +1,13 @@
 # Cryptex a simple CLI lockpicking tool 
+
+#### What can it do:
+- Encode / Decode Hex
+- Encode / Decode Base64
+- Break Randomly :D 
   
 #### Requirements:  
 - Python3 
+- Linux as your Host OS
   
 #### linkies:  
   [Check out the project board](https://github.com/CythesOut/Cryptex/projects/1)  

@@ -48,7 +48,7 @@ while ans:
       hex2txt = input("\nWhat would you like to convert:\n")
       #Decrypt the text and print it out
       textOut = bytes.fromhex(hex2txt).decode("utf-8")
-      print("\nHere is your encoding: \n\n" + textOut)
+      print("\nHere is your decoding: \n\n" + textOut)
       #TODO Enable | Automagic copy of output into clipboard
       input("\nPress enter to return to main menu...")
       os.system("clear")

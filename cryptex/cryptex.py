@@ -33,10 +33,10 @@ while ans:
     ans=input("What would you like to do? ") 
     if ans=="1": 
       os.system("clear")
-      exec(open("hex.py").read())
+      exec(open("encodehex.py").read())
     elif ans=="2":
       os.system("clear")
-      exec(open("base64.py").read())
+      exec(open("encodebase64.py").read())
     elif ans=="3":
       os.system("clear")
       print(information) 

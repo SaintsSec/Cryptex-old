@@ -37,6 +37,8 @@ sudo nano ~/.zshrc
 #alternatively you can edit bashrc as well: sudo nano ~/.bashrc
 #Add this line to the bottom of the file.
 alias cryptex="python3 /usr/bin/cryptex.py
+#reload zshrc
+source ~/.zshrc
 ```  
 You should now be able to run the script by simply typing **cryptex**  
   

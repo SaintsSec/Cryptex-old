@@ -35,7 +35,8 @@ while ans:
       os.system("clear")
       exec(open("hex.py").read())
     elif ans=="2":
-      print("Place holder for BASE64")
+      os.system("clear")
+      exec(open("base64.py").read())
     elif ans=="3":
       os.system("clear")
       print(information) 

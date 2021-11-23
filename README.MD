@@ -1,11 +1,12 @@
-## Cryptex a simple CLI encoder / decoder  
-As of right now the only thing this can do is encode / decode to and from hex.  
+# Cryptex a simple CLI lockpicking tool 
   
 #### Requirements:  
-Python3
+- Python3 
   
-#### Future plans:  
-  - Add more encoders and decoders  
+#### linkies:  
+  [Check out the project board](https://github.com/CythesOut/Cryptex/projects/1)  
+  [Join or start the discussion](https://github.com/CythesOut/Cryptex/discussions)  
+  [Check out my twitter page](https://twitter.com/CythesOut)
 
 #### Install:  
 1.) Clone the repo  
@@ -14,13 +15,13 @@ gh repo clone CythesOut/Cryptex
 ```
 2.) cd into the directory  
 ```
-cd Cryptex/
+cd Cryptex/cryptex
 ```
 3.) run the script  
 ```
 python3 cryptex.py
 ```
-
+<!---
 ##### Optional:  
 change permissions to +x on cryptex.py  
 ```
@@ -41,5 +42,5 @@ alias cryptex="python3 /usr/bin/cryptex.py
 source ~/.zshrc
 ```  
 You should now be able to run the script by simply typing **cryptex**  
-  
+--->
 **Enjoy!**

@@ -32,6 +32,7 @@ while ans:
     print(menuText)
     ans=input("What would you like to do? ") 
     if ans=="1": 
+      os.system("clear")
       exec(open("hex.py").read())
     elif ans=="2":
       print("Place holder for BASE64")

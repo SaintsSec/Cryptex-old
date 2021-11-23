@@ -53,6 +53,7 @@ while ans:
       input("\nPress enter to return to main menu...")
       os.system("clear")
   elif ans == "3":
+    os.system("clear")
     exec(open("cryptex.py").read())
   elif ans == "4":
     #exit the script

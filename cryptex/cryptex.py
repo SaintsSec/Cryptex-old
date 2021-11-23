@@ -33,9 +33,11 @@ while ans:
     ans=input("What would you like to do? ") 
     if ans=="1": 
       os.system("clear")
+      #os.system("python3 ~/encodehex.py")
       exec(open("encodehex.py").read())
     elif ans=="2":
       os.system("clear")
+      #os.system("python3 ~/encodebase64.py")
       exec(open("encodebase64.py").read())
     elif ans=="3":
       os.system("clear")

@@ -59,6 +59,7 @@ while ans:
       os.system("clear")
   elif ans == "3":
     os.system("clear")
+    #os.system("python3 ~/cryptex.py")
     exec(open("cryptex.py").read())
   elif ans == "4":
     #exit the script

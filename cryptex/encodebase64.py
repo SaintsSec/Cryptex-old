@@ -36,7 +36,7 @@ while ans:
     base64_message = base64_bytes.decode('ascii')
     #Print out the hex string
     pc.copy(base64_message)
-    print("\nHere is your encoding: \n\n" + base64_message)
+    print("\nHere is your encoding: \n\n" + base64_message + "\n\nEncoding copied to clipboard.")
     #TODO Enable | automagic copy of output to clipboard 
     input("\nPress enter to return to main menu...")
     os.system("clear")

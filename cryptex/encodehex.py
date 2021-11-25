@@ -33,7 +33,7 @@ while ans:
     hexIn = text2hex.encode("utf-8").hex()
     #Print out the hex string
     pc.copy(hexIn)
-    print("\nHere is your encoding: \n\n" + hexIn)
+    print("\nHere is your encoding: \n\n" + hexIn + "\n\nEncoding copied to clipboard.")
     #TODO Enable | automagic copy of output to clipboard 
     input("\nPress enter to return to main menu...")
     os.system("clear")

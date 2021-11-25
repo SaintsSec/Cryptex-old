@@ -1,4 +1,5 @@
 import os
+import pyperclip as pc
 menuText = """
    __ __                __        _            __
   / // /____ _____ ____/ /__ ____(_)_ _  ___ _/ /
@@ -31,6 +32,7 @@ while ans:
     #Convert the text from UTF-8 into hex. 
     hexIn = text2hex.encode("utf-8").hex()
     #Print out the hex string
+    pc.copy(hexIn)
     print("\nHere is your encoding: \n\n" + hexIn)
     #TODO Enable | automagic copy of output to clipboard 
     input("\nPress enter to return to main menu...")

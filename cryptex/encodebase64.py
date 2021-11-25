@@ -1,5 +1,6 @@
 import os
 import base64
+import pyperclip as pc
 menuText = """
    ___                 ____ ____
   / _ )___ ____ ___   / __// / /
@@ -34,6 +35,7 @@ while ans:
     base64_bytes = base64.b64encode(text2b64_bytes)
     base64_message = base64_bytes.decode('ascii')
     #Print out the hex string
+    pc.copy(base64_message)
     print("\nHere is your encoding: \n\n" + base64_message)
     #TODO Enable | automagic copy of output to clipboard 
     input("\nPress enter to return to main menu...")

@@ -1,5 +1,5 @@
 # Cryptex a simple CLI lockpicking tool   
-[![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)  
 ![status](https://img.shields.io/pypi/status/st?logo=git&style=plastic)
 ![commits](https://img.shields.io/github/last-commit/CythesOut/Cryptex?logo=github)
 ![downloads](https://img.shields.io/github/downloads/CythesOut/Cryptex/total)  

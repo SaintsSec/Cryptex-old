@@ -10,11 +10,11 @@
 - Linux as your Host OS
   
 #### linkies:  
-  [Check out the project board](https://github.com/CythesOut/Cryptex/projects/1)  
+  [Check out the project board](https://github.com/CythesOut/Cryptex/projects/)  
   [Join or start the discussion](https://github.com/CythesOut/Cryptex/discussions)  
   [Check out my twitter page](https://twitter.com/CythesOut)
 
-#### Install:  
+# Install:  
 1.) Clone the repo  
 ```
 gh repo clone CythesOut/Cryptex
@@ -49,4 +49,7 @@ source ~/.zshrc
 ```  
 You should now be able to run the script by simply typing **cryptex**  
 --->
-**Enjoy!**
+
+# So why?  
+Honestly, I'm not sure why I am doing this. The project started with a post on facebook in which was encrypted text in Base64. I thought to myself "I wonder if I can make a program to decrypt this on my own."  
+I started with HEX then moved into Base64. The current plan is to expand into harder encryption / decryption and make it an actual decent program. Eventually I would like to add an optional GUI but this is going to always be a CLI program first. Anyway. **Enjoy!**

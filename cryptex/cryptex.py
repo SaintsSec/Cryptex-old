@@ -12,8 +12,9 @@ menuText = """
     -----{Main menu}-----
     1.Hex Encoder
     2.Base64 Encoder
-    3.Information
-    4.Exit/Quit
+    3.Password Generator
+    4.Information
+    5.Exit/Quit
     ---------------------
 """
 information = """
@@ -41,10 +42,14 @@ while ans:
       exec(open("encodebase64.py").read())
     elif ans=="3":
       os.system("clear")
+      #os.system("python3 ~/CryptexPass.py")
+      exec(open("cryptexpass.py").read())    
+    elif ans=="4":
+      os.system("clear")
       print(information) 
       input("\nPress enter to return to main menu...")
       os.system("clear")
-    elif ans=="4":
+    elif ans=="5":
       #exit the script
       print("\n Goodbye\n\n")
       exit() 

@@ -1,9 +1,8 @@
-# Cryptex a simple CLI lockpicking tool 
-![python](https://img.shields.io/pypi/pyversions/3?logo=Python)  
+# Cryptex a simple CLI lockpicking tool   
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  
 ![status](https://img.shields.io/pypi/status/st?logo=git&style=plastic)
 ![commits](https://img.shields.io/github/last-commit/CythesOut/Cryptex?logo=github)
 ![downloads](https://img.shields.io/github/downloads/CythesOut/Cryptex/total)  
-[![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
 # So why?  
 Honestly, I'm not sure why I am doing this. The project started with a post on facebook in which was encrypted text in Base64. I thought to myself "I wonder if I can make a program to decrypt this on my own."  

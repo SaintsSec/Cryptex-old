@@ -1,10 +1,10 @@
-# Cryptex - Locks only exist to keep honest people honest.   
+## Cryptex - Locks only exist to keep honest people honest.   
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  
 ![status](https://img.shields.io/pypi/status/st?logo=git&style=plastic)
 ![commits](https://img.shields.io/github/last-commit/CythesOut/Cryptex?logo=github)
 ![downloads](https://img.shields.io/github/downloads/CythesOut/Cryptex/total)  
 
-# So why?  
+## So why?  
 Honestly, I'm not sure why I am doing this.  
 The project started with a post on facebook in which was encrypted text in Base64. I thought to myself..  
 >"I wonder if I can make a program to decrypt this on my own."    

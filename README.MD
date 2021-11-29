@@ -5,56 +5,25 @@
 ![downloads](https://img.shields.io/github/downloads/CythesOut/Cryptex/total)  
 
 # So why?  
-Honestly, I'm not sure why I am doing this. The project started with a post on facebook in which was encrypted text in Base64. I thought to myself "I wonder if I can make a program to decrypt this on my own."  
-I started with HEX then moved into Base64. The current plan is to expand into harder encryption / decryption and make it an actual decent program. Eventually I would like to add an optional GUI but this is going to always be a CLI program first. Anyway.
+Honestly, I'm not sure why I am doing this.  
+The project started with a post on facebook in which was encrypted text in Base64. I thought to myself..  
+>"I wonder if I can make a program to decrypt this on my own."    
+
+I started with HEX then moved into Base64. In the most recent update I added a password generator.  
+The current plan is to expand into harder encryption / decryption and make it an actual decent program.
 
 #### What can it do:
 - Encode / Decode Hex
 - Encode / Decode Base64
+- Generate Passwords
 - Break Randomly :D 
+
+## Install:  
+  [Installing on Linux](https://github.com/CythesOut/Cryptex/wiki/Cryptex-Installing-and-Running--on-Linux)
   
-#### Requirements:  
-- Python3 
-- Linux as your Host OS (Though it can hypothetically work on windows.)
-  
-#### linkies:  
+## linkies:  
   [Check out the project board](https://github.com/CythesOut/Cryptex/projects/)  
   [Join or start the discussion](https://github.com/CythesOut/Cryptex/discussions)  
-  [Check out my twitter page](https://twitter.com/CythesOut)
+  [Check out my twitter page](https://twitter.com/CythesOut)  
 
-# Install:  
-1.) Clone the repo  
-```
-gh repo clone CythesOut/Cryptex
-```
-2.) cd into the directory  
-```
-cd Cryptex/cryptex
-```
-3.) run the script  
-```
-python3 cryptex.py
-```
-<!---
-##### Optional:  
-change permissions to +x on cryptex.py  
-```
-sudo chmod +x cryptex.py
-```
-Copy cryptex.py into /usr/bin  
-```
-sudo cp cryptex.py /usr/bin
-```
-set system alias(BASH | ZSH):  
-```
-cd
-sudo nano ~/.zshrc
-#alternatively you can edit bashrc as well: sudo nano ~/.bashrc
-#Add this line to the bottom of the file.
-alias cryptex="python3 /usr/bin/cryptex.py
-#reload zshrc
-source ~/.zshrc
-```  
-You should now be able to run the script by simply typing **cryptex**  
---->
 **Enjoy!**

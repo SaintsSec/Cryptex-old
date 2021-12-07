@@ -4,6 +4,7 @@ from menu import menu, information
 ans=True
 while ans:
     #print out menu and ask user what they want to do.
+    os.system("clear")
     print(menu)
     ans=input("What would you like to do? ") 
     if ans=="1": 

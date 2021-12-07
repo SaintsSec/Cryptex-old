@@ -47,28 +47,28 @@ b64Menu = """
 """
 
 information = """
-      ----------------{Program Information}------------------
-      Author: @CythesOut(https://twitter.com/CythesOut)
-      Github: https://github.com/CythesOut
-      Art:    https://patorjk.com/software/taag/
-      -------------------------------------------------------
-      Description: 
-      What started out as a basic encoder / decoder for hex
-      turned into way more. Cryptex can now do everything it
-      states on the main menu with more features being added
-      as time goes on. While its still very basic I am 
-      personally mega proud of it. 
-      
-      How you can help: 
-      Honestly its a cryptography program get involved any
-      way you think you might be able to. Be it testing, 
-      adding features, custom art if you can think it. 
-      I'm more than willing to see where it goes. 
-      That is the beauty of open source.
-      
-      ABOVE ALL: Thank you for checking this out. 
-      -Cy
-      --------------------------------------------------------
+      -----------------{Program Information}-------------------
+      | Author: @CythesOut(https://twitter.com/CythesOut)     |
+      | Github: https://github.com/CythesOut                  |
+      | Art:    https://patorjk.com/software/taag/            |
+      ---------------------------------------------------------
+      | Description:                                          | 
+      | What started out as a basic encoder / decoder for hex |
+      | turned into way more. Cryptex can now do everything it|
+      | states on the main menu with more features being added|
+      | as time goes on. While its still very basic I am      |
+      | personally mega proud of it.                          |
+      |                                                       |
+      | How you can help:                                     |
+      | Honestly its a cryptography program get involved any  |
+      | way you think you might be able to. Be it testing,    |
+      | adding features, custom art if you can think it.      |
+      | I'm more than willing to see where it goes.           |
+      | That is the beauty of open source.                    |
+      |                                                       |
+      | ABOVE ALL: Thank you for checking this out.           |
+      | -Cy                                                   |
+      ---------------------------------------------------------
 """
 passlogo = """
    ___                                 __  _____                      __             

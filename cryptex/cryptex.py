@@ -1,12 +1,6 @@
 import os
 from menu import menu, information
 
-"""
-TODO Error Checking | IE: If the user fat fingers 
-something it will warn that the encryption is not valid
-"""
-print(menu)
-
 ans=True
 while ans:
     #print out menu and ask user what they want to do.

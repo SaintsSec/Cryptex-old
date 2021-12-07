@@ -15,6 +15,7 @@ The current plan is to expand into harder encryption / decryption and make it an
 #### What can it do:
 - Encode / Decode Hex
 - Encode / Decode Base64
+- Encode / Decode Ceasar Cypher
 - Generate Passwords
 - Break Randomly :D 
 

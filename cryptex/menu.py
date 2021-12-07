@@ -7,13 +7,13 @@ menu = """
     Locks only exist to keep honest 
             people honest
 -------------{Main menu}--------------         
-|      options:          |Shortcodes:|
-|    1.Hex Encoder       |  (hex)    | 
-|    2.Base64 Encoder    |  (b64)    |
-|    3.Ceasar's Cypher   |  (cc)     |
-|    4.Password Generator|  (pg)     |
-|    5.Information       |  (i)      |
-|    6.Exit/Quit         |  (e)      |
+|    options:          | Shortcodes: |
+|  1.Hex Encoder       |    (hex)    | 
+|  2.Base64 Encoder    |    (b64)    |
+|  3.Ceasar's Cypher   |    (cc)     |
+|  4.Password Generator|    (pg)     |
+|  5.Information       |    (i)      |
+|  6.Exit/Quit         |    (e)      |
 --------------------------------------
 """
 

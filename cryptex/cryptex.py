@@ -6,29 +6,29 @@ while ans:
     #print out menu and ask user what they want to do.
     os.system("clear")
     print(menu)
-    ans=input("What would you like to do? ") 
-    if ans=="1": 
+    ans=input("Enter a shortcode. ").lower() 
+    if ans == "hex": 
       os.system("clear")
       #os.system("python3 ~/encodehex.py")
       exec(open("encodehex.py").read())
-    elif ans=="2":
+    elif ans == "b64":
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")
       exec(open("encodebase64.py").read())
-    elif ans=="3":
+    elif ans == "cc":
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")
       exec(open("cCypher.py").read())
-    elif ans=="4":
+    elif ans == "pg":
       os.system("clear")
       #os.system("python3 ~/CryptexPass.py")
       exec(open("cryptexpass.py").read())    
-    elif ans=="5":
+    elif ans == "i":
       os.system("clear")
       print(information) 
       input("\nPress enter to return to main menu...")
       os.system("clear")
-    elif ans=="6":
+    elif ans == "e":
       #exit the script
       print("\n Goodbye\n\n")
       exit() 

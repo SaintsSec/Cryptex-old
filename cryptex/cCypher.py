@@ -6,8 +6,8 @@ alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
             "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
             "w", "x", "y", "z"]
 
-from ceasarArt import logo
-print(logo)
+from menu import cclogo
+print(cclogo)
 
 def ceasar(startText, shiftAmmount, cypherDirection):
     endText = ""

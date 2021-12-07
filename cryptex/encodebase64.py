@@ -1,25 +1,13 @@
 import os
 import base64
 import pyperclip as pc
-menuText = """
-   ___                 ____ ____
-  / _ )___ ____ ___   / __// / /
- / _  / _ `(_-</ -_) / _ \/_  _/
-/____/\_,_/___/\__/  \___/ /_/ 
-
-    -----{Main menu}-----
-    1.Encrypt
-    2.Decrypt
-    3.Main Menu
-    4.Exit/Quit
-    ---------------------
-"""
+from menu import b64Menu
 
 ans = True
 while ans:
-  print(menuText)
-  ans = input("What would you like to do: ")
-  if ans == "1":
+  print(b64Menu)
+  ans = input("What would you like to do: ").lower()
+  if ans == "enc":
     os.system("clear")
     print("""
    ____                       __ 
@@ -40,7 +28,7 @@ while ans:
     #TODO Enable | automagic copy of output to clipboard 
     input("\nPress enter to return to main menu...")
     os.system("clear")
-  elif ans=="2":
+  elif ans=="dec":
       os.system("clear")
       print("""
    ___                        __ 
@@ -59,11 +47,11 @@ while ans:
       #TODO Enable | automagic copy of output to clipboard 
       input("\nPress enter to return to main menu...")
       os.system("clear")
-  elif ans == "3":
+  elif ans == "mm":
     os.system("clear")
     #os.system("python3 ~/cryptex.py")
     exec(open("cryptex.py").read())
-  elif ans == "4":
+  elif ans == "e":
     #exit the script
     print("\n Goodbye\n\n")
     exit()   

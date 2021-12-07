@@ -1,24 +1,12 @@
 import os
 import pyperclip as pc
-menuText = """
-   __ __                __        _            __
-  / // /____ _____ ____/ /__ ____(_)_ _  ___ _/ /
- / _  / -_) \ / _ `/ _  / -_) __/ /  ' \/ _ `/ / 
-/_//_/\__/_\_\\_,_/\_,_/\__/\__/_/_/_/_/\_,_/_/
-
-    -----{Main menu}-----
-    1.Encrypt
-    2.Decrypt
-    3.Main Menu
-    4.Exit/Quit
-    ---------------------
-"""
+from menu import hexMenu
 
 ans = True
 while ans:
-  print(menuText)
-  ans = input("What would you like to do: ")
-  if ans == "1":
+  print(hexMenu)
+  ans = input("What would you like to do: ").lower()
+  if ans == "enc":
     os.system("clear")
     print("""
    ____                       __ 
@@ -37,7 +25,7 @@ while ans:
     #TODO Enable | automagic copy of output to clipboard 
     input("\nPress enter to return to main menu...")
     os.system("clear")
-  elif ans=="2":
+  elif ans=="dec":
       os.system("clear")
       print("""
    ___                        __ 
@@ -54,11 +42,11 @@ while ans:
       #TODO Enable | Automagic copy of output into clipboard
       input("\nPress enter to return to main menu...")
       os.system("clear")
-  elif ans == "3":
+  elif ans == "mm":
     os.system("clear")
     #os.system("python3 ~/cryptex.py")
     exec(open("cryptex.py").read())
-  elif ans == "4":
+  elif ans == "e":
     #exit the script
     print("\n Goodbye\n\n")
     exit()   

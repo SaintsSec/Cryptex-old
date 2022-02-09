@@ -11,7 +11,7 @@ print(cclogo)
 
 def ceasar(startText, shiftAmmount, cypherDirection):
     endText = ""
-    if cypherDirection == "decode":
+    if cypherDirection == "dec":
         shiftAmmount *= -1
     for char in startText:
         if char in alphabet:
@@ -21,13 +21,13 @@ def ceasar(startText, shiftAmmount, cypherDirection):
         else:
             endText += char
     print(f"the {cypherDirection}d text is: {endText}")
-    if cypherDirection == "encode":
+    if cypherDirection == "enc":
         pc.copy(endText)
         print("\nYour encoding has been copied to the clipboard!")
 
 shouldContinue = True
 while shouldContinue:        
-    direction = input("Type \'encode\' to encode a message or type \'decode\' to decode a message: \n")
+    direction = input("What would you like to do: \n")
     text = input("Type your message: \n").lower()
     shift = int(input("Type your shift number:\n"))
     #avoid absurd numbers for shift codes
@@ -35,7 +35,7 @@ while shouldContinue:
         
     #Run the function :D
     ceasar(startText=text, shiftAmmount=shift, cypherDirection=direction)
-    result = input("\nType 'yes' if you want to go again. Otherwise Type 'no'\n")
-    if result == "no":
+    result = input("\nType 'yes' if you want to go again. Otherwise Type 'mm' to go to the main menu\n")
+    if result == "mm":
         shouldContinue = False
         print("Goodbye!")

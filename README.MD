@@ -12,15 +12,11 @@ The project started with a post on facebook in which was encrypted text in Base6
 I started with HEX then moved into Base64. In the most recent update I added a password generator.  
 The current plan is to expand into harder encryption / decryption and make it an actual decent program.
 
-#### What can it do:
-- Encode / Decode Hex
-- Encode / Decode Base64
-- Encode / Decode Ceasar Cypher
-- Generate Passwords
-- Break Randomly :D 
-
 ## Install:  
-  [Installing on Linux](https://github.com/CythesOut/Cryptex/wiki/Cryptex-Installing-and-Running--on-Linux)
+  [Installing on Linux / Mac](https://github.com/CythesOut/Cryptex/wiki/Cryptex-Installing-and-Running--on-Linux)  
+  [Installing on Windows](https://github.com/CythesOut/Cryptex/wiki/Installing-on-Windows)  
+  [Error handling](https://github.com/CythesOut/Cryptex/wiki/Error-Handling)
+  
   
 ## linkies:  
   [Check out the project board](https://github.com/CythesOut/Cryptex/projects/)  

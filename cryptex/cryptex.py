@@ -19,6 +19,9 @@ while ans:
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")
       exec(open("cCypher.py").read())
+    elif ans == "qr":
+      os.system("clear")
+      exec(open("QR.py").read())
     elif ans == "pg":
       os.system("clear")
       #os.system("python3 ~/CryptexPass.py")

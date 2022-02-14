@@ -15,5 +15,6 @@ qr.add_data(linkie)
 qr.make(fit=True)
 
 img = qr.make_image(fill='black', back_color='white')
-img.save('qrcode001.png')
+img.save('qrout001.png')
 input("\n\nYour image has been saved press enter to return to main menu")
+exec(open("cryptex.py").read())

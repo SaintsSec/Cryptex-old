@@ -10,7 +10,7 @@ The project started with a post on facebook in which was encrypted text in Base6
 >"I wonder if I can make a program to decrypt this on my own."    
 
 I started with HEX then moved into Base64. In the most recent update I added a password generator.  
-The current plan is to expand into harder encryption / decryption and make it an actual decent program.
+The current plan is to expand into harder encryption / decryption and make it an actual decent program. Maybe even one day do an enigma clone!
 
 ## Install:  
   [Installing on Linux / Mac](https://github.com/CythesOut/Cryptex/wiki/Cryptex-Installing-and-Running--on-Linux)  

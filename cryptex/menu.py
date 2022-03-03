@@ -10,11 +10,12 @@ menu = """
 |    options:          | Shortcodes: |
 |  1.Hex Encoder       |    (hex)    | 
 |  2.Base64 Encoder    |    (b64)    |
-|  3.Ceasar's Cypher   |    (cc)     |
-|  4.QR Generator      |    (qr)     |
-|  4.Password Generator|    (pg)     |
-|  5.Information       |    (i)      |
-|  6.Exit/Quit         |    (e)      |
+|  3.MD5 Cracker       |    (md5)    |
+|  4.Ceasar's Cypher   |    (cc)     |
+|  5.QR Generator      |    (qr)     |
+|  6.Password Generator|    (pg)     |
+|  7.Information       |    (i)      |
+|  8.Exit/Quit         |    (e)      |
 --------------------------------------
 """
 
@@ -86,6 +87,14 @@ qrLogo = """
 / /_/ / / _, _/  / /_/ /  __/ / / /  __/ /  / /_/ / /_/ /_/ / /    
 \___\_\/_/ |_|   \____/\___/_/ /_/\___/_/   \__,_/\__/\____/_/     
                    V1.0.0 | @CythesOut |                                                                
+"""
+
+md5Logo = """ 
+    __  _______  ______   ______                __            
+   /  |/  / __ \/ ____/  / ____/________ ______/ /_____  _____
+  / /|_/ / / / /___ \   / /   / ___/ __ `/ ___/ //_/ _ \/ ___/
+ / /  / / /_/ /___/ /  / /___/ /  / /_/ / /__/ ,< /  __/ /    
+/_/  /_/_____/_____/   \____/_/   \__,_/\___/_/|_|\___/_/  
 """
 
 cclogo = """

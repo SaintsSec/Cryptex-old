@@ -15,6 +15,10 @@ while ans:
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")
       exec(open("encodebase64.py").read())
+    elif ans == "md5":
+      os.system("clear")
+      #os.system("python3 ~/encodebase64.py")
+      exec(open("md5crack.py").read())
     elif ans == "cc":
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")

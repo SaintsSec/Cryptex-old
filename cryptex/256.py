@@ -17,7 +17,7 @@ while ans:
                  /___/_/   
     """)
     #Ask user for text they wish to encode
-    str = input("What would you like to encrypt: ")
+    str = input("What would you like to encrypt: \n")
     encode = hashlib.sha256(str.encode())
     encodeHex = encode.hexdigest()
     pc.copy(encodeHex)

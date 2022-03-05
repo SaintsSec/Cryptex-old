@@ -16,7 +16,7 @@ while ans:
                  /___/_/   
     """)
     #Ask user for text they wish to encode
-    text2hex = input("What would you like to encode:\n")
+    text2hex = input("What would you like to encrypt:\n")
     #Convert the text from UTF-8 into hex. 
     hexIn = text2hex.encode("utf-8").hex()
     #Print out the hex string
@@ -35,7 +35,7 @@ while ans:
                  /___/_/ 
       """)
       #Ask user what they want to convert
-      hex2txt = input("\nWhat would you like to convert:\n")
+      hex2txt = input("\nWhat would you like to decrypt:\n")
       #Decrypt the text and print it out
       textOut = bytes.fromhex(hex2txt).decode("utf-8")
       print("\nHere is your decoding: \n\n" + textOut)

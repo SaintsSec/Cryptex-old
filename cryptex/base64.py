@@ -17,7 +17,7 @@ while ans:
                  /___/_/   
     """)
     #Ask user for text they wish to encode
-    text2b64 = input("What would you like to encode:\n")
+    text2b64 = input("What would you like to encrypt:\n")
     #Convert the text from UTF-8 into Base64.
     text2b64_bytes = str.encode(text2b64) 
     base64_bytes = base64.b64encode(text2b64_bytes)
@@ -38,7 +38,7 @@ while ans:
                  /___/_/ 
       """)
       #Ask user for text they wish to encode
-      b642text = input("What would you like to encode:\n")
+      b642text = input("What would you like to decrypt:\n")
       #Convert the text from Base64 into Text.
       decoded = base64.b64decode(b642text)
       finaltext = decoded.decode('ascii')

@@ -8,14 +8,15 @@ menu = """
             people honest
 -------------{Main menu}--------------         
 |    options:          | Shortcodes: |
-|  1.Hex Encoder       |    (hex)    | 
-|  2.Base64 Encoder    |    (b64)    |
-|  3.MD5 Cracker       |    (md5)    |
-|  4.Ceasar's Cypher   |    (cc)     |
-|  5.QR Generator      |    (qr)     |
-|  6.Password Generator|    (pg)     |
-|  7.Information       |    (i)      |
-|  8.Exit/Quit         |    (e)      |
+|  1.Hex               |    (hex)    | 
+|  2.Base64            |    (b64)    |
+|  3.SHA256            |    (256)    |
+|  4.MD5 Cracker       |    (md5)    |
+|  5.Ceasar's Cypher   |    (cc)     |
+|  6.QR Generator      |    (qr)     |
+|  7.Password Generator|    (pg)     |
+|  8.Information       |    (i)      |
+|  9.Exit/Quit         |    (e)      |
 --------------------------------------
 """
 

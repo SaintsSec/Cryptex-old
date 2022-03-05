@@ -15,6 +15,10 @@ while ans:
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")
       exec(open("base64.py").read())
+    elif ans == "256":
+      os.system("clear")
+      #os.system("python3 ~/encodebase64.py")
+      exec(open("256.py").read())
     elif ans == "md5":
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")

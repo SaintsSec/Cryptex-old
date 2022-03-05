@@ -17,32 +17,32 @@ while ans:
                  /___/_/   
     """)
     #Ask user for text they wish to encode
-    str = input("What would you like to encode: ")
+    str = input("What would you like to encrypt: ")
     encode = hashlib.sha256(str.encode())
     encodeHex = encode.hexdigest()
     pc.copy()
     print(f"Here is the encryption: {encodeHex} \nCopied to clipboard...")
     input("\nPress enter to return to main menu...")
     os.system("clear")
-  elif ans=="dec":
-      os.system("clear")
-      print("""
-   ___                        __ 
-  / _ \___ __________ _____  / /_
- / // / -_) __/ __/ // / _ \/ __/
-/____/\__/\__/_/  \_, / .__/\__/ 
-                 /___/_/ 
-      """)
+#  elif ans=="dec":
+#      os.system("clear")
+#      print("""
+#   ___                        __ 
+#  / _ \___ __________ _____  / /_
+# / // / -_) __/ __/ // / _ \/ __/
+#/____/\__/\__/_/  \_, / .__/\__/ 
+#                 /___/_/ 
+#      """)
       #Ask user for text they wish to encode
-      b642text = input("What would you like to encode:\n")
+#      b642text = input("What would you like to decrypt:\n")
       #Convert the text from Base64 into Text.
-      decoded = base64.b64decode(b642text)
-      finaltext = decoded.decode('ascii')
+#     decoded = base64.b64decode(b642text)
+#      finaltext = decoded.decode('ascii')
       #Print out the hex string
-      print("\nHere is your encoding: \n\n" + finaltext)
+#      print("\nHere is your encoding: \n\n" + finaltext)
       #TODO Enable | automagic copy of output to clipboard 
-      input("\nPress enter to return to main menu...")
-      os.system("clear")
+#      input("\nPress enter to return to main menu...")
+#      os.system("clear")  
   elif ans == "mm":
     os.system("clear")
     #os.system("python3 ~/cryptex.py")

@@ -21,7 +21,7 @@ while ans:
     encode = hashlib.sha256(str.encode())
     encodeHex = encode.hexdigest()
     pc.copy(encodeHex)
-    print(f"Here is the encryption: {encodeHex} \nCopied to clipboard...")
+    print(f"Here is the encryption: \n{encodeHex} \n\nCopied to clipboard...")
     input("\nPress enter to return to main menu...")
     os.system("clear")
 #  elif ans=="dec":

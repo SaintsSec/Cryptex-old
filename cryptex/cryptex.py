@@ -10,11 +10,11 @@ while ans:
     if ans == "hex": 
       os.system("clear")
       #os.system("python3 ~/encodehex.py")
-      exec(open("encodehex.py").read())
+      exec(open("hex.py").read())
     elif ans == "b64":
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")
-      exec(open("encodebase64.py").read())
+      exec(open("base64.py").read())
     elif ans == "md5":
       os.system("clear")
       #os.system("python3 ~/encodebase64.py")

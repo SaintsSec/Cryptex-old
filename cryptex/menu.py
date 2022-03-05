@@ -124,7 +124,7 @@ sha526logo = """
    ----------{Main menu}---------
    | Options:     | Shortcodes: | 
    | 1.Encrypt    | (enc)       |
-   | 2.Decrypt    | (dec)       |
+   | 2.Decrypt    | (dec)(soon) |
    | 3.Main Menu  | (mm)        |
    | 4.Exit/Quit  | (e)         |
    ------------------------------

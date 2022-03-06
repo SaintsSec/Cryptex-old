@@ -13,7 +13,7 @@ while run:
     if menuOption == "hex":
         exec(open("CryptexTools/encryption/hex.py").read())
     if menuOption == "b64":
-        exec(open("CryptexTools/encryption/b64.py").read())
+        exec(open("CryptexTools/encryption/base64.py").read())
     if menuOption == "256":
         exec(open("CryptexTools/encryption/256.py").read())
     if menuOption == "cc":

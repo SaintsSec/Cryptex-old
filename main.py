@@ -9,7 +9,7 @@ while run:
     #Print the main menu
     print(menu)
     #Ask user for input
-    menuOption = input("Enter a short code: \n")
+    menuOption = input("Enter a short code: \n").lower()
     if menuOption == "i":
         print(information)
         input("Press enter to return to main menu")

@@ -9,7 +9,7 @@ while run:
     #Print the main menu
     print(crackerMenu)
     #Ask user for input
-    menuOption = input("Enter a short code: \n")
+    menuOption = input("Enter a short code: \n").lower()
     if menuOption == "md5":
         exec(open("CryptexTools/crackers/md5crack.py").read())
     if menuOption == "mm":

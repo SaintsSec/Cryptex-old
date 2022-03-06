@@ -9,7 +9,7 @@ while run:
     #Print the main menu
     print(miscMenu)
     #Ask user for input
-    menuOption = input("Enter a short code: \n")
+    menuOption = input("Enter a short code: \n").lower()
     if menuOption == "pg":
         exec(open("CryptexTools/misc/passwordgen.py").read())
     if menuOption == "qr":

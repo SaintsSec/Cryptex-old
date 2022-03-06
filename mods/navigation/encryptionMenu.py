@@ -9,7 +9,7 @@ while run:
     #Print the main menu
     print(encryptionMenu)
     #Ask user for input
-    menuOption = input("Enter a short code: \n")
+    menuOption = input("Enter a short code: \n").lower()
     if menuOption == "hex":
         exec(open("CryptexTools/encryption/hex.py").read())
     if menuOption == "b64":

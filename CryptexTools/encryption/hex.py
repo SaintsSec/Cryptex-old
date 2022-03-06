@@ -13,7 +13,7 @@ while ans:
     hexDecrypt()
   elif ans == "back":
     cs()
-    exec(open("/mods/navigation/encryptionMenu.py").read())
+    exec(open("mods/navigation/encryptionMenu.py").read())
   elif ans == "mm":
     cs()
     exec(open("main.py").read())

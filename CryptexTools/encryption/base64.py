@@ -13,7 +13,7 @@ while ans:
     b64Decrypt()
   elif ans == "back":
     cs()
-    exec(open("/CryptexTools/encryption/base64.py").read())
+    exec(open("/mods/navigation/encryptionMenu.py").read())
   elif ans == "mm":
     cs()
     exec(open("main.py").read())

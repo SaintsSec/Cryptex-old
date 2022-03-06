@@ -1,4 +1,4 @@
-from mods.menu import menu, information, exitMessage
+from mods.menu import miscMenu, exitMessage
 from mods.clearScreen import clear_screen as cs
 import CryptexTools
 
@@ -7,18 +7,15 @@ while run:
     #Clear the screen
     cs()
     #Print the main menu
-    print(menu)
+    print(miscMenu)
     #Ask user for input
     menuOption = input("Enter a short code: \n")
-    if menuOption == "i":
-        print(information)
-        input("Press enter to return to main menu")
-    if menuOption == "enc":
-        exec(open("mods/navigation/encryptionMenu.py").read())
-    if menuOption == "crack":
-        exec(open("mods/navigation/crackerMenu.py").read())
-    if menuOption == "misc":
-        exec(open("mods/navigation/miscMenu.py").read())
+    if menuOption == "pg":
+        exec(open("CryptexTools/misc/passwordgen.py").read())
+    if menuOption == "qr":
+        exec(open("CryptexTools/misc/QR.py").read())
+    if menuOption == "mm":
+        exec(open("main.py").read())
     #Option to exit the program
     elif menuOption == "e":
       print(exitMessage)

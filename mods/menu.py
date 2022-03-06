@@ -8,17 +8,44 @@ menu = """
             people honest
 -------------{Main menu}--------------         
 |    options:          | Shortcodes: |
+|  1.Encryption        |    (enc)    | 
+|  2.Crackers          |    (crack)  |
+|  3.Misc Tools        |    (misc)   |
+|  4.Information       |    (i)      |
+|  5.Exit/Quit         |    (e)      |
+--------------------------------------
+"""
+encryptionMenu = """
+----------{Encryption Menu}-----------         
+|    options:          | Shortcodes: |
 |  1.Hex               |    (hex)    | 
 |  2.Base64            |    (b64)    |
 |  3.SHA256            |    (256)    |
-|  4.MD5 Cracker       |    (md5)    |
-|  5.Ceasar's Cypher   |    (cc)     |
-|  6.QR Generator      |    (qr)     |
-|  7.Password Generator|    (pg)     |
-|  8.Information       |    (i)      |
-|  9.Exit/Quit         |    (e)      |
+|  4.Caesars Cypher    |    (cc)     |
+|  5.Main Menu         |    (mm)     | 
+|  5.Exit/Quit         |    (e)      |
 --------------------------------------
 """
+crackerMenu = """
+-----------{Cracker Menu}-------------         
+|    options:          | Shortcodes: |
+|  1.MD5 Cracker       |    (md5)    | 
+|  2.Main Menu         |    (mm)     |
+|  5.Exit/Quit         |    (e)      |
+--------------------------------------
+"""
+miscMenu = """
+-------------{MISC Menu}--------------         
+|    options:          | Shortcodes: |
+|  1.Password Generator|    (pg)     | 
+|  2.QR Generator      |    (qr)     |
+|  3.Main Menu         |    (mm)     |
+|  5.Exit/Quit         |    (e)      |
+--------------------------------------
+"""
+
+
+
 exitMessage = "\nGoodbye, Thank you for using Cryptex.\n\nHappy hacking!"
 
 information = """

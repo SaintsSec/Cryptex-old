@@ -9,4 +9,4 @@ def crackMD5():
             hash_ob = hashlib.md5(line.strip().encode())
             hashed_pass = hash_ob.hexdigest()
             if hashed_pass == hash_input:
-                print('Found cleartext password! ' + line.strip())
+                print(f"Found cleartext password: \n{line.strip()}")

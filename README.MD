@@ -2,7 +2,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)  
 ![status](https://img.shields.io/pypi/status/st?logo=git&style=plastic)
 ![commits](https://img.shields.io/github/last-commit/CythesOut/Cryptex?logo=github)
-![downloads](https://img.shields.io/github/downloads/CythesOut/Cryptex/total)  
+![downloads](https://img.shields.io/github/downloads/CythesOut/Cryptex/total) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9666bf9839f94e47b28c786b426fa5e4)](https://www.codacy.com/gh/AlexKollar/Cryptex/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlexKollar/Cryptex&amp;utm_campaign=Badge_Grade)
 
 ## So why?  
 Honestly, I'm not sure why I am doing this.  

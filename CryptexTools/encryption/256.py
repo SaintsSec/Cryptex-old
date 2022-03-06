@@ -9,6 +9,9 @@ while ans:
   ans = input("What would you like to do: ").lower()
   if ans == "enc":
     SHAEncrypt()
+  elif ans == "back":
+    cs()
+    exec(open("/CryptexTools/encryption/256.py").read())
   elif ans == "mm":
     cs()
     exec(open("main.py").read())

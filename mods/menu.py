@@ -134,8 +134,9 @@ sha526logo = """
    ----------{Main menu}---------
    | Options:     | Shortcodes: | 
    | 1.Encrypt    | (enc)       |
-   | 2.Main Menu  | (mm)        |
-   | 3.Exit/Quit  | (e)         |
+   | 2.Back       | (back)      |   
+   | 3.Main Menu  | (mm)        |
+   | 4.Exit/Quit  | (e)         |
    ------------------------------
 """
 hexMenu = """
@@ -148,8 +149,9 @@ hexMenu = """
     | Options:     | Shortcodes: | 
     | 1.Encrypt    | (enc)       |
     | 2.Decrypt    | (dec)       |
-    | 3.Main Menu  | (mm)        |
-    | 4.Exit/Quit  | (e)         |
+    | 3.Back       | (back)      | 
+    | 4.Main Menu  | (mm)        |
+    | 5.Exit/Quit  | (e)         |
     ------------------------------
 """
 b64Menu = """
@@ -162,7 +164,8 @@ b64Menu = """
     | Options:     | Shortcodes: | 
     | 1.Encrypt    | (enc)       |
     | 2.Decrypt    | (dec)       |
-    | 3.Main Menu  | (mm)        |
-    | 4.Exit/Quit  | (e)         |
+    | 3.Back       | (back)      | 
+    | 4.Main Menu  | (mm)        |
+    | 5.Exit/Quit  | (e)         |
     ------------------------------
 """

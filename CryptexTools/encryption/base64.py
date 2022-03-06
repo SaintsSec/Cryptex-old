@@ -11,6 +11,9 @@ while ans:
     b64Encrypt()
   elif ans=="dec":
     b64Decrypt()
+  elif ans == "back":
+    cs()
+    exec(open("/CryptexTools/encryption/base64.py").read())
   elif ans == "mm":
     cs()
     exec(open("main.py").read())

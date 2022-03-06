@@ -11,6 +11,9 @@ while ans:
     hexEncrypt()
   elif ans=="dec":
     hexDecrypt()
+  elif ans == "back":
+    cs()
+    exec(open("/CryptexTools/encryption/hex.py").read())
   elif ans == "mm":
     cs()
     exec(open("main.py").read())

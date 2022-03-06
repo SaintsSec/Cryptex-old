@@ -1,6 +1,5 @@
 from mods.menu import miscMenu, exitMessage
 from mods.clearScreen import clear_screen as cs
-import CryptexTools
 
 run = True
 while run:
@@ -19,7 +18,7 @@ while run:
     #Option to exit the program
     elif menuOption == "e":
       print(exitMessage)
-      exit() 
+      exit()
     #Failsafe incase if someone presses a non-menu item
     elif menuOption !="":
-      print("\n Not Valid Choice Try again") 
+      print("\n Not Valid Choice Try again")

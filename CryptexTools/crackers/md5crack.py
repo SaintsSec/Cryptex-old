@@ -15,6 +15,5 @@ def menu():
         exec(open("main.py").read())
     if menuOption == "e":
         print(exitMessage)
-        exit()
-        
+        exit()       
 menu()

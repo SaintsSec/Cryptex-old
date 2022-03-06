@@ -1,6 +1,5 @@
 from mods.menu import menu, information, exitMessage
 from mods.clearScreen import clear_screen as cs
-import CryptexTools
 
 run = True
 while run:

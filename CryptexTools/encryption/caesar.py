@@ -34,7 +34,6 @@ while shouldContinue:
     shift = int(input("Type your shift number:\n"))
     #avoid absurd numbers for shift codes
     shift = shift % 26
-        
     #Run the function :D
     ceasar(startText=text, shiftAmmount=shift, cypherDirection=direction)
     result = input("\nType 'yes' if you want to go again. Otherwise Type 'mm' to go to the main menu\n")

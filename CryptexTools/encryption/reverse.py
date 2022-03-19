@@ -1,6 +1,8 @@
 from mods.menu import reverseLogo
 import pyperclip as pc
+from mods.clearScreen import clear_screen as cs
 
+cs()
 print(reverseLogo) 
 
 message = input("What would you like to reverse: \n")

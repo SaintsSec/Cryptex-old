@@ -1,5 +1,5 @@
 import pyperclip as pc
-from mods.menu import cclogo2 
+from mods.menu import cclogo2
 from mods.clearScreen import clear_screen as cs
 
 cs()
@@ -20,7 +20,7 @@ for symbol in message:
             translatedIndex = symbolIndex + key
         if mode == 'decrypt':
             translatedIndex = symbolIndex - key
-        
+
         if translatedIndex >= len(SYMBOLS):
             translatedIndex = translatedIndex - len(SYMBOLS)
         elif translatedIndex < 0:
@@ -29,7 +29,6 @@ for symbol in message:
         translated = translated + SYMBOLS[translatedIndex]
     else:
         translated = translated + symbol
-
 
 pc.copy(translated)
 print(f"Your output is: {translated} \n ... Output copied to clipboard")

@@ -28,7 +28,7 @@ def ceasar(startText, shiftAmmount, cypherDirection):
         print("\nYour encoding has been copied to the clipboard!")
 
 shouldContinue = True
-while shouldContinue:        
+while shouldContinue:
     direction = input("What would you like to do: \n")
     text = input("Type your message: \n").lower()
     shift = int(input("Type your shift number:\n"))
@@ -40,7 +40,7 @@ while shouldContinue:
     if result == "yes":
         shouldContinue = True
         cs()
-        exec(open("CryptexTools/caesar.py").read())    
+        exec(open("CryptexTools/caesar.py").read())
     if result == "mm":
         shouldContinue = False
         exec(open("main.py").read())        

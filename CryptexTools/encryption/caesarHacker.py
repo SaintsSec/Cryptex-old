@@ -13,7 +13,6 @@ for key in range(len(symbols)):
         if symbol in symbols:
             symbolIndex = symbols.find(symbol)
             translatedIndex = symbolIndex - key
-            
             if translatedIndex < 0:
                 translatedIndex = translatedIndex + len(symbols)
             
@@ -21,5 +20,4 @@ for key in range(len(symbols)):
         else:
           translated = translated + symbol
     print('key #%s: %s' % (key, translated))  
-
 input("\npress enter to go back...")

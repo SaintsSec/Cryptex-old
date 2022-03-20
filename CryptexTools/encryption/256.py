@@ -18,6 +18,6 @@ while ans:
   elif ans == "e":
     #exit the script
     print(exitMessage)
-    exit()   
+    exit()
   else:
     print("Invalid option try again!")

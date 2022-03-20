@@ -21,7 +21,7 @@ while run:
     #Option to exit the program
     elif menuOption == "e":
       print(exitMessage)
-      exit() 
+      exit()
     #Failsafe incase if someone presses a non-menu item
     elif menuOption !="":
       print("\n Not Valid Choice Try again") 

@@ -29,5 +29,5 @@ for symbol in message:
         translated = translated + symbol
 
 pc.copy(translated)
-print(f"Your output is: {translated} \n ... Output copied to clipboard")
+print(f"\n\nYour output is: {translated} \n ... Output copied to clipboard")
 input("\n\nPress enter to go back...")

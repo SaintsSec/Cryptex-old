@@ -1,46 +1,36 @@
 import pyperclip as pc
-from mods.menu import cclogo
+from mods.menu import cclogo2 
 from mods.clearScreen import clear_screen as cs
 
-alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-            "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
-            "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-            "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
-            "w", "x", "y", "z"]
-
 cs()
-print(cclogo)
+print(cclogo2)
 
-def ceasar(startText, shiftAmmount, cypherDirection):
-    endText = ""
-    if cypherDirection == "dec":
-        shiftAmmount *= -1
-    for char in startText:
-        if char in alphabet:
-            position = alphabet.index(char)
-            newPosition = position + shiftAmmount
-            endText += alphabet[newPosition]
-        else:
-            endText += char
-    print(f"the {cypherDirection}d text is: {endText}")
-    if cypherDirection == "enc":
-        pc.copy(endText)
-        print("\nYour encoding has been copied to the clipboard!")
+mode = input("Enter mode (encrypt / decrypt): ")
+message = input("Enter your text: ")
+key = int(input("Enter a shift key (1 - 64): "))
 
-shouldContinue = True
-while shouldContinue:        
-    direction = input("What would you like to do: \n")
-    text = input("Type your message: \n").lower()
-    shift = int(input("Type your shift number:\n"))
-    #avoid absurd numbers for shift codes
-    shift = shift % 26
-    #Run the function :D
-    ceasar(startText=text, shiftAmmount=shift, cypherDirection=direction)
-    result = input("\nType 'yes' if you want to go again. Otherwise Type 'mm' to go to the main menu\n")
-    if result == "yes":
-        shouldContinue = True
-        cs()
-        exec(open("CryptexTools/caesar.py").read())    
-    if result == "mm":
-        shouldContinue = False
-        exec(open("main.py").read())        
+SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789 !?.,'
+
+translated = ''
+
+for symbol in message:
+    if symbol in SYMBOLS:
+        symbolIndex = SYMBOLS.find(symbol)
+        if mode == 'encrypt':
+            translatedIndex = symbolIndex + key
+        if mode == 'decrypt':
+            translatedIndex = symbolIndex - key
+        
+        if translatedIndex >= len(SYMBOLS):
+            translatedIndex = translatedIndex - len(SYMBOLS)
+        elif translatedIndex < 0:
+            translatedIndex = translatedIndex + len(SYMBOLS)
+            
+        translated = translated + SYMBOLS[translatedIndex]
+    else:
+        translated = translated + symbol
+
+
+pc.copy(translated)
+print(f"Your output is: {translated} \n ... Output copied to clipboard")
+input("\n\nPress enter to go back...")

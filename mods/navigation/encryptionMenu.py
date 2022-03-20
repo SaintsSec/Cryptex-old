@@ -17,6 +17,10 @@ while run:
         exec(open("CryptexTools/encryption/256.py").read())
     if menuOption == "cc":
         exec(open("CryptexTools/encryption/caesar.py").read())
+    if menuOption == "ogcc":
+        exec(open("CryptexTools/encryption/OGCaesar.py").read())
+    if menuOption == "ch":
+        exec(open("CryptexTools/encryption/caesarHacker.py").read())
     if menuOption == "rc":
         exec(open("CryptexTools/encryption/reverse.py").read())
     if menuOption == "mm":

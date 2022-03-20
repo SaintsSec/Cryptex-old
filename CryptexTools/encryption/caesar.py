@@ -20,12 +20,10 @@ for symbol in message:
             translatedIndex = symbolIndex + key
         if mode == 'decrypt':
             translatedIndex = symbolIndex - key
-
         if translatedIndex >= len(SYMBOLS):
             translatedIndex = translatedIndex - len(SYMBOLS)
         elif translatedIndex < 0:
             translatedIndex = translatedIndex + len(SYMBOLS)
-            
         translated = translated + SYMBOLS[translatedIndex]
     else:
         translated = translated + symbol

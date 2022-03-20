@@ -15,9 +15,8 @@ for key in range(len(symbols)):
             translatedIndex = symbolIndex - key
             if translatedIndex < 0:
                 translatedIndex = translatedIndex + len(symbols)
-            
             translated = translated + symbols[translatedIndex]
         else:
           translated = translated + symbol
-    print('key #%s: %s' % (key, translated))  
+    print('key #%s: %s' % (key, translated))
 input("\npress enter to go back...")

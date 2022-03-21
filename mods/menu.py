@@ -18,15 +18,17 @@ menu = """
 encryptionMenu = """
 ----------{Encryption Menu}-----------         
 |    options:          | Shortcodes: |
+|----------------------|-------------|
 |  1.Hex               |    (hex)    | 
 |  2.Base64            |    (b64)    |
 |  3.SHA256            |    (256)    |
-|  4.Caesars Cipher    |    (cc)     |
-|  4.Caesars Hacker    |    (ch)     |
-|  4.Caesars Cipher(OG)|    (ogcc)   |
-|  5.Reverse Cipher    |    (rc)     |
-|  5.Main Menu         |    (mm)     | 
-|  5.Exit/Quit         |    (e)      |
+|------{Ciphers*}------|-------------|
+|  1.Caesars Cipher    |    (cc)     |
+|  2.Caesars Hacker    |    (ch)     |
+|  3.Reverse Cipher    |    (rc)     |
+|--------{Menu}--------|-------------|
+|  1.Main Menu         |    (mm)     | 
+|  2.Exit/Quit         |    (e)      |
 --------------------------------------
 """
 crackerMenu = """
@@ -46,8 +48,6 @@ miscMenu = """
 |  5.Exit/Quit         |    (e)      |
 --------------------------------------
 """
-
-
 
 exitMessage = "\nGoodbye, Thank you for using Cryptex.\n\nHappy hacking!"
 

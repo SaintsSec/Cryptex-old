@@ -17,18 +17,24 @@ menu = """
 """
 encryptionMenu = """
 ----------{Encryption Menu}-----------         
-|    options:          | Shortcodes: |
+|       options:       | Shortcodes: |
 |----------------------|-------------|
+|                      |             |
 |  1.Hex               |    (hex)    | 
 |  2.Base64            |    (b64)    |
 |  3.SHA256            |    (256)    |
+|                      |             |
 |------{Ciphers*}------|-------------|
+|                      |             |
 |  1.Caesars Cipher    |    (cc)     |
 |  2.Caesars Hacker    |    (ch)     |
 |  3.Reverse Cipher    |    (rc)     |
+|                      |             |
 |--------{Menu}--------|-------------|
+|                      |             |
 |  1.Main Menu         |    (mm)     | 
 |  2.Exit/Quit         |    (e)      |
+|                      |             |
 --------------------------------------
 """
 crackerMenu = """

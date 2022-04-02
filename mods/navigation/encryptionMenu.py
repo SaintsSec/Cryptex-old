@@ -23,6 +23,8 @@ while run:
         exec(open("CryptexTools/encryption/caesarHacker.py").read())
     if menuOption == "rc":
         exec(open("CryptexTools/encryption/reverse.py").read())
+    if menuOption == "pc":
+        exec(open("CryptexTools/encryption/playfair.py").read())    
     if menuOption == "mm":
         exec(open("main.py").read())
     #Option to exit the program

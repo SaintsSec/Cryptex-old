@@ -28,6 +28,7 @@ encryptionMenu = """
 |                      |             |
 |  1.Caesars Cipher    |    (cc)     |
 |  2.Caesars Hacker    |    (ch)     |
+|  3.Playfair Cipher   |    (pc)     | 
 |  3.Reverse Cipher    |    (rc)     |
 |                      |             |
 |--------{Menu}--------|-------------|
@@ -62,24 +63,24 @@ information = """
       | Author: @CythesOut(https://twitter.com/CythesOut)     |
       | Github: https://github.com/CythesOut                  |
       | Art:    https://patorjk.com/software/taag/            |
-      ---------------------------------------------------------
+      |-------------------------------------------------------|
+      | Contributors:                                         |
+      | 1.) Karan Munjani(https://twitter.com/Karan_Munjani)  |
+      |     - Playfair Cipher                                 |
+      |-------------------------------------------------------|
       | Description:                                          | 
-      | What started out as a basic encoder / decoder for hex |
-      | turned into way more. Cryptex can now do everything it|
-      | states on the main menu with more features being added|
-      | as time goes on. While its still very basic I am      |
-      | personally mega proud of it.                          |
+      | Cryptex started with a question:                      |
+      | Can I encode / decode a message into hex or base64?   |
+      | The answer is yes, but what about the other ciphers?  |
+      | So, I got to work and here we are.                    |
       |                                                       |
-      | How you can help:                                     |
-      | Honestly its a cryptography program get involved any  |
-      | way you think you might be able to. Be it testing,    |
-      | adding features, custom art if you can think it.      |
-      | I'm more than willing to see where it goes.           |
-      | That is the beauty of open source.                    |
+      | Cryptex evolved fast with new features being added on |
+      | a seemingly monthly basis. From password generators   |
+      | to QR code generators, and a multitude of ciphers.    |
       |                                                       |
-      | ABOVE ALL: Thank you for checking this out.           |
-      | -Cy                                                   |
-      ---------------------------------------------------------
+      | ABOVE ALL: Thank you for checking out my little       |
+      | passion project! - Cythes                             |
+      |_______________________________________________________|
 """
 encrypt = """
    ____                       __ 
@@ -157,6 +158,13 @@ chackerLogo = """
 \___/\_,_/\__/___/\_,_/_/   /_//_/\_,_/\__/_/\_\\__/_/                                                                   
 """
 
+playfairLogo = """
+   ___  __          ___     _       ______      __          
+  / _ \/ /__ ___ __/ _/__ _(_)___  / ___(_)__  / /  ___ ____
+ / ___/ / _ `/ // / _/ _ `/ / __/ / /__/ / _ \/ _ \/ -_) __/
+/_/  /_/\_,_/\_, /_/ \_,_/_/_/    \___/_/ .__/_//_/\__/_/   
+            /___/  By: Karan Munjani   /_/ 
+""" 
 sha526logo = """   _____ __  _____   ___   ___________
   / ___// / / /   | |__ \ / ____/ ___/
   \__ \/ /_/ / /| | __/ //___ \/ __ \ 

@@ -10,6 +10,7 @@ while run:
     #Ask user for input
     menuOption = input("Enter a short code: \n").lower()
     if menuOption == "i":
+        cs()
         print(information)
         input("Press enter to return to main menu")
     if menuOption == "enc":

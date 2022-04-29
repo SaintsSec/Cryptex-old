@@ -24,7 +24,9 @@ while run:
     if menuOption == "rc":
         exec(open("CryptexTools/encryption/reverse.py").read())
     if menuOption == "pc":
-        exec(open("CryptexTools/encryption/playfair.py").read())    
+        exec(open("CryptexTools/encryption/playfair.py").read()) 
+    if menuOption == "xor":
+        exec(open("CryptexTools/encryption/hexor.py").read())   
     if menuOption == "mm":
         exec(open("main.py").read())
     #Option to exit the program

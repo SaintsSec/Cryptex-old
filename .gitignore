@@ -1,2 +1,5 @@
 venv/
 Venv/
+libs/__pycache__/encryption.cpython-39.pyc
+mods/__pycache__/clearScreen.cpython-39.pyc
+mods/__pycache__/menu.cpython-39.pyc

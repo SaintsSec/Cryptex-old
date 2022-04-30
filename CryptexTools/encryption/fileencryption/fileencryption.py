@@ -32,20 +32,19 @@ def decryptFile(filename, key):
 def main():   
     key = loadKey()
     filename = input("Enter the file name: ")    
-    choice = input("Would you like to [1]encrypt or [2]decrypt a file? ")
+    choice = input("\nWould you like to [1]encrypt or [2]decrypt a file? ")
     if choice == "1":
         encryptFile(filename, key)
-        input("Press enter to exit")
-        print(exitMessage)
+        input("\n...File Encrypted\n\nPress enter to go back to encryption menu")
     elif choice == "2":
         decryptFile(filename, key)
-        input("Press enter to exit")
-        print(exitMessage)
+        input("\n...File Decrypted\n\nPress enter to go back to encryption menu")
 
 def ToKeyOrNotToKey():
     keyChoice = input("Would you like to generate a key? (y/n) ") 
     if keyChoice == 'y':
         writeKey()
+        print("\nBe sure you save your key somewhere safe!\n")
         main()
     elif keyChoice == 'n':
         main()

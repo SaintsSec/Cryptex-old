@@ -27,6 +27,8 @@ while run:
         exec(open("CryptexTools/encryption/playfair.py").read()) 
     if menuOption == "xor":
         exec(open("CryptexTools/encryption/hexor.py").read())   
+    if menuOption == "fe":
+        exec(open("CryptexTools/encryption/fileencryption/fileencryption.py").read())
     if menuOption == "mm":
         exec(open("main.py").read())
     #Option to exit the program

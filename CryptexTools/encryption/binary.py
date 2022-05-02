@@ -11,7 +11,7 @@ if choice == "1":
     str2bin = input("Enter a string to convert to binary: ")
     output = ' '.join(format(ord(x), 'b') for x in str2bin)
     pc.copy(output)
-    print(f"Encoding: \n\n...{output} \n\n...copied to clipboard")
+    print(f"Encoding: \n\n... {output} \n\n...copied to clipboard")
     input("\npress enter to continue...")
 if choice == "2":
     output = ''
@@ -21,7 +21,7 @@ if choice == "2":
     for binary in binary_list:
         output += f'{chr(int(binary, 2))}'
     pc.copy(output)
-    print(f"Decoding: \n\n...{output} \n\n...copied to clipboard")
+    print(f"Decoding: \n\n... {output} \n\n...copied to clipboard")
     input("\nPress enter to continue...")
 if choice == "b":
     input("\n\nPress enter to go back...")

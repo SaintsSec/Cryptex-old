@@ -5,7 +5,7 @@ from mods.menu import exitMessage, binaryLogo
 
 cs()
 print(binaryLogo)
-choice = input("\nenter [1] for binary to decimal, [2] for decimal to binary, [b] to exit : ")
+choice = input("\nenter [1] for string to binary, [2] for binary to string, [b] to go back : ")
 
 if choice == "1":
     str2bin = input("Enter a string to convert to binary: ")

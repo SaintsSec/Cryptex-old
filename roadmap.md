@@ -6,3 +6,6 @@
 - [ ] alias and shortcutting
 - [ ] dynamic updates
 - [ ] update documentation
+- [ ] cipher identifier
+- [ ] automatic decryption/breaking
+- [ ] crypt console | consolex

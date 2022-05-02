@@ -68,7 +68,9 @@ information = """
       | Art:    https://patorjk.com/software/taag/            |
       |-------------------------------------------------------|
       | Contributors:                                         |
-      | 1.) Karan Munjani(https://twitter.com/Karan_Munjani)  |
+      | 1.) BlueCosmo(https://twitter.com/CosmodiumCS)        |
+      |     - Merging Cryptex / Codex into one                |
+      | 2.) Karan Munjani(https://twitter.com/Karan_Munjani)  |
       |     - Playfair Cipher                                 |
       |-------------------------------------------------------|
       | Description:                                          | 

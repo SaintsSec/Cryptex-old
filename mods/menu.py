@@ -15,7 +15,8 @@ menu = """
 |  5.Exit/Quit         |    (e)      |
 |------------------------------------|
 |                Devs:               |
-|    @saints_cythes|@CosmodiumCS     |
+|   @saints_cythes  | @CosmodiumCS   |
+|   @ItsJustShepherd| @FyzzNFT       |
 --------------------------------------
 """
 encryptionMenu = """
@@ -66,28 +67,24 @@ exitMessage = "\nGoodbye, Thank you for using Cryptex.\n\nHappy hacking!"
 
 information = """
       -----------------{Program Information}-------------------
-      | Author: @CythesOut(https://twitter.com/CythesOut)     |
-      | Github: https://github.com/CythesOut                  |
-      | Art:    https://patorjk.com/software/taag/            |
+      | Lead Dev: Cythes | Alex                               |
+      | Github:   https://github.com/AlexKollar               |
+      | Art:      https://patorjk.com/software/taag/          |
       |-------------------------------------------------------|
-      | Contributors:                                         |
-      | 1.) BlueCosmo(https://twitter.com/CosmodiumCS)        |
+      | Development Team:                                     |
+      | 1.) Shepherd(https://twitter.com/ItsJustShepherd)     |
+      |     - Leader of the SAINTS and Code Meister           | 
+      | 2.) BlueCosmo(https://twitter.com/CosmodiumCS)        |
       |     - Merging Cryptex / Codex into one                |
-      | 2.) Karan Munjani(https://twitter.com/Karan_Munjani)  |
-      |     - Playfair Cipher                                 |
+      | 3.) FyzzNFT(https://twitter.com/FyzzNFT)              |
+      |      - Crypto-Hacker extradinaire                     |
+      | 4.) Karan Munjani(https://twitter.com/Karan_Munjani)  |
+      |     - Contributed Playfair Cipher                     |
       |-------------------------------------------------------|
       | Description:                                          | 
-      | Cryptex started with a question:                      |
-      | Can I encode / decode a message into hex or base64?   |
-      | The answer is yes, but what about the other ciphers?  |
-      | So, I got to work and here we are.                    |
-      |                                                       |
-      | Cryptex evolved fast with new features being added on |
-      | a seemingly monthly basis. From password generators   |
-      | to QR code generators, and a multitude of ciphers.    |
-      |                                                       |
-      | ABOVE ALL: Thank you for checking out my little       |
-      | passion project! - Cythes                             |
+      | > The metasploit of cryptography.                     |
+      |   Cryptex is meant to be your one stop shop for all   |
+      |   things cryptography related.                        |
       |_______________________________________________________|
 """
 encrypt = """

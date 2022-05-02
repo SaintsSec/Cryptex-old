@@ -11,27 +11,27 @@ while run:
     menuOption = input("Enter a short code: \n").lower()
     if menuOption == "hex":
         exec(open("CryptexTools/encryption/hex.py").read())
-    if menuOption == "b64":
+    elif menuOption == "b64":
         exec(open("CryptexTools/encryption/base64.py").read())
-    if menuOption == "256":
+    elif menuOption == "256":
         exec(open("CryptexTools/encryption/256.py").read())
-    if menuOption == "cc":
+    elif menuOption == "cc":
         exec(open("CryptexTools/encryption/caesar.py").read())
-    if menuOption == "ogcc":
+    elif menuOption == "ogcc":
         exec(open("CryptexTools/encryption/OGCaesar.py").read())
-    if menuOption == "ch":
+    elif menuOption == "ch":
         exec(open("CryptexTools/encryption/caesarHacker.py").read())
-    if menuOption == "rc":
+    elif menuOption == "rc":
         exec(open("CryptexTools/encryption/reverse.py").read())
-    if menuOption == "pc":
+    elif menuOption == "pc":
         exec(open("CryptexTools/encryption/playfair.py").read()) 
-    if menuOption == "xor":
+    elif menuOption == "xor":
         exec(open("CryptexTools/encryption/hexor.py").read())  
-    if menuOption == "bin":
+    elif menuOption == "bin":
         exec(open("CryptexTools/encryption/binary.py").read())  
-    if menuOption == "fe":
+    elif menuOption == "fe":
         exec(open("CryptexTools/encryption/fileencryption/fileencryption.py").read())
-    if menuOption == "mm":
+    elif menuOption == "mm":
         exec(open("main.py").read())
     #Option to exit the program
     elif menuOption == "e":

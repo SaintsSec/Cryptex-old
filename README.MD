@@ -7,27 +7,39 @@
 ![downloads](https://img.shields.io/github/downloads/CythesOut/Cryptex/total) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9666bf9839f94e47b28c786b426fa5e4)](https://www.codacy.com/gh/AlexKollar/Cryptex/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AlexKollar/Cryptex&amp;utm_campaign=Badge_Grade)
 
 ## Description
+> The metasploit of cryptography.  
+
+Cryptex is meant to be your one stop shop for all things cryptography related.
+Features Include: 
+- Code Breaking
+- Encryption
+- Password Cracking (MD5 Current | Upcoming)
+- Cryptographic Payloads (Upcoming)
 
 ## Requirements
+All requirements are the current versions of the software in mention
+- Pyperclip
+- QRCode
+- Image
+- Cryptography
 
 ## Instructions
 
 ## About Us
-Honestly, I'm not sure why I am doing this.  
-The project started with a post on facebook in which was encrypted text in Base64. I thought to myself..  
->"I wonder if I can make a program to decrypt this on my own."    
+**Alex | Cythes:**
+I started learning computers around middle school age with my discovery & passion of PC Gaming.  A few years later I'd stumbled into Ubuntu 8.04 soon started learning programming, hacking on and off, while over the next decade working on projects ranging from Android personal safety applications to light game development.
 
-I started with HEX then moved into Base64. In the most recent update I added a password generator.  
-The current plan is to expand into harder encryption / decryption and make it an actual decent program. Maybe even one day do an enigma clone!
+My current obsession being the development of a cryptography toolkit aptly named CrypteX as part of CICADA while attempting to avoid SVT from all the caffeine I main line in a given day.
+
+**BlueCosmo:**
+Started Cosmodium at 17 and since then has made significant changes in the cybersecurity community.  A reasonably known content creator and python programming whiz to say the least.
 
 ## Install ##
-  [Installing on Linux / Mac](https://github.com/CythesOut/Cryptex/wiki/Cryptex-Installing-and-Running--on-Linux)  
-  [Installing on Windows](https://github.com/CythesOut/Cryptex/wiki/Installing-on-Windows)  
-  [Error handling](https://github.com/CythesOut/Cryptex/wiki/Error-Handling)
    
 ## linkies ##
   [Check out the project board](https://github.com/CythesOut/Cryptex/projects/)  
   [Join or start the discussion](https://github.com/CythesOut/Cryptex/discussions)  
-  [Check out my twitter page](https://twitter.com/CythesOut)  
+  [Alex|Cythes Twitter](https://twitter.com/CythesOut)  
+  [BlueCosmo's Twitter](https://twitter.com/CosmodiumCS)
 
 **Enjoy!**

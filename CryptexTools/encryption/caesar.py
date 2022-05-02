@@ -5,29 +5,26 @@ from mods.clearScreen import clear_screen as cs
 cs()
 print(cclogo2)
 
-mode = input("Enter mode (encrypt / decrypt): ")
+mode = input("Enter mode (enc / dec): ")
 message = input("Enter your text: ")
 key = int(input("Enter a shift key (1 - 64): "))
 
-SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789 !?.,'
+SYMBOLS = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
 
 translated = ''
 
+# enc is there just for the sake of it being more understadable
+if mode == 'dec':
+    key *= -1
+
 for symbol in message:
-    if symbol in SYMBOLS:
-        symbolIndex = SYMBOLS.find(symbol)
-        if mode == 'encrypt':
-            translatedIndex = symbolIndex + key
-        if mode == 'decrypt':
-            translatedIndex = symbolIndex - key
-        if translatedIndex >= len(SYMBOLS):
-            translatedIndex = translatedIndex - len(SYMBOLS)
-        elif translatedIndex < 0:
-            translatedIndex = translatedIndex + len(SYMBOLS)
-        translated = translated + SYMBOLS[translatedIndex]
-    else:
-        translated = translated + symbol
+    symbolIndex = SYMBOLS.index(symbol)
+
+    translatedIndex = symbolIndex + key
+    translatedIndex %= len(SYMBOLS)
+
+    translated += SYMBOLS[translatedIndex]
 
 pc.copy(translated)
-print(f"\n\nYour output is: {translated} \n ... Output copied to clipboard")
+print(f"\n\nYour output is: \n{translated}\n\n... Output copied to clipboard")
 input("\n\nPress enter to go back...")

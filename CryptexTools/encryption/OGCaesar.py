@@ -43,4 +43,4 @@ while shouldContinue:
         exec(open("CryptexTools/caesar.py").read())
     if result == "mm":
         shouldContinue = False
-        exec(open("main.py").read())        
+        exec(open("main.py").read())

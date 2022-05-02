@@ -3,6 +3,7 @@
 - [ ] incorporate codex code
 - [ ] packages and indexing
 - [ ] wiki
+- [ ] Kayr Integration
 - [ ] fix UI 
 - [ ] alias and shortcutting
 - [ ] dynamic updates

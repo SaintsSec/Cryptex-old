@@ -13,6 +13,7 @@ menu = """
 |  3.Misc Tools        |    (misc)   |
 |  4.Information       |    (i)      |
 |  5.Exit/Quit         |    (e)      |
+|------------------------------------|
 |                Devs:               |
 |    @saints_cythes|@CosmodiumCS     |
 --------------------------------------

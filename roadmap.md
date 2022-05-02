@@ -3,9 +3,11 @@
 - [ ] incorporate codex code
 - [ ] packages and indexing
 - [ ] wiki
+- [ ] fix UI 
 - [ ] alias and shortcutting
 - [ ] dynamic updates
 - [ ] update documentation
 - [ ] cipher identifier
 - [ ] automatic decryption/breaking
 - [ ] crypt console | consolex
+- [ ] cryptographic payloads

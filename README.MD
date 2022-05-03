@@ -26,13 +26,25 @@ All requirements are the current versions of the software in mention
 ## Instructions
 
 ## About Us
-**Alex | Cythes:**
+**Alex | Cythes: Lead Developer**
 I started learning computers around middle school age with my discovery & passion of PC Gaming.  A few years later I'd stumbled into Ubuntu 8.04 soon started learning programming, hacking on and off, while over the next decade working on projects ranging from Android personal safety applications to light game development.
 
 My current obsession being the development of a cryptography toolkit aptly named CrypteX as part of CICADA while attempting to avoid SVT from all the caffeine I main line in a given day.
 
-**BlueCosmo:**
-Started Cosmodium at 17 and since then has made significant changes in the cybersecurity community.  A reasonably known content creator and python programming whiz to say the least.
+**BlueCosmo: Lead Developer**
+Started Cosmodium at 17 and since then has made significant changes in the cybersecurity community.  A reasonably known content creator and python programming whiz to say the least.  
+
+**Shepherd: The man the myth the legend**
+a natural team leader with over 5+ years experience in technology, and perpetually encouraging the SAINTS members to take on new challenges in their
+day-to-day lives ensuring they develop not just in the team but in their own lives as well.  His skills are predominantly in: SQLi, OSINT and Social Engineering  
+  
+**Matze: Guest staring as himself.**
+Cosmo's right hand man, getting work done so CosmodiumCS can continue to prosper.  System Admin and lover of craft beef, always up for a challenge.  
+  
+**Fyzz: Nothing to do with soda** Everything to do with crypto-hacking!  
+
+**Mart: Rocked the boat!**
+
 
 ## Install ##
    

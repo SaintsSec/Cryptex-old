@@ -120,7 +120,7 @@ def cli(argument_check):
 
         # tries to get all arguments
         try:
-            arguments = b64_parser()
+            arguments = leet_parser()
 
         # catches arguments with no value
         except getopt.GetoptError:
@@ -153,11 +153,11 @@ def cli(argument_check):
             try:
                 # encodes leet
                 if ciphering_process == '-e':
-                    encode_base64(inputted_content, print_content)
+                    encode_leet(inputted_content, print_content)
 
                 # decodes leet
                 if ciphering_process == '-d':
-                    decode_base64(inputted_content, print_content)
+                    decode_leet(inputted_content, print_content)
 
             # catches unspecified arguments
             except TypeError:

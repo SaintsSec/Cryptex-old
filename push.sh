@@ -2,6 +2,7 @@
 # push to git hub
 # created by : cosmo
 
+git fetch
 git pull origin master
 git add .
 git commit -s -m "$1"

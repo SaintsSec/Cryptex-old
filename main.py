@@ -80,8 +80,11 @@ def cli(arguments):
         string_args = ' '.join(remaining_arguments)
 
         try:
-            cipher = f'{local_path}/ciphers/'
-            os.system(f'python3 {cipher}{ciphering_option[1:]}.py {string_args}')
+            if ciphering_option == '--help' or ciphering_option == '-h':
+                print(help_menu)
+            else:
+                os.system(f'python3 {cipher}{ciphering_option[1:]}.py {string_args}')
+                
 
         # catches unspecified arguments
         except TypeError:
@@ -107,17 +110,17 @@ def cli(arguments):
                 print('[*] Exiting...')
                 break
 
-            # caesar cipher
-            elif user_input.startswith('-cc'):
-                os.system(f'python3 {cipher}caesarCipher.py {user_input[4:]}')
-
-
             elif user_input == 'clear':
                 clear_screen()
 
             else:
-                os.system(user_input)
-            
+                try:
+                    ciphering_options = user_input.split(" ")
+                    os.system(f'python3 {cipher}{ciphering_options[0].replace("-", "")}.py {" ".join(ciphering_options[1:])}')
+                        
+                # catches unspecified arguments
+                except TypeError:
+                    os.system(user_input)
 
 # main code
 def main():

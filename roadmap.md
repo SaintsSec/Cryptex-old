@@ -3,10 +3,10 @@
 - [x] crypt console | consolex
 - [x] packages and indexing
 - [x] alias and shortcutting
-- [ ] incorporate codex code
+- [x] incorporate codex code
 - [ ] wiki
 - [ ] Kayr Integration
-- [ ] fix UI 
+- [x] fix UI 
 - [ ] dynamic updates
 - [ ] update documentation
 - [ ] cipher identifier

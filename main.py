@@ -69,6 +69,42 @@ cipher = f'{local_path}/ciphers/' # local path to ciphers
 def clear_screen():
     os.system('clear')
 
+# exits cryptex
+def exit():
+    print('\n[*] Exiting...')
+    sys.exit()
+
+# update cryptex
+def update():
+
+    print("\n[*] Checking for updates...")
+
+    # get latest version nubmer
+    os.system(f"curl https://raw.githubusercontent.com/AlexKollar/Cryptex/master/version.txt | tee ~/.Cryptex/latest.txt")
+
+    # save version nubmers to memory
+    current_version = float(open(f"{local_path}/version.txt", "r").read())
+    latest_version = float(open(f"{local_path}/latest.txt", "r").read())
+
+    # remove version number file
+    os.system("rm -rf ~/.Cryptex/latest.txt")
+
+    # if new version is available, update
+    if latest_version > current_version:
+        print("\n[+] Update found")
+        print("[~] Update Cryptex? [y/n]\n")
+
+        # user input, option
+        option = input(f"{header}")
+        
+        # update
+        if option == "y":
+            os.system(f"sh ~/.Cryptex/resources/update.sh")
+
+    # otherwise, run main code
+    else:
+        print("\n[+] Cryptex already up to date")
+
 # command line interface
 def cli(arguments):
 
@@ -82,6 +118,9 @@ def cli(arguments):
         try:
             if ciphering_option == '--help' or ciphering_option == '-h':
                 print(help_menu)
+
+            elif ciphering_option == '-u' or ciphering_option == '--update':
+                update()
             else:
                 os.system(f'python3 {cipher}{ciphering_option[1:]}.py {string_args}')
                 
@@ -107,8 +146,11 @@ def cli(arguments):
                 print(help_menu)
 
             elif user_input == 'exit' or user_input == 'quit':
-                print('[*] Exiting...')
+                exit()
                 break
+
+            elif user_input == 'update':
+                update()
 
             elif user_input == 'clear':
                 clear_screen()

@@ -62,6 +62,7 @@ username = getpass.getuser() # gets username
 header = f'[~] {username}@cryptex $ ' # header for user input
 remote_path = 'raw.githubusercontent.com/AlexKollar/Cryptex/master' # remote url path
 local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cryptex' # local path to cryptex
+cipher = f'{local_path}/ciphers/' # local path to ciphers
 
 # clears screen
 def clear_screen():
@@ -78,7 +79,6 @@ def cli(arguments):
         string_args = ' '.join(remaining_arguments)
 
         try:
-            cipher = f'{local_path}/ciphers/'
 
             # caesar cipher
             if ciphering_option == '-cc':
@@ -131,6 +131,10 @@ def cli(arguments):
                 print('[*] Exiting...')
                 break
 
+            # caesar cipher
+            elif user_input.startswith('-cc'):
+                os.system(f'python3 {cipher}caesarCipher.py {user_input[4:]}')
+
             # elif user_input == 'cryptex':
             #     os.system()
 
@@ -141,31 +145,10 @@ def cli(arguments):
                 os.system(user_input)
             
 
-
-            # ask user for input
-            # menuOption = input("Enter a short code: \n").lower()
-            # if menuOption == "i":
-            #     cs()
-            #     print(information)
-            #     input("Press enter to return to main menu")
-            # if menuOption == "enc":
-            #     exec(open("mods/navigation/encryptionMenu.py").read())
-            # if menuOption == "crack":
-            #     exec(open("mods/navigation/crackerMenu.py").read())
-            # if menuOption == "misc":
-            #     exec(open("mods/navigation/miscMenu.py").read())
-            # #Option to exit the program
-            # elif menuOption == "e":
-            #     print(exitMessage)
-            #     exit()
-            # #Failsafe incase if someone presses a non-menu item
-            # elif menuOption !="":
-            #     print("\n Not Valid Choice Try again") 
-
 # main code
 def main():
     # clear screen
-    clear_screen()
+    # clear_screen()
 
     # checks for arguments
     try:

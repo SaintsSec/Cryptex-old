@@ -120,8 +120,12 @@ def cli(argument_check):
                     encode_base64(inputted_content, print_content)
 
                 # decodes base64
-                if ciphering_process == '-d':
+                elif ciphering_process == '-d':
                     decode_base64(inputted_content, print_content)
+                
+                # exeption
+                else:
+                    print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
             # catches unspecified arguments
             except TypeError:

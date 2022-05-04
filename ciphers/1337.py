@@ -156,8 +156,12 @@ def cli(argument_check):
                     encode_leet(inputted_content, print_content)
 
                 # decodes leet
-                if ciphering_process == '-d':
+                elif ciphering_process == '-d':
                     decode_leet(inputted_content, print_content)
+
+                # exeption
+                else:
+                    print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
             # catches unspecified arguments
             except TypeError:

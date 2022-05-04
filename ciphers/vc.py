@@ -321,12 +321,16 @@ def cli(argument_check):
                     encrypt_vigenere(inputted_content, key, print_content)
 
                 # decrypts vigenere
-                if ciphering_process == '-d':
+                elif ciphering_process == '-d':
                     decrypt_vigenere(inputted_content, key, print_content)
 
                 # decrypts with unkown key
-                if  ciphering_process == '-b':
+                elif  ciphering_process == '-b':
                     unkown_key(inputted_content, print_content)
+
+                # exeption
+                else:
+                    print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
             # catches unspecified arguments
             except TypeError:

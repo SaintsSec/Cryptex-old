@@ -33,7 +33,7 @@ help_menu = """
             [-xor] -------- XOR Cipher
             [-r13] -------- ROT 13
             [-r47] -------- ROT 47
-            [-b64] -------- Base65
+            [-b64] -------- Base64
             [-bin] -------- Binary
             [-hex] -------- Hex
             [-oct] -------- Octal

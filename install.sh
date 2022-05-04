@@ -3,12 +3,19 @@
 # created by : C0SM0
 
 # staging
+# echo [*] Staging process...
+# mkdir ~/.Cryptex
+# cd ..
+# mv Cryptex/* ~/.Cryptex
+# rm -rf Cryptex
+# cd ~/.Cryptex
+# echo [+] Complete
+
+# staging for testing
 echo [*] Staging process...
 mkdir ~/.Cryptex
 cd ..
-# mv Cryptex/* ~/.Cryptex
 cp Cryptex/* ~/.Cryptex -r
-# rm -rf Cryptex
 cd ~/.Cryptex
 echo [+] Completed
 

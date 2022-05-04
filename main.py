@@ -80,33 +80,8 @@ def cli(arguments):
         string_args = ' '.join(remaining_arguments)
 
         try:
-
-            # caesar cipher
-            if ciphering_option == '-cc':
-                os.system(f'python3 {cipher}caesarCipher.py {string_args}')
-
-            # vigenere cipher
-            elif ciphering_option == '-vc':
-                os.system(f'python3 {cipher}vigenereCipher.py {string_args}')
-
-            # reverse cipher
-            elif ciphering_option == '-rc':
-                os.system(f'python3 {cipher}reverseCipher.py {string_args}')
-
-            # multiplicative cipher
-            elif ciphering_option == '-mc':
-                os.system(f'python3 {cipher}multiplicativeCipher.py {string_args}')
-            
-            # base64 cipher
-            elif ciphering_option == '-b64':
-                os.system(f'python3 {cipher}base64Cipher.py {string_args}')
-
-            elif ciphering_option == '-h' or ciphering_option == '--help':
-                print(help_menu)
-
-            # exception
-            else:
-                print('no ciphering option was added')
+            cipher = f'{local_path}/ciphers/'
+            os.system(f'python3 {cipher}{ciphering_option[1:]}.py {string_args}')
 
         # catches unspecified arguments
         except TypeError:

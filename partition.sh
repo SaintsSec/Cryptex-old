@@ -2,5 +2,5 @@
 # partitions file correctly
 
 rm -rf ~/.Cryptex
-cp -r ~/cybersec/scripts/cryptography/Cryptex/ ~
+cp -r ~/Coding/Python/Cryptex/ ~
 mv ~/Cryptex ~/.Cryptex

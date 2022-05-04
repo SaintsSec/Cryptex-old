@@ -9,7 +9,7 @@ import sys
 import getpass
 
 # import packages
-from ciphers import *
+# from ciphers import *
 
 # banner
 banner = '''
@@ -54,6 +54,7 @@ help_menu = """
             [-t] ---------- String
             [-i] ---------- Input File
             [-o] ---------- Output File
+            [-k] ---------- Encryption Key
             [-r] ---------- Range
 """
 
@@ -135,8 +136,6 @@ def cli(arguments):
             elif user_input.startswith('-cc'):
                 os.system(f'python3 {cipher}caesarCipher.py {user_input[4:]}')
 
-            # elif user_input == 'cryptex':
-            #     os.system()
 
             elif user_input == 'clear':
                 clear_screen()

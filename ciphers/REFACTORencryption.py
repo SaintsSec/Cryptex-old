@@ -30,36 +30,6 @@ def hexDecrypt():
   input("\nPress enter to return to main menu...")
   cs()
   
-#All code regarding base64
-def b64Encrypt():
-    cs()
-    print(encrypt)
-    #Ask user for text they wish to encode
-    text2b64 = input("What would you like to encrypt:\n")
-    #Convert the text from UTF-8 into Base64.
-    text2b64_bytes = str.encode(text2b64) 
-    base64_bytes = base64.b64encode(text2b64_bytes)
-    base64_message = base64_bytes.decode('ascii')
-    #Print out the hex string
-    pc.copy(base64_message)
-    print(f"\nHere is your encoding: \n\n {base64_message}\n\n... Encoding copied.")
-    input("\nPress enter to return to main menu...")
-    cs()
-
-def b64Decrypt():
-      cs()
-      print(decrypt)
-      #Ask user for text they wish to encode
-      b642text = input("What would you like to decrypt:\n")
-      #Convert the text from Base64 into Text.
-      decoded = base64.b64decode(b642text)
-      finaltext = decoded.decode('ascii')
-      #Print out the hex string
-      pc.copy(finaltext)
-      print(f"\nHere is your decryption: \n\n {finaltext}\n\n... Decryption copied") 
-      input("\nPress enter to return to main menu...")
-      cs()
-      
 # All code for SHA256
 def SHAEncrypt():
     cs()

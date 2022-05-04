@@ -45,7 +45,6 @@ def b64Encrypt():
     print(f"\nHere is your encoding: \n\n {base64_message}\n\n... Encoding copied.")
     input("\nPress enter to return to main menu...")
     cs()
-    
 
 def b64Decrypt():
       cs()

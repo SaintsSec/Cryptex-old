@@ -1,11 +1,4 @@
 menu = """
-      _____              __         
-     / ___/_____ _____  / /______ __
-    / /__/ __/ // / _ \/ __/ -_) \ /
-    \___/_/  \_, / .__/\__/\__/_\_\ 
-     V:1.0.1/___/_/
-    Locks only exist to keep honest 
-            people honest
 -------------{Main menu}--------------         
 |    options:          | Shortcodes: |
 |  1.Encryption        |    (enc)    | 

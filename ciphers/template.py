@@ -107,11 +107,11 @@ def cli(argument_check):
             try:
                 # encodes base64
                 if ciphering_process == '-e':
-                    encrypt(plain_content, print_cnt)(inputted_content, print_content)
+                    encrypt(inputted_content, print_content)
 
                 # decodes base64
                 elif ciphering_process == '-d':
-                    decrypt(plain_content, print_cnt)(inputted_content, print_content)
+                    decrypt(inputted_content, print_content)
 
                 # exeption
                 else:

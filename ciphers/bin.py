@@ -1,35 +1,5 @@
-# from mods.clearScreen import clear_screen as cs
-# import pyperclip as pc
-
-# from mods.menu import exitMessage, binaryLogo
-
-# cs()
-# print(binaryLogo)
-# choice = input("\nenter [1] for string to binary, [2] for binary to string, [b] to go back : ")
-
-# if choice == "1":
-#     str2bin = input("Enter a string to convert to binary: ")
-#     output = ' '.join(format(ord(x), 'b') for x in str2bin)
-#     pc.copy(output)
-#     print(f"Encoding: \n\n... {output} \n\n...copied to clipboard")
-#     input("\npress enter to continue...")
-# if choice == "2":
-#     output = ''
-#     dec2str= input("Enter a binary number to convert to string: ")
-#     binary_list = dec2str.split(' ')
-#     # print(binary_list)
-#     for binary in binary_list:
-#         output += f'{chr(int(binary, 2))}'
-#     pc.copy(output)
-#     print(f"Decoding: \n\n... {output} \n\n...copied to clipboard")
-#     input("\nPress enter to continue...")
-# if choice == "b":
-#     input("\n\nPress enter to go back...")
-
 #!/usr/bin/python
-
-# reverse cipher package for the the codex project
-# created by : C0SM0
+# binary [enc | dec] for Cryptex
 
 # imports
 import sys
@@ -37,23 +7,23 @@ import getopt
 
 # help menu for ciphering process
 help_menu = """
-        [+] ARGUMENTS Reverse Cipher
+        [+] ARGUMENTS Binary
         [+] ARG 2. Additional Aruments
                 [-t <plaintext>] --------- Input Text
                 [-i <input file>] -------- Input File [.txt]
                 [-o <output file>] ------- Output File
 
         [+] Example:
-        cryptex -rc -t hello
+        cryptex -bin -e -t hello
         """
 
-# encrypt reverse
+# encrypt binary
 def encrypt(plain_content, print_cnt):
-    output = ''
+    output = ' '.join(format(ord(x), 'b') for x in plain_content)
 
     # output content to cli
     if print_cnt == True:
-        print(f'Reversed Content:\n{output}\n')
+        print(f'Binary:\n{output}\n')
 
     # output content to file
     else:
@@ -61,13 +31,19 @@ def encrypt(plain_content, print_cnt):
             f.write(output)
         print('Output written to file sucessfully')
 
-# encrypt reverse
+# decrypt binary
 def decrypt(plain_content, print_cnt):
+    binary_list = plain_content.split(' ')
+    print(plain_content)
+    print(binary_list)
     output = ''
+
+    for binary in binary_list:
+        output += chr(int(binary, 2))
 
     # output content to cli
     if print_cnt == True:
-        print(f'Reversed Content:\n{output}\n')
+        print(f'Decoded Content:\n{output}\n')
 
     # output content to file
     else:
@@ -76,8 +52,8 @@ def decrypt(plain_content, print_cnt):
         print('Output written to file sucessfully')
 
 # parse all arguments
-def parser():
-    opts, args = getopt.getopt(sys.argv[1:], 'i:t:o:k:', ['inputFile', 'inputText', 'outputFile', 'key'])
+def binary_parser():
+    opts, args = getopt.getopt(sys.argv[2:], 'i:t:o:', ['inputFile', 'inputText', 'outputFile'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -87,9 +63,6 @@ def parser():
             arg_dict['-i'] = arg
         if opt == '-t':
             arg_dict['-t'] = arg
-        if opt == '-k':
-            arg_dict['-k'] = arg
-
         # output options
         if opt == '-o':
             arg_dict['-o'] = arg
@@ -104,7 +77,7 @@ def cli(argument_check):
 
         # tries to get all arguments
         try:
-            arguments = parser()
+            arguments = binary_parser()
 
         # catches arguments with no value
         except getopt.GetoptError:
@@ -131,16 +104,18 @@ def cli(argument_check):
             if ('-o' in arguments):
                 print_content = arguments.get('-o')
 
+            ciphering_process = sys.argv[1]
+
             # attempts to run cipher
             try:
                 # encodes binary
                 if ciphering_process == '-e':
-                    encrypt(plain_content, print_cnt)(inputted_content, print_content)
+                    encrypt(inputted_content, print_content)
 
                 # decodes binary
                 elif ciphering_process == '-d':
-                    decrypt(plain_content, print_cnt)(inputted_content, print_content)
-
+                    decrypt(inputted_content, print_content)
+                
                 # exeption
                 else:
                     print(f'[!!] No Key or Argument was specified\n{help_menu}')
@@ -154,7 +129,7 @@ def cli(argument_check):
         print(help_menu)
 
 # main code
-def reverse_main():
+def binary_main():
 
     # checks for arguments
     try:
@@ -168,4 +143,4 @@ def reverse_main():
 
 # runs main function if file is not being imported
 if __name__ == '__main__':
-    reverse_main()
+    binary_main()

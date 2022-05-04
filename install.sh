@@ -7,7 +7,7 @@ echo [*] Staging process...
 mkdir ~/.Cryptex
 cd ..
 # mv Cryptex/* ~/.Cryptex
-cp Cryptex/* ~/.Cryptex
+cp Cryptex/* ~/.Cryptex -r
 # rm -rf Cryptex
 cd ~/.Cryptex
 echo [+] Completed
@@ -17,9 +17,7 @@ echo [*] Installing tools...
 sudo apt update
 sudo apt-get install python3
 sudo apt-get install python3-pip python-dev
-pip install pyperclip 
 pip install qrcode
-pip install Image
 pip install Cryptography
 echo [+] Completed
 

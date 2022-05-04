@@ -186,17 +186,21 @@ def cli(argument_check):
                     encrypt_caesar(inputted_content, key, print_content)
 
                 # decrypts caesar
-                if ciphering_process == '-d':
+                elif ciphering_process == '-d':
                     decrypt_caesar(inputted_content, key, print_content)
 
                 # bruteforce caesar
-                if ciphering_process == '-b':
+                elif ciphering_process == '-b':
                     range = range if '-r' in arguments else False
                     if range == False:
                         bruteforce_caesar(inputted_content, print_content)
                     else:
                         bruteforce_caesar(inputted_content, print_content, int(range[0]), int(range[1])+1)
 
+                # exception
+                else:
+                    print(f'[!!] No Key or Argument was specified\n{help_menu}')
+                    
             # catches unspecified arguments
             except TypeError:
                 print(f'[!!] No Key or Argument was specified\n{help_menu}')

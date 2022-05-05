@@ -26,7 +26,7 @@ All requirements are the current versions of the software in mention
 
 ## Install ##
 ### Linux: 
-1. Download / clone cryptex into its own folder
+1. Clone cryptex
 2. ```cd``` into the cryptex directory
 3. ```sh install.sh```
 4. Restart Terminal 

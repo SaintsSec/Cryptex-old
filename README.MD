@@ -48,4 +48,4 @@ I started tinkering with computers I think around primary school, then in junior
   [Alex|Cythes Twitter](https://twitter.com/CythesOut)  
   [BlueCosmo's Twitter](https://twitter.com/CosmodiumCS)
 
-**Enjoy!**
+**Enjoy! If you like what you see here consider hitting that sponosor button!**

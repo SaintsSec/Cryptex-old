@@ -129,7 +129,6 @@ def cli(arguments):
         except TypeError:
             print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
-        
     # crypt console
     else:
 

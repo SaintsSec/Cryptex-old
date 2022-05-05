@@ -9,19 +9,20 @@ import getopt
 
 # help menu for ciphering process
 help_menu = """
-        [+] ARGUMENTS Reverse Cipher
+        [+] ARGUMENTS Hexadecimal 
         [+] ARG 2. Additional Aruments
                 [-t <plaintext>] --------- Input Text
                 [-i <input file>] -------- Input File [.txt]
                 [-o <output file>] ------- Output File
 
         [+] Example:
-        cryptex -rc -t hello
+        cryptex -hex -t hello
         """
 
-# encrypt reverse
+# encode hex
 def encrypt(plain_content, print_cnt):
-    output = ''
+    # encode to hex
+    output = plain_content.encode("utf-8").hex()
 
     # output content to cli
     if print_cnt == True:
@@ -33,9 +34,10 @@ def encrypt(plain_content, print_cnt):
             f.write(output)
         print('Output written to file sucessfully')
 
-# encrypt reverse
+# decode hex
 def decrypt(plain_content, print_cnt):
-    output = ''
+    # decode to hex
+    output = plain_content.decode()("utf-8")
 
     # output content to cli
     if print_cnt == True:
@@ -49,7 +51,7 @@ def decrypt(plain_content, print_cnt):
 
 # parse all arguments
 def parser():
-    opts, args = getopt.getopt(sys.argv[1:], 'i:t:o:k:', ['inputFile', 'inputText', 'outputFile', 'key'])
+    opts, args = getopt.getopt(sys.argv[1:], 'i:t:o:', ['inputFile', 'inputText', 'outputFile'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -59,8 +61,6 @@ def parser():
             arg_dict['-i'] = arg
         if opt == '-t':
             arg_dict['-t'] = arg
-        if opt == '-k':
-            arg_dict['-k'] = arg
 
         # output options
         if opt == '-o':

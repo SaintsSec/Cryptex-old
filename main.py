@@ -11,20 +11,31 @@ import getpass
 # import packages
 # from ciphers import *
 
+# global variables
+username = getpass.getuser() # gets username
+header = f'[~] {username}@cryptex $ ' # header for user input
+remote_path = 'raw.githubusercontent.com/AlexKollar/Cryptex/master' # remote url path
+local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cryptex' # local path to cryptex
+cipher = f'{local_path}/ciphers/' # local path to ciphers
+
+# version
+version = open(f'{local_path}/version.txt').read().strip()
+
 # banner
-banner = '''
+banner = f'''
         _____              __         
        / ___/_____ _____  / /______ __
       / /__/ __/ // / _ \/ __/ -_) \ /
       \___/_/  \_, / .__/\__/\__/_\_\ 
-       V:1.0.1/___/_/
+              /___/_/
 Locks only exist to keep honest people honest
+            Version : {version}
 '''
 
 # help menu
 help_menu = """
       [+] EXAMPLE cryptex -cc -d -t 'This is a string to encrypt' 
-      [+] ARG 1. Cipher or Encoding type
+      [+] ARG 1. Cipher 
             [-cc] --------- Caesar Cipher
             [-vc] --------- Vingenere Cipher
             [-rc] --------- Reverse Cipher
@@ -37,7 +48,7 @@ help_menu = """
             [-bin] -------- Binary
             [-hex] -------- Hex
             [-oct] -------- Octal
-            [-133t] ------- L33T 5P34K
+            [-1337] ------- L33T 5P34K
             [-mor] -------- Morse Code
             [-pho] -------- Phonetic Alphabet
             [-md5] -------- MD5
@@ -48,22 +59,20 @@ help_menu = """
             [-e] ---------- Encrypt
             [-d] ---------- Decrypt
             [-b] ---------- Break
-            [-w] ---------- Wordlist
 
-      [+] ARG 3. Options
-            [-t] ---------- String
+      [+] Additional Arguments
+            [-t] ---------- Input Text
             [-i] ---------- Input File
             [-o] ---------- Output File
             [-k] ---------- Encryption Key
             [-r] ---------- Range
-"""
+            [-w] ---------- Wordlist
 
-# global variables
-username = getpass.getuser() # gets username
-header = f'[~] {username}@cryptex $ ' # header for user input
-remote_path = 'raw.githubusercontent.com/AlexKollar/Cryptex/master' # remote url path
-local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cryptex' # local path to cryptex
-cipher = f'{local_path}/ciphers/' # local path to ciphers
+      [+] Cryptex Arguments
+            [--help] ------ help
+            [--version] --- version
+            [--update] ---- update
+"""
 
 # clears screen
 def clear_screen():
@@ -121,6 +130,9 @@ def cli(arguments):
 
             elif ciphering_option == '-u' or ciphering_option == '--update':
                 update()
+
+            elif ciphering_option == '--version' or ciphering_option == '-v':
+                print(version)
             else:
                 os.system(f'python3 {cipher}{ciphering_option[1:]}.py {string_args}')
                 
@@ -143,6 +155,9 @@ def cli(arguments):
 
             if user_input == 'help':
                 print(help_menu)
+
+            elif user_input == 'version':
+                print(version)
 
             elif user_input == 'exit' or user_input == 'quit':
                 exit()

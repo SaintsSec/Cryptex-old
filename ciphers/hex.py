@@ -9,15 +9,17 @@ import getopt
 
 # help menu for ciphering process
 help_menu = """
-        [+] ARGUMENTS Hexadecimal 
-        [+] ARG 2. Additional Aruments
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -hex -t hello
-        """
+      +------------------------------------------------------+
+      |  [+] ARGUMENTS Hexadecimal                           |
+      |  [+] ARG 2. Additional Aruments                      |
+      |          [-t <plaintext>] --------- Input Text       |
+      |          [-i <input file>] -------- Input File [.txt]|
+      |          [-o <output file>] ------- Output File      |
+      +------------------------------------------------------+  
+      |  [+] Example:                                        |
+      |          cryptex -hex -t hello                       |  
+      +------------------------------------------------------+
+    """
 
 # encode hex
 def encrypt(plain_content, print_cnt):

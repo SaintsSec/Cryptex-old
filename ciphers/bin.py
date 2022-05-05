@@ -7,15 +7,17 @@ import getopt
 
 # help menu for ciphering process
 help_menu = """
-        [+] ARGUMENTS Binary
-        [+] ARG 2. Additional Aruments
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -bin -e -t hello
-        """
+      +-----------------------------------------------------+
+      | [+] ARGUMENTS Binary                                |
+      | [+] ARG 2. Additional Aruments                      |
+      |         [-t <plaintext>] --------- Input Text       |
+      |         [-i <input file>] -------- Input File [.txt]|
+      |         [-o <output file>] ------- Output File      |
+      +-----------------------------------------------------+
+      |  [+] Example:                                       |
+      |  cryptex -bin -e -t hello                           | 
+      +-----------------------------------------------------+
+    """
 
 # encrypt binary
 def encrypt(plain_content, print_cnt):

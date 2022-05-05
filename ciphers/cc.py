@@ -9,22 +9,25 @@ import getopt
 
 # help menu for displaying argument options
 help_menu = """
-        [+] ARGUMENTS Caesar-Cipher
-        [+] ARG 1. Ciphering Process
-                [-e] ---------- Encrypt
-                [-d] ---------- Decrypt
-                [-b] ---------- Brute Force
-
-        [+] ARG 2. Additional Aruments
-                [-k <int key>] ----------- Key [not required for bruteforcing '-b']
-                [-r <start,finish>] ------ Range
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -cc -e -k 5 -t hello 
-        """
+      +------------------------------------------------------+
+      |  [+] ARGUMENTS Caesar-Cipher                         |
+      |  [+] ARG 1. Ciphering Process                        |
+      |          [-e] ---------- Encrypt                     |
+      |          [-d] ---------- Decrypt                     |
+      |          [-b] ---------- Brute Force                 |
+      +------------------------------------------------------+
+      |  [+] ARG 2. Additional Aruments                      |
+      |          [-k <int key>] ----------- Key              |
+      |              [not required for bruteforcing '-b']    |
+      |          [-r <start,finish>] ------ Range            |
+      |          [-t <plaintext>] --------- Input Text       |
+      |          [-i <input file>] -------- Input File [.txt]|
+      |          [-o <output file>] ------- Output File      |
+      +------------------------------------------------------+  
+      |  [+] Example:                                        |
+      |          cryptex -cc -e -k 5 -t hello                |  
+      +------------------------------------------------------+
+    """
 
 # symbols that can't be processed through the cipher
 symbols = "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789" # Why aren't numbers processed? (Mart)

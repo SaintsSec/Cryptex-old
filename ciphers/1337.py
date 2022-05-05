@@ -13,7 +13,7 @@ help_menu = """
       | [+] ARGUMENTS L33T 5P34K                            |
       | [+] ARG 1. Process                                  |
       |         [-e] ---------- Encrypt                     |
-      |        [-d] ---------- Decrypt                      |      
+      |         [-d] ---------- Decrypt                     |      
       +-----------------------------------------------------+                                             
       | [+] ARG 2. Additional Aruments                      |
       |         [-t <plaintext>] --------- Input Text       | 

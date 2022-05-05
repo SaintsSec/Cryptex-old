@@ -9,15 +9,17 @@ import getopt
 
 # help menu for ciphering process
 help_menu = """
-        [+] ARGUMENTS Reverse Cipher
-        [+] ARG 2. Additional Aruments
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -rc -t hello
-        """
+      +------------------------------------------------------+
+      |  [+] ARGUMENTS Reverse Cipher                        |
+      |  [+] ARG 2. Additional Aruments                      |                                       
+      |          [-t <plaintext>] --------- Input Text       |
+      |          [-i <input file>] -------- Input File [.txt]|
+      |          [-o <output file>] ------- Output File      |
+      +------------------------------------------------------+
+      |  [+] Example:                                        |
+      |  cryptex -rc -t hello                                |
+      +------------------------------------------------------+
+    """
 
 # encrypt reverse
 def reverse(plain_content, print_cnt):

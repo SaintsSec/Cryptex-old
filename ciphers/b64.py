@@ -10,18 +10,20 @@ import sys
 
 # help menu for cipheringing process
 help_menu = """
-        [+] ARGUMENTS Base64
-        [+] ARG 1. Process
-                [-e] ---------- Encrypt
-                [-d] ---------- Decrypt
-
-        [+] ARG 2. Additional Aruments
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -b64 -e -t hello
+      +------------------------------------------------------+
+      |  [+] ARGUMENTS Base64                                |
+      |  [+] ARG 1. Process                                  |
+      |          [-e] ---------- Encrypt                     |
+      |          [-d] ---------- Decrypt                     |
+      +------------------------------------------------------+
+      |  [+] ARG 2. Additional Aruments                      |
+      |          [-t <plaintext>] --------- Input Text       |
+      |          [-i <input file>] -------- Input File [.txt]|
+      |          [-o <output file>] ------- Output File      |
+      +------------------------------------------------------+ 
+      |  [+] Example:                                        |
+      |          cryptex -b64 -e -t hello                    |
+      +------------------------------------------------------+
         """
 
 # encode base64

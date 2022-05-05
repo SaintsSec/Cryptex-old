@@ -9,20 +9,22 @@ import getopt
 
 # help menu for ciphering options
 help_menu = """
-        [+] ARGUMENTS Multiplicative-Cipher
-        [+] ARG 1. Ciphering Process
-                [-e] ---------- Encrypt
-                [-d] ---------- Decrypt
-
-        [+] ARG 2. Additional Aruments
-                [-k <int key>] ----------- Key
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -mc -e -k 7 -t hello
-        """
+      +----------------------------------------------------+
+      |  [+] ARGUMENTS Multiplicative-Cipher               |
+      |  [+] ARG 1. Ciphering Process                      |
+      |        [-e] ---------- Encrypt                     |
+      |        [-d] ---------- Decrypt                     |
+      +----------------------------------------------------+
+      |  [+] ARG 2. Additional Aruments                    |
+      |        [-k <int key>] ----------- Key              |
+      |        [-t <plaintext>] --------- Input Text       |
+      |        [-i <input file>] -------- Input File [.txt]|
+      |        [-o <output file>] ------- Output File      | 
+      +----------------------------------------------------+   
+      |  [+] Example:                                      |
+      |  cryptex -mc -e -k 7 -t hello                      |
+      +----------------------------------------------------+
+    """
 
 # symbols that can't be processed through the cipher
 symbols = ['\n', '\t', ' ', '.', '?', '!', ',', '/', '\\', '<', '>', '|',

@@ -22,7 +22,6 @@ help_menu = """
         cryptex -r13 -e -t hello 
 """
 
-
 # variables
 username = getpass.getuser() # gets username
 local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cryptex' # local path to cryptex

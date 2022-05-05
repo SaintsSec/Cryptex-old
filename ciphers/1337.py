@@ -137,7 +137,6 @@ def cli(argument_check):
                 # tries to read file
                 try:
                     inputted_content = open(arguments.get('-i'), 'r').read()
-                    # inputted_content = inputted_content[2::2]
 
                 # file does not exist
                 except FileNotFoundError:

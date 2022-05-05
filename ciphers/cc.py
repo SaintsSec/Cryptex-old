@@ -27,10 +27,7 @@ help_menu = """
         """
 
 # symbols that can't be processed through the cipher
-symbols = ['\n', '\t', ' ', '.', '?', '!', ',', '/', '\\', '<', '>', '|',
-           '[', ']', '{', '}', '@', '#', '$', '%', '^', '&', '*', '(', ')',
-           '-', '_', '=', '+', '`', '~', ':', ';', '"', "'", '0', '1', '2', '3',
-           '4', '5', '6', '7', '8', '9']
+symbols = "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789" # Why aren't numbers processed? (Mart)
 
 # generate path
 # path = f"{getpass.getuser()}@caesar-cipher $ "

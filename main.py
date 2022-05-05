@@ -47,7 +47,7 @@ help_menu = """
       [+] ARG 2. Method
             [-e] ---------- Encrypt
             [-d] ---------- Decrypt
-            [-b] ---------- Brute Force
+            [-b] ---------- Break
             [-w] ---------- Wordlist
 
       [+] ARG 3. Options
@@ -155,12 +155,16 @@ def cli(arguments):
                 clear_screen()
 
             else:
-                try:
-                    ciphering_options = user_input.split(" ")
-                    os.system(f'python3 {cipher}{ciphering_options[0].replace("-", "")}.py {" ".join(ciphering_options[1:])}')
+                # get path to cipher file
+                ciphering_options = user_input.split(" ")
+                path = f'{cipher}{ciphering_options[0].replace("-", "")}.py'
+
+                # if file exists, run appropiate cipher
+                if os.path.exists(path):
+                    os.system(f'python3 {path} {" ".join(ciphering_options[1:])}')
                         
-                # catches unspecified arguments
-                except TypeError:
+                # otherwise, run it throught the commandline
+                else:
                     os.system(user_input)
 
 # main code

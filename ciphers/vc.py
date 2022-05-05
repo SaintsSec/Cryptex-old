@@ -11,22 +11,25 @@ import getopt
 
 # help menu
 help_menu = """
-        [+] ARGUMENTS Vigenere Cipher
-        [+] ARG 1. Ciphering Process
-                [-e] ---------- Encrypt
-                [-d] ---------- Decrypt
-                [-b] ---------- Brute Force
-
-        [+] ARG 2. Additional Aruments
-                [-k <key>] --------------- Key [not required for bruteforcing '-b']
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-                [-l <max key length>] ---- Max Key Length [for '-b']
-
-        [+] Example:
-        cryptex -vc -e -k 5 -t hello -k world
-        """
+      +--------------------------------------------------------------+
+      |  [+] ARGUMENTS Vigenere Cipher                               |
+      |  [+] ARG 1. Ciphering Process                                |
+      |          [-e] ---------- Encrypt                             |
+      |          [-d] ---------- Decrypt                             |
+      |          [-b] ---------- Brute Force                         |
+      +--------------------------------------------------------------+ 
+      |  [+] ARG 2. Additional Aruments                              |
+      |          [-k <key>] --------------- Key                      | 
+      |              [not required for bruteforcing '-b']            |
+      |          [-t <plaintext>] --------- Input Text               |
+      |          [-i <input file>] -------- Input File [.txt]        |
+      |          [-o <output file>] ------- Output File              |
+      |          [-l <max key length>] ---- Max Key Length [for '-b']|
+      +--------------------------------------------------------------+
+      |  [+] Example:                                                |
+      |          cryptex -vc -e -k 5 -t hello -k world               |
+      +--------------------------------------------------------------+
+    """
 
 # letters for encryption process
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'

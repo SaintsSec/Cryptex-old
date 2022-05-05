@@ -101,6 +101,7 @@ def cli(argument_check):
             if ('-o' in arguments):
                 print_content = arguments.get('-o')
 
+            # check ciphering process
             ciphering_process = sys.argv[1]
 
             # attempts to run cipher

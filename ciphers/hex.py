@@ -37,7 +37,7 @@ def encrypt(plain_content, print_cnt):
 # decode hex
 def decrypt(plain_content, print_cnt):
     # decode to hex
-    output = plain_content.decode()("utf-8")
+    output = bytes.fromhex(plain_content).decode("utf-8")
 
     # output content to cli
     if print_cnt == True:
@@ -51,7 +51,7 @@ def decrypt(plain_content, print_cnt):
 
 # parse all arguments
 def parser():
-    opts, args = getopt.getopt(sys.argv[1:], 'i:t:o:', ['inputFile', 'inputText', 'outputFile'])
+    opts, args = getopt.getopt(sys.argv[2:], 'i:t:o:', ['inputFile', 'inputText', 'outputFile'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -101,6 +101,9 @@ def cli(argument_check):
             # checks if output was specified
             if ('-o' in arguments):
                 print_content = arguments.get('-o')
+
+            # check ciphering process
+            ciphering_process = sys.argv[1]
 
             # attempts to run cipher
             try:

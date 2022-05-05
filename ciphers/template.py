@@ -49,7 +49,7 @@ def decrypt(plain_content, print_cnt):
 
 # parse all arguments
 def parser():
-    opts, args = getopt.getopt(sys.argv[1:], 'i:t:o:k:', ['inputFile', 'inputText', 'outputFile', 'key'])
+    opts, args = getopt.getopt(sys.argv[2:], 'i:t:o:k:', ['inputFile', 'inputText', 'outputFile', 'key'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -101,6 +101,9 @@ def cli(argument_check):
             # checks if output was specified
             if ('-o' in arguments):
                 print_content = arguments.get('-o')
+
+            # check ciphering process
+            ciphering_process = sys.argv[1]
 
             # attempts to run cipher
             try:

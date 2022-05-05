@@ -26,7 +26,8 @@ help_menu = """
         cryptex -cc -e -k 5 -t hello 
         """
 
-symbols = "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789"
+# symbols that can't be processed through the cipher
+symbols = "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789" # Why aren't numbers processed? (Mart)
 
 # generate path
 # path = f"{getpass.getuser()}@caesar-cipher $ "

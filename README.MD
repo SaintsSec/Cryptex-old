@@ -24,6 +24,14 @@ All requirements are the current versions of the software in mention
 - Image
 - Cryptography
 
+## Install ##
+### Linux: 
+1. Clone cryptex
+2. ```cd``` into the cryptex directory
+3. ```sh install.sh```
+4. Restart Terminal 
+5. type ```cryptex``` and it should launch into the cryptex console.
+
 ## Instructions
 
 ## About Us
@@ -37,12 +45,13 @@ Started Cosmodium at 17 and since then has made significant changes in the cyber
   
 **Fyzz: Nothing to do with soda** Everything to do with crypto-hacking!  
 
-## Install ##
-   
+**Mart | marvhus: A helping hand**
+I started tinkering with computers I think around primary school, then in junior high school I started doing more tech stuff, then in high school I started learning more propper programming, and I began to do a lot of programming in my spare time, and at school, but I was allways at least 10 steps ahead of what my class was learning, and eventually I ended up finding this place.
+
 ## linkies ##
   [Check out the project board](https://github.com/CythesOut/Cryptex/projects/)  
   [Join or start the discussion](https://github.com/CythesOut/Cryptex/discussions)  
   [Alex|Cythes Twitter](https://twitter.com/CythesOut)  
   [BlueCosmo's Twitter](https://twitter.com/CosmodiumCS)
 
-**Enjoy!**
+**Enjoy! If you like what you see here consider hitting that sponosor button!**

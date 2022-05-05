@@ -163,7 +163,7 @@ def cli(arguments):
                 if os.path.exists(path):
                     os.system(f'python3 {path} {" ".join(ciphering_options[1:])}')
                         
-                # otherwise, run it throught the commandline
+                # otherwise, run input through the commandline
                 else:
                     os.system(user_input)
 

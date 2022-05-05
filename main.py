@@ -27,7 +27,7 @@ banner = f'''
        / ___/_____ _____  / /______ __
       / /__/ __/ // / _ \/ __/ -_) \ /
       \___/_/  \_, / .__/\__/\__/_\_\ 
-              /___/_/
+       V:0.0.1/___/_/
 Locks only exist to keep honest people honest
             Version : {version}
 '''

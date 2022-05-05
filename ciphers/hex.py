@@ -26,7 +26,7 @@ def encrypt(plain_content, print_cnt):
 
     # output content to cli
     if print_cnt == True:
-        print(f'Reversed Content:\n{output}\n')
+        print(f'Encoded Content:\n{output}\n')
 
     # output content to file
     else:
@@ -41,7 +41,7 @@ def decrypt(plain_content, print_cnt):
 
     # output content to cli
     if print_cnt == True:
-        print(f'Reversed Content:\n{output}\n')
+        print(f'Decoded Content:\n{output}\n')
 
     # output content to file
     else:

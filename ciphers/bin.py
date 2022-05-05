@@ -36,8 +36,6 @@ def decrypt(plain_content, print_cnt):
     binary_list = plain_content.split(' ')
     output = ''
 
-    print(binary_list)
-
     for binary in binary_list:
         output += chr(int(binary, 2))
 
@@ -94,7 +92,6 @@ def cli(argument_check):
                 # tries to read file
                 try:
                     inputted_content = open(arguments.get('-i'), 'r').read()
-                    # inputted_content = inputted_content[2::2]
 
                 # file does not exist
                 except FileNotFoundError:

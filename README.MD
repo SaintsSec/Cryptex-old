@@ -45,4 +45,4 @@ Started Cosmodium at 17 and since then has made significant changes in the cyber
   [Alex|Cythes Twitter](https://twitter.com/CythesOut)  
   [BlueCosmo's Twitter](https://twitter.com/CosmodiumCS)
 
-**Enjoy!**
+**Enjoy! If you like what you see here consider hitting that sponosor button!**

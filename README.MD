@@ -25,6 +25,12 @@ All requirements are the current versions of the software in mention
 - Cryptography
 
 ## Instructions
+### Linux: 
+1. Download / clone cryptex into its own folder
+2. ```cd``` into the cryptex directory
+3. ```sh install.sh```
+4. Restart Terminal 
+5. type ```cryptex``` and it should launch into the cryptex console.
 
 ## About Us
 **Alex | Cythes: Lead Developer**

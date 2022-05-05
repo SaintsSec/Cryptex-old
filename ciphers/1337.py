@@ -9,19 +9,21 @@ import sys
 
 # help menu for cipheringing process
 help_menu = """
-        [+] ARGUMENTS L33T 5P34K
-        [+] ARG 1. Process
-                [-e] ---------- Encrypt
-                [-d] ---------- Decrypt
-
-        [+] ARG 2. Additional Aruments
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -l33t -e -t hello
-        """
+      +-----------------------------------------------------+
+      | [+] ARGUMENTS L33T 5P34K                            |
+      | [+] ARG 1. Process                                  |
+      |         [-e] ---------- Encrypt                     |
+      |        [-d] ---------- Decrypt                      |      
+      +-----------------------------------------------------+                                             
+      | [+] ARG 2. Additional Aruments                      |
+      |         [-t <plaintext>] --------- Input Text       | 
+      |         [-i <input file>] -------- Input File [.txt]|
+      |         [-o <output file>] ------- Output File      |
+      +-----------------------------------------------------+
+      | [+] Example:                                        |
+      |         cryptex -l33t -e -t hello                   |
+      +-----------------------------------------------------+
+    """
 
 #
 leet_dictionary_enc = {

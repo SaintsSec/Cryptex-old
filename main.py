@@ -27,9 +27,9 @@ banner = f'''
        / ___/_____ _____  / /______ __
       / /__/ __/ // / _ \/ __/ -_) \ /
       \___/_/  \_, / .__/\__/\__/_\_\ 
-       V:0.0.1/___/_/
+              /___/_/
 Locks only exist to keep honest people honest
-            Version : {version}
+            Version : 0.{version}
 '''
 
 # help menu
@@ -55,7 +55,7 @@ help_menu = """
             [-sha256] ----- Sha256
             [-gt] --------- Google Translate
       
-      [+] ARG 2. Method
+      [+] ARG 2. Cipher Method
             [-e] ---------- Encrypt
             [-d] ---------- Decrypt
             [-b] ---------- Break

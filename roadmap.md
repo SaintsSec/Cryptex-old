@@ -14,6 +14,7 @@
 - [x] base64
 - [x] binary
 - [x] ROT 13
+- [x] hexadecimal
 - [ ] wiki
 - [ ] Kayr Integration
 - [ ] update documentation
@@ -26,7 +27,6 @@
 - [ ] XOR cipher
 - [ ] ROT 47
 - [ ] dings 
-- [ ] hexadecimal
 - [ ] octal
 - [ ] morse code
 - [ ] phonetic alphabet

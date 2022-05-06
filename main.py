@@ -138,9 +138,13 @@ def cli(arguments):
 
         ciphering_option = sys.argv[1]
         remaining_arguments = sys.argv[2:]
-        text_input = remaining_arguments[remaining_arguments.index("-t") + 1]
-        remaining_arguments.pop(remaining_arguments.index("-t") + 1)
-        string_args = (' '.join(remaining_arguments)).replace('-t', f'-t "{text_input}"')
+        
+        if '-t' in remaining_arguments:
+            text_input = remaining_arguments[remaining_arguments.index("-t") + 1]
+            remaining_arguments.pop(remaining_arguments.index("-t") + 1)
+            string_args = (' '.join(remaining_arguments)).replace('-t', f'-t "{text_input}"')
+        else:
+            string_args = ' '.join(remaining_arguments)
 
         try:
             if ciphering_option == '--help' or ciphering_option == '-h':

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# morsecode cipher [encoding] package for the the codex project
+# octal cipher [encoding] package for the the codex project
 # created by : Fyzz
 
 # imports

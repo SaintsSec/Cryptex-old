@@ -1,31 +1,47 @@
 #!/usr/bin/python
-
-# reverse cipher package for the the codex project
-# created by : C0SM0
+# New Template for the the codex project
+# created by : Fyzz
 
 # imports
-import sys
 import getopt
+import sys
 
-# help menu for ciphering process
+#---------------------------------------------------------------------------------| Help Menu |
+# Make sure to edit this for your specific cipher
 help_menu = """
-        [+] ARGUMENTS Reverse Cipher
-        [+] ARG 2. Additional Aruments
-                [-t <plaintext>] --------- Input Text
-                [-i <input file>] -------- Input File [.txt]
-                [-o <output file>] ------- Output File
-
-        [+] Example:
-        cryptex -rc -t hello
+      +------------------------------------------------------+
+      |  [+] ARGUMENTS Template                              |
+      |  [+] ARG 1. Process                                  |
+      |          [-e] ---------- Encrypt                     |
+      |          [-d] ---------- Decrypt                     |
+      +------------------------------------------------------+
+      |  [+] ARG 2. Additional Aruments                      |
+      |          [-t <plaintext>] --------- Input Text       |
+      |          [-i <input file>] -------- Input File [.txt]|
+      |          [-o <output file>] ------- Output File      |
+      +------------------------------------------------------+ 
+      |  [+] Example:                                        |
+      |          cryptex -template -e -t hello               |
+      +------------------------------------------------------+
         """
 
-# encrypt reverse
-def encrypt(plain_content, print_cnt):
+#-----------------------------------------------------------------------------------| Encoding |
+def encode(plain_content, print_cnt):
+
+    encoded_cnt = plain_content # This is the string input for -t or -i
     output = ''
+
+    # Encode code goes here | set output the real output
+    # Make sure that the formatting for the output is the same in both the CLI and File Output
+    output = f'Encoded: {plain_content} | Used These args: {sys.argv[1:]}' # [ REPLACE THIS ]
+
+
+
+
 
     # output content to cli
     if print_cnt == True:
-        print(f'Reversed Content:\n{output}\n')
+        print(f'Encrypted Content:\n{output}\n')
 
     # output content to file
     else:
@@ -33,13 +49,23 @@ def encrypt(plain_content, print_cnt):
             f.write(output)
         print('Output written to file sucessfully')
 
-# encrypt reverse
-def decrypt(plain_content, print_cnt):
+#-----------------------------------------------------------------------------------| Decoding |
+def decode(plain_content, print_cnt):
+
+    encoded_cnt = plain_content # This is the string input for -t or -i
     output = ''
+
+    # Decode code goes here | set output the real output
+    # Make sure that the formatting for the output is included in both the CLI and File Output
+    output = f'Decoded: {plain_content} | Used These args: {sys.argv[1:]}' # [ REPLACE THIS ]
+
+
+
+
 
     # output content to cli
     if print_cnt == True:
-        print(f'Reversed Content:\n{output}\n')
+        print(f'Encrypted Content:\n{output}\n')
 
     # output content to file
     else:
@@ -47,9 +73,10 @@ def decrypt(plain_content, print_cnt):
             f.write(output)
         print('Output written to file sucessfully')
 
-# parse all arguments
+# -------------------------------------------------------------------------------| Arg Parsing |
+# Add more args here if there are more than the default -t -i -o [ Example: -k ]
 def parser():
-    opts, args = getopt.getopt(sys.argv[2:], 'i:t:o:k:', ['inputFile', 'inputText', 'outputFile', 'key'])
+    opts, args = getopt.getopt(sys.argv[2:], 'i:t:o:', ['inputFile', 'inputText', 'outputFile'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -59,15 +86,15 @@ def parser():
             arg_dict['-i'] = arg
         if opt == '-t':
             arg_dict['-t'] = arg
-        if opt == '-k':
-            arg_dict['-k'] = arg
-
         # output options
         if opt == '-o':
             arg_dict['-o'] = arg
 
     return arg_dict
 
+
+# ---------------------------------------------------------------------------------| CLI Args |
+# Edit this if you have more than the default -t -i -o [ Example: -k ]
 # command line interface
 def cli(argument_check):
 
@@ -102,19 +129,18 @@ def cli(argument_check):
             if ('-o' in arguments):
                 print_content = arguments.get('-o')
 
-            # check ciphering process
             ciphering_process = sys.argv[1]
 
             # attempts to run cipher
             try:
-                # encodes base64
+                # encodes octal
                 if ciphering_process == '-e':
-                    encrypt(inputted_content, print_content)
+                    encode(inputted_content, print_content)
 
-                # decodes base64
+                # decodes octal
                 elif ciphering_process == '-d':
-                    decrypt(inputted_content, print_content)
-
+                    decode(inputted_content, print_content)
+                
                 # exeption
                 else:
                     print(f'[!!] No Key or Argument was specified\n{help_menu}')
@@ -127,8 +153,10 @@ def cli(argument_check):
     else:
         print(help_menu)
 
-# main code
-def reverse_main():
+
+# ---------------------------------------------------------------------------------| Main Code |
+# [!!] Shouldnt have to edit this 
+def main_code():
 
     # checks for arguments
     try:
@@ -142,4 +170,4 @@ def reverse_main():
 
 # runs main function if file is not being imported
 if __name__ == '__main__':
-    reverse_main()
+    main_code()

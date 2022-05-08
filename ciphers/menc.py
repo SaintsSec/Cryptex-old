@@ -69,7 +69,7 @@ def encode(_Input, alphabet, _Output):
         else:
             print("error, could not find the charIndex difference")
 
-    print(f'Encrypted Content:\n{_Output}\nGenerated Key: \n{key}\n')
+    print(f'\nEncrypted Content:\n{_Output}\nGenerated Key: \n{key}\n')
 
 #-----------------------------------------------------------------------------------| Decoding |
 def decode(plain_content, alphabet, key):

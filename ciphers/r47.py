@@ -1,16 +1,16 @@
 #!/usr/bin/python
-
-# morsecode cipher [encoding] package for the the codex project
+# New Rot47 cipher for the the codex project
 # created by : Fyzz
 
 # imports
 import getopt
 import sys
 
-# help menu for cipheringing process
+#---------------------------------------------------------------------------------| Help Menu |
+# Make sure to edit this for your specific cipher
 help_menu = """
       +------------------------------------------------------+
-      |  [+] ARGUMENTS Morsecode                             |
+      |  [+] ARGUMENTS Rot47                                 |
       |  [+] ARG 1. Process                                  |
       |          [-e] ---------- Encrypt                     |
       |          [-d] ---------- Decrypt                     |
@@ -21,86 +21,63 @@ help_menu = """
       |          [-o <output file>] ------- Output File      |
       +------------------------------------------------------+ 
       |  [+] Example:                                        |
-      |          cryptex -mor -e -t hello                    |
+      |          cryptex -r47 -e -t hello                    |
       +------------------------------------------------------+
         """
 
-morseAlphabet ={
-        "A" : ".-",
-        "B" : "-...",
-        "C" : "-.-.",
-        "D" : "-..",
-        "E" : ".",
-        "F" : "..-.",
-        "G" : "--.",
-        "H" : "....",
-        "I" : "..",
-        "J" : ".---",
-        "K" : "-.-",
-        "L" : ".-..",
-        "M" : "--",
-        "N" : "-.",
-        "O" : "---",
-        "P" : ".--.",
-        "Q" : "--.-",
-        "R" : ".-.",
-        "S" : "...",
-        "T" : "-",
-        "U" : "..-",
-        "V" : "...-",
-        "W" : ".--",
-        "X" : "-..-",
-        "Y" : "-.--",
-        "Z" : "--..",
-        " " : "/"
-        }
+#-----------------------------------------------------------------------------------| Encoding |
+def encode(plain_content, print_cnt):
 
-inverseMorseAlphabet = dict((v,k) for (k,v) in morseAlphabet.items())
+    encoded_cnt = plain_content # This is the string input for -t or -i
+    output = ""
 
-# encode morse
-def encode_morse(plain_content, print_cnt):
-
-    encoded_cnt = plain_content.upper()
-    output = []
-
-    for character in encoded_cnt:
-        if character in morseAlphabet:
-            output.append(morseAlphabet[character])
+    # Encode code goes here | set output the real output
+    # Make sure that the formatting for the output is the same in both the CLI and File Output
+    for index in encoded_cnt:
+        encoded = ord(index)
+        if encoded >= 33 and encoded <= 126:
+            output += chr(33 + ((encoded + 14) % 94))
+        else:
+            output += index
 
     # output content to cli
     if print_cnt == True:
-        print(f'\nEncrypted Content:\n{" ".join(output)}\n')
+        print(f'Encrypted Content:\n{output}\n')
 
     # output content to file
     else:
         with open(print_cnt, 'w') as f:
-            f.write(" ".join(output))
+            f.write(output)
         print('Output written to file sucessfully')
 
-# encode morse
-def decode_morse(plain_content, print_cnt):
+#-----------------------------------------------------------------------------------| Decoding |
+def decode(plain_content, print_cnt):
 
-    encoded_cnt = (plain_content.upper()).split(' ')
+    encoded_cnt = plain_content # This is the string input for -t or -i
     output = ''
 
-    for character in encoded_cnt:
-        if character in inverseMorseAlphabet:
-            output += inverseMorseAlphabet[character]
+    # Decode code goes here | set output the real output
+    # Make sure that the formatting for the output is included in both the CLI and File Output
+    for index in encoded_cnt:
+        encoded = ord(index)
+        if encoded >= 33 and encoded <= 126:
+            output += chr(33 + ((encoded + 14) % 94))
         else:
-            output += character
+            output += index
 
     # output content to cli
     if print_cnt == True:
-        print(f'Encrypted Content:\n{output.capitalize()}\n')
+        print(f'Encrypted Content:\n{output}\n')
 
     # output content to file
     else:
         with open(print_cnt, 'w') as f:
-            f.write(output.capitalize())
+            f.write(output)
         print('Output written to file sucessfully')
 
-# parse all arguments
-def morse_parser():
+# -------------------------------------------------------------------------------| Arg Parsing |
+# Add more args here if there are more than the default -t -i -o [ Example: -k ]
+def parser():
     opts, args = getopt.getopt(sys.argv[2:], 'i:t:o:', ['inputFile', 'inputText', 'outputFile'])
     arg_dict = {}
 
@@ -117,6 +94,9 @@ def morse_parser():
 
     return arg_dict
 
+
+# ---------------------------------------------------------------------------------| CLI Args |
+# Edit this if you have more than the default -t -i -o [ Example: -k ]
 # command line interface
 def cli(argument_check):
 
@@ -125,7 +105,7 @@ def cli(argument_check):
 
         # tries to get all arguments
         try:
-            arguments = morse_parser()
+            arguments = parser()
 
         # catches arguments with no value
         except getopt.GetoptError:
@@ -142,7 +122,6 @@ def cli(argument_check):
                 # tries to read file
                 try:
                     inputted_content = open(arguments.get('-i'), 'r').read()
-                    inputted_content = inputted_content[2::2]
 
                 # file does not exist
                 except FileNotFoundError:
@@ -156,13 +135,13 @@ def cli(argument_check):
 
             # attempts to run cipher
             try:
-                # encodes morse
+                # encodes octal
                 if ciphering_process == '-e':
-                    encode_morse(inputted_content, print_content)
+                    encode(inputted_content, print_content)
 
-                # decodes morse
+                # decodes octal
                 elif ciphering_process == '-d':
-                    decode_morse(inputted_content, print_content)
+                    decode(inputted_content, print_content)
                 
                 # exeption
                 else:
@@ -176,8 +155,10 @@ def cli(argument_check):
     else:
         print(help_menu)
 
-# main code
-def mor_main():
+
+# ---------------------------------------------------------------------------------| Main Code |
+# [!!] Shouldnt have to edit this 
+def main_code():
 
     # checks for arguments
     try:
@@ -191,4 +172,4 @@ def mor_main():
 
 # runs main function if file is not being imported
 if __name__ == '__main__':
-    mor_main()
+    main_code()

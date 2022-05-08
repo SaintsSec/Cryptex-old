@@ -27,7 +27,7 @@ def reverse(plain_content, print_cnt):
 
     # output content to cli
     if print_cnt == True:
-        print(f'Reversed Content:\n{output}\n')
+        print(f'\n Encrypted Content:\n{output}\n')
 
     # output content to file
     else:

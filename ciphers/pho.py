@@ -71,7 +71,7 @@ def encode(plain_content, print_cnt):
          
     # output content to cli
     if print_cnt == True:
-        print(f'Encrypted Content:\n{" ".join(output)}\n')
+        print(f'\nEncrypted Content:\n{" ".join(output)}\n')
 
     # output content to file
     else:

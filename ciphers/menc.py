@@ -16,58 +16,93 @@ help_menu = """
       +------------------------------------------------------+
       |  [+] ARG 2. Additional Aruments                      |
       |          [-t <plaintext>] --------- Input Text       |
-      |          [-i <input file>] -------- Input File [.txt]|
       |          [-k <plaintext>] --------- Input Key        |
-      |          [-ik <input file>] ------- Input Key File   |
-      |          [-o <output file>] ------- Output File      |
       +------------------------------------------------------+ 
       |  [+] Example:                                        |
-      |          cryptex -menc -e -t hello -k test           |
+      |          cryptex -menc -e -t "hello" -k "test"       |
+      |          cryptex -menc -d -t "test" -k "0C00070805"  |
       +------------------------------------------------------+
         """
 
 #-----------------------------------------------------------------------------------| Encoding |
-def encode(plain_content, alphabet, key, print_cnt):
+def encode(_Input, alphabet, _Output):
 
-    encoded_cnt = plain_content # This is the string input for -t or -i
-    output = ''
+    # Calculate the indexes of the characters in the input based of the alphabet variable
+    inputArr = []
+    for char in _Input:
+        index = alphabet.index(char)
+        if index == -1:
+            print(f"Error: illegal character: '{char}'")
+            return
+        inputArr.append(index)
 
-    # encryption process
+    # Calculate the indexes of the character in the output based of the alphabet variable
+    outputArr = []
+    for char in _Output:
+        index = alphabet.index(char)
+        if index == -1:
+            print(f"Error: illegal character: '{char}'")
+            return
+        outputArr.append(index)
 
+    # Calculate the encryption/decryption key
+    key = ""
+    for i in range(len(inputArr)):
+        inputCharIndex = inputArr[i]
+        outputCharIndex = outputArr[i % len(outputArr)]
 
-    # output content to cli
-    if print_cnt == True:
-        print(f'Encrypted Content:\n{output}\nKey: \n{key}\n')
+        difference = None
+        if inputCharIndex == outputCharIndex:
+            difference = 0
+        elif inputCharIndex < outputCharIndex:
+            difference = outputCharIndex - inputCharIndex
+        elif inputCharIndex > outputCharIndex:
+            difference = len(alphabet) - (inputCharIndex - outputCharIndex)
+        else:
+            print("This shouldn't happen")
+            return
 
-    # output content to file
-    else:
-        with open(print_cnt, 'w') as f:
-            f.write(output)
-        print('Output written to file sucessfully')
+        # Check if the difference is correct
+        if outputCharIndex == (inputCharIndex + difference) % len(alphabet):
+            hexValue = "%0.2X" % difference
+            key += hexValue
+        else:
+            print("error, could not find the charIndex difference")
+
+    print(f'Encrypted Content:\n{_Output}\nGenerated Key: \n{key}\n')
 
 #-----------------------------------------------------------------------------------| Decoding |
-def decode(plain_content, alphabet, key, print_cnt):
+def decode(plain_content, alphabet, key):
 
-    encoded_cnt = plain_content # This is the string input for -t or -i
-    output = ''
+    # key
+    n = 2
+    key = [key[i:i+n] for i in range(0, len(key), n)]
+    for i in range(len(key)):
+        key[i] = int(key[i], 16)
 
-    # decryption process
+    # Calculate the indexes of the characters in the encrypted text, based of the alphabet variable
+    encryptedTextCharIndex = []
+    for char in plain_content:
+        index = alphabet.index(char)
+        if index == -1:
+            print(f"error, illegal character: \"{char}\"")
+            return
+        encryptedTextCharIndex.append(index)
+
+    # Decrypt the text
+    decrypted = ""
+    for i in range(len(key)):
+        charIndex = (encryptedTextCharIndex[i % len(encryptedTextCharIndex)] - key[i]) % len(alphabet)
+        char = alphabet[charIndex]
+        decrypted += char
 
 
-    # output content to cli
-    if print_cnt == True:
-        print(f'Encrypted Content:\n{output}\nKey: \n{key}\n')
-
-    # output content to file
-    else:
-        with open(print_cnt, 'w') as f:
-            f.write(output)
-        print('Output written to file sucessfully')
+    print(f'Decrypted Content:\n{decrypted}\n')
 
 # -------------------------------------------------------------------------------| Arg Parsing |
 # Add more args here if there are more than the default -t -i -o [ Example: -k ]
 def parser():
-    opts, args = getopt.getopt(sys.argv[2:], 't:i:k:ik:o:', ['inputText', 'inputFile', 'inputKey', 'inputKeyFile', 'outputFile'])
+    opts, args = getopt.getopt(sys.argv[2:], 't:k:', ['inputText', 'inputKey'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -75,15 +110,8 @@ def parser():
         # input options
         if opt == '-t':
             arg_dict['-t'] = arg # input text
-        if opt == '-i':
-            arg_dict['-i'] = arg # input file
         if opt == '-k':
             arg_dict['-k'] = arg # input key
-        if opt == '-ik':
-            arg_dict['-ik'] = arg # input key file
-        # output options
-        if opt == '-o':
-            arg_dict['-o'] = arg # output file
 
     return arg_dict
 
@@ -110,30 +138,6 @@ def cli(argument_check):
             alphabet = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
             # TODO: add functionality to set custom alphabet
             key = arguments.get('-k')
-            print_content = True
-            
-            # checks users input type
-            if '-i' in arguments:
-                # tries to read file
-                try:
-                    inputted_content = open(arguments.get('-i'), 'r').read()
-
-                # file does not exist
-                except FileNotFoundError:
-                    print('[!!] he attached file does not exist')
-
-            # checks users input type for key
-            if '-ik' in arguments:
-                # tries to read file
-                try:
-                    key = open(arguments.get('-ik'), 'r').read()
-
-                except FileNotFoundError:
-                    print('[!!] he attached file does not exist')
-
-            # checks if output was specified
-            if ('-o' in arguments):
-                print_content = arguments.get('-o')
 
             ciphering_process = sys.argv[1]
 
@@ -141,19 +145,21 @@ def cli(argument_check):
             try:
                 # encodes octal
                 if ciphering_process == '-e':
-                    encode(inputted_content, alphabet, key, print_content)
+                    encode(inputted_content, alphabet, key)
 
                 # decodes octal
                 elif ciphering_process == '-d':
-                    decode(inputted_content, alphabet, key, print_content)
+                    decode(inputted_content, alphabet, key)
                 
                 # exeption
                 else:
-                    print(f'[!!] No Key or Argument was specified\n{help_menu}')
+                    print(f'[!!] No Key or Argument was specified - Ciphering process\n{help_menu}')
 
             # catches unspecified arguments
             except TypeError:
-                print(f'[!!] No Key or Argument was specified\n{help_menu}')
+                print(f'[!!] No Key or Argument was specified - TypeError\n{help_menu}\n')
+                import traceback
+                traceback.print_exc()
 
     # help menu 
     else:

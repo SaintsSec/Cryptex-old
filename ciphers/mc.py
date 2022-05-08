@@ -109,7 +109,7 @@ def encrypt_multiplicative(plain_content, encryption_key, print_cnt):
 
     # output content to cli
     if print_cnt == True:
-        print(f'Encrypted Content:\n{output}\n')
+        print(f'\nEncrypted Content:\n{output}\n')
 
     # output content to file
     else:

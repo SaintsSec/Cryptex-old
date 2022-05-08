@@ -25,7 +25,7 @@ def encrypt(plain_content, print_cnt):
 
     # output content to cli
     if print_cnt == True:
-        print(f'Encoded Content:\n{output}\n')
+        print(f'\nEncoded Content:\n{output}\n')
 
     # output content to file
     else:

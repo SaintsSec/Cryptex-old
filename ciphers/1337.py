@@ -66,7 +66,7 @@ def encode_leet(plain_content, print_cnt):
 
     # output content to cli
     if print_cnt == True:
-        print(f'Encrypted Content:\n{output.capitalize()}\n')
+        print(f'\nEncrypted Content:\n{output.capitalize()}\n')
 
     # output content to file
     else:

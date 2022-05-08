@@ -68,7 +68,7 @@ help_menu = """
     |       [-pho] -------- Phonetic Alphabet                     |
     |       [-md5] -------- MD5                                   |
     |       [-sha256] ----- Sha256                                |
-    |       [-gt] --------- Google Translate                      |
+    |       [-menc] ------- MENC                                  |
     +-------------------------------------------------------------+ 
     | [+] ARG 2. Cipher Method                                    |
     |       [-e] ---------- Encrypt                               |

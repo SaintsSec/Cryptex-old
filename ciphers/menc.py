@@ -91,8 +91,8 @@ def decode(plain_content, alphabet, key):
 
     # Decrypt the text
     decrypted = ""
-    for i in range(len(key)):
-        charIndex = (encryptedTextCharIndex[i % len(encryptedTextCharIndex)] - key[i]) % len(alphabet)
+    for _, val, _ in enumerate(key):
+        charIndex = (encryptedTextCharIndex[i % len(encryptedTextCharIndex)] - val) % len(alphabet)
         char = alphabet[charIndex]
         decrypted += char
 
@@ -133,8 +133,7 @@ def cli(argument_check):
 
         # continues with recieved arguments
         else:   
-            # getting variables for ciphering process
-            inputted_content = arguments.get('-t')
+            inputted_content = arguments.get('-t') # getting variables for ciphering process
             alphabet = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
             # TODO: add functionality to set custom alphabet
             key = arguments.get('-k')
@@ -161,15 +160,13 @@ def cli(argument_check):
                 import traceback
                 traceback.print_exc()
 
-    else: # help menu 
+    else:# help menu 
         print(help_menu)
-
 
 # ---------------------------------------------------------------------------------| Main Code |
 # [!!] Shouldnt have to edit this 
 def main_code():
-    # checks for arguments
-    try:
+    try:# checks for arguments
         sys.argv[1]
     except IndexError:
         arguments_exist = False

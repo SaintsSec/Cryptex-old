@@ -114,7 +114,7 @@ def bruteforce_caesar(plain_content, print_cnt, exclude, start_range=0, end_rang
 
 # parse all arguments
 def caesar_parser():
-    opts, args = getopt.getopt(sys.argv[2:], 'k:i:t:o:r:e:', ['key', 'inputFile', 'inputText', 'outputFile', 'range', 'excludeList'])
+    opts, _ = getopt.getopt(sys.argv[2:], 'k:i:t:o:r:e:', ['key', 'inputFile', 'inputText', 'outputFile', 'range', 'excludeList'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]

@@ -22,7 +22,7 @@ help_menu = """
       |          [-o <output file>] ------- Output File      |
       +------------------------------------------------------+ 
       |  [+] Example:                                        |
-      |          cryptex -template -e -t hello               |
+      |          cryptex -menc -e -t hello -k test           |
       +------------------------------------------------------+
         """
 
@@ -73,19 +73,22 @@ def parser():
     # loop through arguments, assign them to dict [arg_dict]
     for opt, arg in opts:
         # input options
-        if opt == '-i':
-            arg_dict['-i'] = arg
         if opt == '-t':
-            arg_dict['-t'] = arg
+            arg_dict['-t'] = arg # input text
+        if opt == '-i':
+            arg_dict['-i'] = arg # input file
+        if opt == '-k':
+            arg_dict['-k'] = arg # input key
+        if opt == '-ik':
+            arg_dict['-ik'] = arg # input key file
         # output options
         if opt == '-o':
-            arg_dict['-o'] = arg
+            arg_dict['-o'] = arg # output file
 
     return arg_dict
 
 
 # ---------------------------------------------------------------------------------| CLI Args |
-# Edit this if you have more than the default -t -i -o [ Example: -k ]
 # command line interface
 def cli(argument_check):
 
@@ -104,15 +107,27 @@ def cli(argument_check):
         else:    
             # getting variables for ciphering process
             inputted_content = arguments.get('-t')
+            alphabet = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+            # TODO: add functionality to set custom alphabet
+            key = arguments.get('-k')
             print_content = True
             
-            # checks users output type
-            if ('-i' in arguments):
+            # checks users input type
+            if '-i' in arguments:
                 # tries to read file
                 try:
                     inputted_content = open(arguments.get('-i'), 'r').read()
 
                 # file does not exist
+                except FileNotFoundError:
+                    print('[!!] he attached file does not exist')
+
+            # checks users input type for key
+            if '-ik' in arguments:
+                # tries to read file
+                try:
+                    key = open(arguments.get('-ik'), 'r').read()
+
                 except FileNotFoundError:
                     print('[!!] he attached file does not exist')
 
@@ -126,11 +141,11 @@ def cli(argument_check):
             try:
                 # encodes octal
                 if ciphering_process == '-e':
-                    encode(inputted_content, print_content)
+                    encode(inputted_content, alphabet, key, print_content)
 
                 # decodes octal
                 elif ciphering_process == '-d':
-                    decode(inputted_content, print_content)
+                    decode(inputted_content, alphabet, key, print_content)
                 
                 # exeption
                 else:

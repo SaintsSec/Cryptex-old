@@ -132,7 +132,7 @@ def cli(argument_check):
             print(f'[!!] No value was given to your argument\n{help_menu}')
 
         # continues with recieved arguments
-        else:   
+        else:
             inputted_content = arguments.get('-t') # getting variables for ciphering process
             alphabet = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
             # TODO: add functionality to set custom alphabet
@@ -160,11 +160,11 @@ def cli(argument_check):
                 import traceback
                 traceback.print_exc()
 
-    else:# help menu 
+    else:
         print(help_menu)
 
 # ---------------------------------------------------------------------------------| Main Code |
-# [!!] Shouldnt have to edit this 
+# [!!] Shouldnt have to edit this
 def main_code():
     try:# checks for arguments
         sys.argv[1]

@@ -15,34 +15,32 @@ help_menu = """
       |          [-e] ---------- Encrypt                     |
       |          [-d] ---------- Decrypt                     |
       |          [-b] ---------- Brute Force                 |
-      +------------------------------------------------------+
-      |  [+] ARG 2. Additional Aruments                      |
-      |          [-k <int key>] ----------- Key              |
-      |              [not required for bruteforcing '-b']    |
-      |          [-r <start,finish>] ------ Range            |
-      |          [-t <plaintext>] --------- Input Text       |
-      |          [-i <input file>] -------- Input File [.txt]|
-      |          [-o <output file>] ------- Output File      |
-      +------------------------------------------------------+  
-      |  [+] Example:                                        |
-      |          cryptex -cc -e -k 5 -t hello                |  
-      +------------------------------------------------------+
+      +------------------------------------------------------+--+
+      |  [+] ARG 2. Additional Aruments                         |
+      |          [-k <int key>] ----------- Key                 |
+      |              [not required for bruteforcing '-b']       |
+      |          [-r <start,finish>] ------ Range               |
+      |          [-t <plaintext>] --------- Input Text          |
+      |          [-i <input file>] -------- Input File [.txt]   |
+      |          [-o <output file>] ------- Output File         |
+      |          [-e <plaintext>] --------- Custom exclude list |
+      +---------------------------------------------------------+  
+      |  [+] Example:                                           |
+      |          cryptex -cc -e -k 5 -t hello -e "asd[]"        |  
+      +---------------------------------------------------------+
     """
-
-# symbols that can't be processed through the cipher
-symbols = "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789" # Why aren't numbers processed? (Mart)
 
 # generate path
 # path = f"{getpass.getuser()}@caesar-cipher $ "
 
 # encrypts content
-def encrypt_caesar(plain_content, encryption_key, print_cnt):
+def encrypt_caesar(plain_content, encryption_key, print_cnt, exclude):
     # output variable
     output = ''
  
     # encryption process
     for character in plain_content:
-        if character in symbols:
+        if character in exclude:
             output += character
         elif character.isupper():
             output += chr((ord(character) + int(encryption_key) - 65) % 26 + 65)
@@ -61,13 +59,13 @@ def encrypt_caesar(plain_content, encryption_key, print_cnt):
 
 
 # decrypts content
-def decrypt_caesar(plain_content, encryption_key, print_cnt):
+def decrypt_caesar(plain_content, encryption_key, print_cnt, exclude):
     # output variable
     output = ''
  
     # decryption process
     for character in plain_content:
-        if character in symbols:
+        if character in exclude:
             output += character
         elif character.isupper():
             output += chr((ord(character) - int(encryption_key) - 65) % 26 + 65)
@@ -85,7 +83,7 @@ def decrypt_caesar(plain_content, encryption_key, print_cnt):
         print('Output written to file sucessfully')
 
 # bruteforces content
-def bruteforce_caesar(plain_content, print_cnt, start_range=0, end_range=27):
+def bruteforce_caesar(plain_content, print_cnt, exclude, start_range=0, end_range=27):
     # output variable
     output = ''
 
@@ -95,7 +93,7 @@ def bruteforce_caesar(plain_content, print_cnt, start_range=0, end_range=27):
         shift_key += 1
 
         for character in plain_content:
-            if character in symbols:
+            if character in exclude:
                 output += character
             elif character.isupper():
                 output += chr((ord(character) - shift - 65) % 26 + 65)
@@ -116,7 +114,7 @@ def bruteforce_caesar(plain_content, print_cnt, start_range=0, end_range=27):
 
 # parse all arguments
 def caesar_parser():
-    opts, args = getopt.getopt(sys.argv[2:], 'k:i:t:o:r:', ['key', 'inputFile', 'inputText', 'outputFile', 'range'])
+    opts, _ = getopt.getopt(sys.argv[2:], 'k:i:t:o:r:e:', ['key', 'inputFile', 'inputText', 'outputFile', 'range', 'excludeList'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -134,6 +132,9 @@ def caesar_parser():
         # output options
         if opt == '-o':
             arg_dict['-o'] = arg
+        # exclude list
+        if opt == '-e':
+            arg_dict['-e'] = arg
 
     return arg_dict
 
@@ -157,6 +158,10 @@ def cli(argument_check):
             key = arguments.get('-k')
             inputted_content = arguments.get('-t')
             print_content = True
+
+            # symbols that can't be processed through the cipher
+            exclude = "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789" # Why aren't numbers processed? (Mart)
+
             
             # checks users output type
             if ('-i' in arguments):
@@ -176,6 +181,10 @@ def cli(argument_check):
             if '-r' in arguments:   
                 range = arguments.get('-r', False)
 
+            # checks if custom exclude list was specified
+            if '-e' in arguments:
+                exclude = arguments.get('-e')
+
             # check ciphering process
             ciphering_process = sys.argv[1]
 
@@ -183,19 +192,19 @@ def cli(argument_check):
             try:
                 # encrypts caesar
                 if ciphering_process == '-e':
-                    encrypt_caesar(inputted_content, key, print_content)
+                    encrypt_caesar(inputted_content, key, print_content, exclude)
 
                 # decrypts caesar
                 elif ciphering_process == '-d':
-                    decrypt_caesar(inputted_content, key, print_content)
+                    decrypt_caesar(inputted_content, key, print_content, exclude)
 
                 # bruteforce caesar
                 elif ciphering_process == '-b':
                     range = range if '-r' in arguments else False
                     if range == False:
-                        bruteforce_caesar(inputted_content, print_content)
+                        bruteforce_caesar(inputted_content, print_content, exclude)
                     else:
-                        bruteforce_caesar(inputted_content, print_content, int(range[0]), int(range[1])+1)
+                        bruteforce_caesar(inputted_content, print_content, exclude, int(range[0]), int(range[1])+1)
 
                 # exception
                 else:

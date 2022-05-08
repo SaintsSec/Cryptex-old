@@ -47,8 +47,8 @@ def encode(_Input, alphabet, _Output):
 
     # Calculate the encryption/decryption key
     key = ""
-    for i in range(len(inputArr)):
-        inputCharIndex = inputArr[i]
+    for i, val, _ in enumerate(inputArr):
+        inputCharIndex = val
         outputCharIndex = outputArr[i % len(outputArr)]
 
         difference = None
@@ -77,8 +77,8 @@ def decode(plain_content, alphabet, key):
     # key
     n = 2
     key = [key[i:i+n] for i in range(0, len(key), n)]
-    for i in range(len(key)):
-        key[i] = int(key[i], 16)
+    for i, val, arr in enumerate(key):
+        arr[i] = int(val, 16)
 
     # Calculate the indexes of the characters in the encrypted text, based of the alphabet variable
     encryptedTextCharIndex = []
@@ -102,7 +102,7 @@ def decode(plain_content, alphabet, key):
 # -------------------------------------------------------------------------------| Arg Parsing |
 # Add more args here if there are more than the default -t -i -o [ Example: -k ]
 def parser():
-    opts, args = getopt.getopt(sys.argv[2:], 't:k:', ['inputText', 'inputKey'])
+    opts, _ = getopt.getopt(sys.argv[2:], 't:k:', ['inputText', 'inputKey'])
     arg_dict = {}
 
     # loop through arguments, assign them to dict [arg_dict]
@@ -132,7 +132,7 @@ def cli(argument_check):
             print(f'[!!] No value was given to your argument\n{help_menu}')
 
         # continues with recieved arguments
-        else:    
+        else:   
             # getting variables for ciphering process
             inputted_content = arguments.get('-t')
             alphabet = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
@@ -150,7 +150,7 @@ def cli(argument_check):
                 # decodes octal
                 elif ciphering_process == '-d':
                     decode(inputted_content, alphabet, key)
-                
+
                 # exeption
                 else:
                     print(f'[!!] No Key or Argument was specified - Ciphering process\n{help_menu}')
@@ -161,15 +161,13 @@ def cli(argument_check):
                 import traceback
                 traceback.print_exc()
 
-    # help menu 
-    else:
+    else: # help menu 
         print(help_menu)
 
 
 # ---------------------------------------------------------------------------------| Main Code |
 # [!!] Shouldnt have to edit this 
 def main_code():
-
     # checks for arguments
     try:
         sys.argv[1]

@@ -114,7 +114,7 @@ def cli(argument_check):
             # getting variables for ciphering process
             inputted_content = arguments.get('-t')
             print_content = True
-            
+
             # checks users output type
             if ('-i' in arguments):
                 # tries to read file
@@ -155,7 +155,7 @@ def cli(argument_check):
 
 
 # ---------------------------------------------------------------------------------| Main Code |
-# [!!] Shouldnt have to edit this 
+# [!!] Shouldnt have to edit this
 def main_code():
 
     # checks for arguments

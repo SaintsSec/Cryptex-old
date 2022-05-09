@@ -30,7 +30,7 @@ local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cry
 cipher = f'{local_path}/ciphers/' # local path to ciphers
 
 if sys.argv[1:]:
-    # execution 
+    # execution
     string_args = ' '.join(sys.argv[1:])
     os.system(f'python3 {cipher}cc.py {string_args} -k 13')
 else:

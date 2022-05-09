@@ -68,7 +68,7 @@ def encode(plain_content, print_cnt):
             output.append(phonetic[character])
         else:
             output.append(character)
-         
+
     # output content to cli
     if print_cnt == True:
         print(f'\nEncrypted Content:\n{" ".join(output)}\n')
@@ -180,7 +180,7 @@ def cli(argument_check):
             except TypeError:
                 print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
-    # help menu 
+    # help menu
     else:
         print(help_menu)
 

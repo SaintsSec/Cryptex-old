@@ -8,7 +8,7 @@ def writeKey():
     key = Fernet.generate_key()
     with open ('key.key', 'wb') as key_file:
         key_file.write(key)
-        
+
 def loadKey():
     return open('key.key', 'rb').read()
 

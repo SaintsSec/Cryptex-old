@@ -51,7 +51,7 @@ english_frequences = [0.08167, 0.01492, 0.02782, 0.04253, 0.12702, 0.02228, 0.02
 # encrypt vigenere
 def encrypt_vigenere(plain_content, encryption_key, print_cnt):
     # output variable
-    output = [] 
+    output = []
     index = 0
 
     # format key

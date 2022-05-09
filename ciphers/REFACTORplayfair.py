@@ -9,7 +9,7 @@ def generateKeyMatrix (key):
     # Create 5X5 matrix with all values as 0
     # [
     #   [0, 0, 0, 0, 0],
-    #   [0, 0, 0, 0, 0], 
+    #   [0, 0, 0, 0, 0],
     #   [0, 0, 0, 0, 0], 
     #   [0, 0, 0, 0, 0], 
     #   [0, 0, 0, 0, 0]
@@ -79,7 +79,7 @@ def indexLocator (char,cipherKeyMatrix):
     for i,j in enumerate(cipherKeyMatrix):
         # [
         #   (0, ['K', 'A', 'R', 'E', 'N']),
-        #   (1, ['D', 'B', 'C', 'F', 'G']), 
+        #   (1, ['D', 'B', 'C', 'F', 'G']),
         #   (2, ['H', 'I', 'L', 'M', 'O']),
         #   (3, ['P', 'Q', 'S', 'T', 'U']),
         #   (4, ['V', 'W', 'X', 'Y', 'Z'])
@@ -159,7 +159,7 @@ def encryption (plainText,key):
             cipherText.append(keyMatrix[i2][j1])
             cipherText.append(", ")
 
-        i += 2  
+        i += 2
     return cipherText
 
 

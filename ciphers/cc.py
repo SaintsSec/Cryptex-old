@@ -37,7 +37,7 @@ help_menu = """
 def encrypt_caesar(plain_content, encryption_key, print_cnt, exclude):
     # output variable
     output = ''
- 
+
     # encryption process
     for character in plain_content:
         if character in exclude:

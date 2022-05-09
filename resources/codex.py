@@ -130,7 +130,7 @@ def cli(argument_check):
             # multiplicative cipher
             elif ciphering_option == '-m':
                 os.system(f'python3 ./ciphers/multiplicativeCipher.py {string_args}')
-            
+
             # base64 cipher
             elif ciphering_option == '-b':
                 os.system(f'python3 ./ciphers/base64Cipher.py {string_args}')

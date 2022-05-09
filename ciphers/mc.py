@@ -123,7 +123,7 @@ def decrypt_multiplicative(plain_content, decryption_key, print_cnt):
     # output variable
     output = ''
     inverse_key = inverse(decryption_key)
- 
+
     # decryption process
     for character in plain_content:
 
@@ -246,7 +246,7 @@ def cli(argument_check):
             except TypeError:
                 print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
-    # help menu 
+    # help menu
     else:
         print(help_menu)
 

@@ -124,7 +124,7 @@ def cli(argument_check):
             except TypeError:
                 print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
-    # help menu 
+    # help menus
     else:
         print(help_menu)
 

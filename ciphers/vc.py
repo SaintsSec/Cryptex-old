@@ -239,7 +239,7 @@ def get_key(ciphertext, key_length):
 
 # decrypts viginere with unkown key
 def unkown_key(plain_content, print_cnt):
-    ciphertext = ''.join(x.lower() for x in plain_content if x.isalpha())	
+    ciphertext = ''.join(x.lower() for x in plain_content if x.isalpha())
 
     # tries to get key
     try:

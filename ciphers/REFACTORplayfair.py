@@ -4,7 +4,7 @@ from mods.clearScreen import clear_screen as cs
 
 cs()
 print(playfairLogo)
- 
+
 def generateKeyMatrix (key): 
     # Create 5X5 matrix with all values as 0
     # [
@@ -21,7 +21,7 @@ def generateKeyMatrix (key):
 
 
     """
-     Generate SimpleKeyArray with key from user Input 
+     Generate SimpleKeyArray with key from user Input
      with following below condition:
      1. Character Should not be repeated again
      2. Replacing J as I (as per rule of playfair cypher)
@@ -80,8 +80,8 @@ def indexLocator (char,cipherKeyMatrix):
         # [
         #   (0, ['K', 'A', 'R', 'E', 'N']),
         #   (1, ['D', 'B', 'C', 'F', 'G']), 
-        #   (2, ['H', 'I', 'L', 'M', 'O']), 
-        #   (3, ['P', 'Q', 'S', 'T', 'U']), 
+        #   (2, ['H', 'I', 'L', 'M', 'O']),
+        #   (3, ['P', 'Q', 'S', 'T', 'U']),
         #   (4, ['V', 'W', 'X', 'Y', 'Z'])
         # ]
 

@@ -132,11 +132,11 @@ def cli(argument_check):
             print(f'[!!] No value was given to your argument\n{help_menu}')
 
         # continues with recieved arguments
-        else:    
+        else: 
             # getting variables for ciphering process
             inputted_content = arguments.get('-t')
             print_content = True
-            
+
             # checks users output type
             if ('-i' in arguments):
                 # tries to read file
@@ -172,7 +172,7 @@ def cli(argument_check):
             except TypeError:
                 print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
-    # help menu 
+    # help menu
     else:
         print(help_menu)
 

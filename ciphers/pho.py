@@ -186,7 +186,7 @@ def cli(argument_check):
 
 
 # ---------------------------------------------------------------------------------| Main Code |
-# [!!] Shouldnt have to edit this 
+# [!!] Shouldnt have to edit this
 def main_code():
 
     # checks for arguments

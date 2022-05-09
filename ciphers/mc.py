@@ -193,7 +193,7 @@ def cli(argument_check):
             print(f'[!!] No value was given to your argument\n{help_menu}')
 
         # continues with recieved arguments
-        else:    
+        else:
             # getting variables for ciphering process
             key = arguments.get('-k')
             inputted_content = arguments.get('-t')
@@ -214,7 +214,7 @@ def cli(argument_check):
                 print_content = arguments.get('-o')
 
             # checks if range was specified
-            if '-r' in arguments:   
+            if '-r' in arguments:
                 range = arguments.get('-r', False)
 
             # check ciphering process

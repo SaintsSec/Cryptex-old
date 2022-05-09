@@ -19,10 +19,10 @@ Features Include:
 
 ## Requirements
 All requirements are the current versions of the software in mention
-- Pyperclip
-- QRCode
-- Image
-- Cryptography
+  - Pyperclip
+  - QRCode
+  - Image
+  - Cryptography
 
 ## Install ##
 ### Linux: 

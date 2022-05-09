@@ -4,7 +4,7 @@
 # from mods.menu import menu, information, exitMessage
 
 # imports
-import os 
+import os
 import sys
 import getpass
 
@@ -121,7 +121,7 @@ def update():
 
         # user input, option
         option = input(f"{header}")
-        
+
         # update
         if option == "y":
             os.system(f"sh ~/.Cryptex/resources/update.sh")

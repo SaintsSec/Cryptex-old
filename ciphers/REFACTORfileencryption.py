@@ -16,7 +16,7 @@ def encryptFile(filename, key):
     f = Fernet(key)
     with open(filename, 'rb') as file:
         fileData = file.read()
-    encryptedData = f.encrypt(fileData) 
+    encryptedData = f.encrypt(fileData)
     with open(filename, 'wb') as file:
         file.write(encryptedData)
         
@@ -31,7 +31,7 @@ def decryptFile(filename, key):
 
 def main():   
     key = loadKey()
-    filename = input("Enter the file name: ")    
+    filename = input("Enter the file name: ")
     choice = input("\nWould you like to [1]encrypt or [2]decrypt a file? ")
     if choice == "1":
         encryptFile(filename, key)

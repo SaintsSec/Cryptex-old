@@ -46,7 +46,7 @@ Started Cosmodium at 17 and since then has made significant changes in the cyber
 **Fyzz: Nothing to do with soda** Everything to do with crypto-hacking!  
 
 **Mart | marvhus: A helping hand**
-I started tinkering with computers I think around primary school, then in junior high school I started doing more tech stuff, then in high school I started learning more propper programming, and I began to do a lot of programming in my spare time, and at school, but I was allways at least 10 steps ahead of what my class was learning, and eventually I ended up finding this place.
+I started tinkering with computers I think around primary school, then in junior high school I started doing more tech stuff, then in high school I started learning more proper programming, and I began to do a lot of programming in my spare time, and at school, but I was always at least 10 steps ahead of what my class was learning, and eventually I ended up finding this place.
 
 ## linkies ##
   [Check out the project board](https://github.com/CythesOut/Cryptex/projects/)  

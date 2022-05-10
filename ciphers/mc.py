@@ -3,28 +3,24 @@
 # reverse cipher package for the the codex project
 # created by : C0SM0
 
-# imports
-import sys
-import getopt
-
 # help menu for ciphering options
 help_menu = """
-      +----------------------------------------------------+
-      |  [+] ARGUMENTS Multiplicative-Cipher               |
-      |  [+] ARG 1. Ciphering Process                      |
-      |        [-e] ---------- Encrypt                     |
-      |        [-d] ---------- Decrypt                     |
-      +----------------------------------------------------+
-      |  [+] ARG 2. Additional Aruments                    |
-      |        [-k <int key>] ----------- Key              |
-      |        [-t <plaintext>] --------- Input Text       |
-      |        [-i <input file>] -------- Input File [.txt]|
-      |        [-o <output file>] ------- Output File      | 
-      +----------------------------------------------------+   
-      |  [+] Example:                                      |
-      |  cryptex -mc -e -k 7 -t hello                      |
-      +----------------------------------------------------+
-    """
++-----------------------------------------------------+
+|  [+] ARGUMENTS Multiplicative-Cipher                |
+|  [+] ARG 1. Ciphering Process                       |
+|        [-e] ---------- Encrypt                      |
+|        [-d] ---------- Decrypt                      |
++-----------------------------------------------------+
+|  [+] ARG 2. Additional Aruments                     |
+|        [-k <int key>] ----------- Key               |
+|        [-t <plaintext>] --------- Input Text        |
+|        [-i <input file>] -------- Input File [.txt] |
+|        [-o <output file>] ------- Output File       | 
++-----------------------------------------------------+   
+|  [+] Example:                                       |
+|  cryptex mc -e -k 7 -t hello                        |
++-----------------------------------------------------+
+"""
 
 # symbols that can't be processed through the cipher
 symbols = ['\n', '\t', ' ', '.', '?', '!', ',', '/', '\\', '<', '>', '|',
@@ -81,189 +77,72 @@ def inverse(a):
             return x
     return -1
 
-# encrypts multiplicative cipher
-def encrypt_multiplicative(plain_content, encryption_key, print_cnt):
-    # output variable
+# encodes multiplicative cipher
+def encode(input):
     output = ''
+    text = input.text
+    key = input.key
 
-    # encryption process
-    for character in plain_content:
+    if key and text:
+        # encryption process
+        key = int(key)
+        for character in text:
 
-        # checks if character is symbol
-        if character in symbols:
-            output += character
+            # checks if character is symbol
+            if character in symbols:
+                output += character
 
-        # checks if character is upper
-        elif character.isupper():
-            index = get_index(character.lower())
-            new_index = (index * encryption_key) % 26
-            cipher_character = get_letter(new_index)
-            output += cipher_character.upper()
+            # checks if character is upper
+            elif character.isupper():
+                index = get_index(character.lower())
+                new_index = (index * key) % 26
+                cipher_character = get_letter(new_index)
+                output += cipher_character.upper()
 
-        # checks if character is lower
-        else:
-            index = get_index(character)
-            new_index = (index * encryption_key) % 26
-            cipher_character = get_letter(int(new_index))
-            output += cipher_character
+            # checks if character is lower
+            else:
+                index = get_index(character)
+                new_index = (index * key) % 26
+                cipher_character = get_letter(int(new_index))
+                output += cipher_character
 
-    # output content to cli
-    if print_cnt == True:
-        print(f'\nEncrypted Content:\n{output}\n')
-
-    # output content to file
+        return [output, True]
     else:
-        with open(print_cnt, 'w') as f:
-            f.write(output)
-        print('Output written to file sucessfully')
+        return ["Please provide -k <key> argument", False]
 
 
-# decrypts multiplicative cipher
-def decrypt_multiplicative(plain_content, decryption_key, print_cnt):
-    # output variable
+# decodes multiplicative cipher
+def decode(input):
     output = ''
-    inverse_key = inverse(decryption_key)
+    text = input.text
+    key = input.key
 
-    # decryption process
-    for character in plain_content:
+    if key and text:
+        # decryption process
+        inverse_key = inverse(int(key))
+        for character in text:
 
-        # checks if character is symbol
-        if character in symbols:
-            output += character
+            # checks if character is symbol
+            if character in symbols:
+                output += character
 
-        # checks if character is upper
-        elif character.isupper():
-            index = get_index(character.lower())
-            new_index = (index * inverse_key) % 26
-            cipher_character = get_letter(new_index)
-            output += cipher_character.upper()
+            # checks if character is upper
+            elif character.isupper():
+                index = get_index(character.lower())
+                new_index = (index * inverse_key) % 26
+                cipher_character = get_letter(new_index)
+                output += cipher_character.upper()
 
-        # check if character is lower
-        else:
-            index = get_index(character)
-            new_index = (index * inverse_key) % 26
-            cipher_character = get_letter(new_index)
-            output += cipher_character
-
-    # output content to cli
-    if print_cnt == True:
-        print(f'Decrypted Content:\n{output}\n')
-
-    # output content to file
+            # check if character is lower
+            else:
+                index = get_index(character)
+                new_index = (index * inverse_key) % 26
+                cipher_character = get_letter(new_index)
+                output += cipher_character
+                
+        return [output, True]
     else:
-        with open(print_cnt, 'w') as f:
-            f.write(output)
-        print('Output written to file sucessfully')
+        return ["Please provide -k <key> argument", False]
+        
 
-# parses arguments for ciphering process
-def multiplicative_parser():
-    opts, args = getopt.getopt(sys.argv[2:], 'k:i:t:o:r:', ['key', 'inputFile', 'inputText', 'outputFile', 'range'])
-    arg_dict = {}
-
-    # loop through arguments, assign them to dict [arg_dict]
-    for opt, arg in opts:
-        # processing options
-        if opt == '-k':
-            arg_dict['-k'] = int(arg)
-        if opt == '-r':
-            arg_dict['-r'] = arg.split(',')
-        # input options
-        if opt == '-i':
-            arg_dict['-i'] = arg
-        if opt == '-t':
-            arg_dict['-t'] = arg
-        # output options
-        if opt == '-o':
-            arg_dict['-o'] = arg
-
-    return arg_dict
-
-# command line interface
-def cli(argument_check):
-
-    # one liners
-    if argument_check == True:
-
-        # tries to get all arguments
-        try:
-            arguments = multiplicative_parser()
-
-        # catches arguments with no value
-        except getopt.GetoptError:
-            print(f'[!!] No value was given to your argument\n{help_menu}')
-
-        # continues with recieved arguments
-        else:
-            # getting variables for ciphering process
-            key = arguments.get('-k')
-            inputted_content = arguments.get('-t')
-            print_content = True
-            
-            # checks users output type
-            if ('-i' in arguments):
-                # tries to read file
-                try:
-                    inputted_content = open(arguments.get('-i'), 'r').read()
-
-                # file does not exist
-                except FileNotFoundError:
-                    print('[!!] The attached file does not exist')
-
-            # checks if output was specified
-            if ('-o' in arguments):
-                print_content = arguments.get('-o')
-
-            # checks if range was specified
-            if '-r' in arguments:
-                range = arguments.get('-r', False)
-
-            # check ciphering process
-            ciphering_process = sys.argv[1]
-
-            # attempts to run cipher
-            try:
-                # encrypts caesar
-                if ciphering_process == '-e':
-                    encrypt_multiplicative(inputted_content, key, print_content)
-
-                # decrypts caesar
-                elif ciphering_process == '-d':
-                    decrypt_multiplicative(inputted_content, key, print_content)
-
-                # bruteforce caesar
-                elif ciphering_process == '-b':
-                    range = range if '-r' in arguments else False
-                    if range == False:
-                        bruteforce_caesar(inputted_content, print_content)
-                    else:
-                        bruteforce_caesar(inputted_content, print_content, int(range[0]), int(range[1])+1)
-
-                # exeption
-                else:
-                    print(f'[!!] No Key or Argument was specified\n{help_menu}')
-
-            # catches unspecified arguments
-            except TypeError:
-                print(f'[!!] No Key or Argument was specified\n{help_menu}')
-
-    # help menu
-    else:
-        print(help_menu)
-
-# main code
-def multiplicative_main():
-
-    # checks for arguments
-    try:
-        sys.argv[1]
-    except IndexError:
-        arguments_exist = False
-    else:
-        arguments_exist = True
-
-    cli(arguments_exist)
-
-# runs main function if file is not being imported
-if __name__ == '__main__':
-    multiplicative_main()
 

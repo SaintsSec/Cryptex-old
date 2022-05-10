@@ -1,14 +1,11 @@
 #!/usr/bin/python
-# base64 cipher [encoding] package for the the codex project
-
+# XOR Cipher
 # created by : Fyzz
-
-import base64
 
 # help menu for cipheringing process
 help_menu = """
 +-------------------------------------------------------+
-|  [+] ARGUMENTS Base64                                 |
+|  [+] ARGUMENTS Template                               |
 |  [+] ARG 1. Process                                   |
 |          [-e] ---------- Encrypt                      |
 |          [-d] ---------- Decrypt                      |
@@ -17,28 +14,32 @@ help_menu = """
 |          [-t <plaintext>] --------- Input Text        |
 |          [-i <input file>] -------- Input File [.txt] |
 |          [-o <output file>] ------- Output File       |
+|          [-k <key>] --------------- Key               |
 +-------------------------------------------------------+ 
 |  [+] Example:                                         |
-|          cryptex b64 -e -t "hello"                    |
+|          cryptex xor -e -t hello -k key               |
 +-------------------------------------------------------+
 """
 
-# encode base64
 def encode(input):
+    key = input.key
+    text = input.text
 
-    text = input.text.encode('ascii')
-    b64_bytes = base64.b64encode(text)
-    output = b64_bytes.decode('ascii')
-
-    return [output, True]
-
+    if key and text:
+        output = " ".join([chr(ord(c1) ^ ord(c2)) for (c1,c2) in zip(text,key)])
+        return [output, True]
+    else:
+        return ["Please provide -k <key> argument", False]
     
 
-# decode base64
+    return output
+
 def decode(input):
+    key = input.key
+    text = input.text
 
-    text = input.text.encode('ascii')
-    b64_bytes = base64.b64decode(text)
-    output = b64_bytes.decode('ascii')
-
-    return [output, True]
+    if key and text:
+        output = " ".join([chr(ord(c1) ^ ord(c2)) for (c1,c2) in zip(text,key)])
+        return [output, True]
+    else:
+        return ["Please provide -k <key> argument", False]

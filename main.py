@@ -1,105 +1,15 @@
 #!/usr/bin/python
-# main code
+# New Arg Parse and Cipher Call
+# created by : Fyzz
 
-# from mods.menu import menu, information, exitMessage
-
-# imports
-import os
+import argparse
+import mods.bits as b
+import importlib
+import readline
 import sys
-import getpass
+import os
 
-# import packages
-# from ciphers import *
 
-# global variables
-username = getpass.getuser() # gets username
-header = f'[~] {username}@cryptex $ ' # header for user input
-remote_path = 'raw.githubusercontent.com/AlexKollar/Cryptex/master' # remote url path
-local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cryptex' # local path to cryptex
-cipher = f'{local_path}/ciphers/' # local path to ciphers
-
-# version
-version = open(f'{local_path}/version.txt').read().strip()
-
-# banner
-banner = f'''
-
-                  .--------.
-                 / .------. \\
-                / /        \ \\
-                | |        | |
-               _| |________| |_
-             .' |_|        |_| '.
-             '._____ ____ _____.'
-             |     .'____'.     |
-             '.__.'.'    '.'.__.'
-             '.__  |      |  __.'
-             |   '.'.____.'.'   |
-             '.____'.____.'____.'
-             '.________________.'
-        _____              __         
-       / ___/_____ _____  / /______ __
-      / /__/ __/ // / _ \/ __/ -_) \ /
-      \___/_/  \_, / .__/\__/\__/_\_\ 
-              /___/_/
-Locks only exist to keep honest people honest
-            Version : 0.{version}
-'''
-
-# help menu
-help_menu = """
-    +-------------------------------------------------------------+
-    | [+] EXAMPLE cryptex -cc -d -t 'This is a string to encrypt' |
-    | [+] ARG 1. Cipher                                           |                                         
-    |       [-cc] --------- Caesar Cipher                         |
-    |       [-vc] --------- Vingenere Cipher                      |
-    |       [-rc] --------- Reverse Cipher                        |
-    |       [-mc] --------- Multiplicative Cipher                 |
-    |       [-dh] --------- Diffie Hellman Key Exchange           |
-    |       [-xor] -------- XOR Cipher                            |
-    |       [-r13] -------- ROT 13                                |
-    |       [-r47] -------- ROT 47                                |
-    |       [-b64] -------- Base64                                |
-    |       [-bin] -------- Binary                                |
-    |       [-hex] -------- Hex                                   |
-    |       [-oct] -------- Octal                                 |
-    |       [-1337] ------- L33T 5P34K                            | 
-    |       [-mor] -------- Morse Code                            | 
-    |       [-pho] -------- Phonetic Alphabet                     |
-    |       [-md5] -------- MD5                                   |
-    |       [-sha256] ----- Sha256                                |
-    |       [-menc] ------- MENC                                  |
-    +-------------------------------------------------------------+ 
-    | [+] ARG 2. Cipher Method                                    |
-    |       [-e] ---------- Encrypt                               |
-    |       [-d] ---------- Decrypt                               |
-    |       [-b] ---------- Break                                 |
-    +-------------------------------------------------------------+
-    | [+] Additional Arguments                                    |
-    |       [-t] ---------- Input Text                            |
-    |       [-i] ---------- Input File                            |
-    |       [-o] ---------- Output File                           | 
-    |       [-k] ---------- Encryption Key                        | 
-    |       [-r] ---------- Range                                 | 
-    |       [-w] ---------- Wordlist                              |
-    +-------------------------------------------------------------+
-    | [+] Cryptex Arguments                                       |
-    |       [--help] ------ help                                  |
-    |       [--version] --- version                               |    
-    |       [--update] ---- update                                |
-    +-------------------------------------------------------------+
-"""
-
-# clears screen
-def clear_screen():
-    os.system('clear')
-
-# exits cryptex
-def exit():
-    print('\n[*] Exiting...')
-    sys.exit()
-
-# update cryptex
 def update():
 
     print("\n[*] Checking for updates...")
@@ -108,8 +18,8 @@ def update():
     os.system(f"curl https://raw.githubusercontent.com/AlexKollar/Cryptex/master/version.txt | tee ~/.Cryptex/latest.txt")
 
     # save version nubmers to memory
-    current_version = float(open(f"{local_path}/version.txt", "r").read())
-    latest_version = float(open(f"{local_path}/latest.txt", "r").read())
+    current_version = float(open(f"{b.local_path}/version.txt", "r").read())
+    latest_version = float(open(f"{b.local_path}/latest.txt", "r").read())
 
     # remove version number file
     os.system("rm -rf ~/.Cryptex/latest.txt")
@@ -120,7 +30,7 @@ def update():
         print("[~] Update Cryptex? [y/n]\n")
 
         # user input, option
-        option = input(f"{header}")
+        option = input(f"{b.header}")
 
         # update
         if option == "y":
@@ -130,53 +40,73 @@ def update():
     else:
         print("\n[+] Cryptex already up to date")
 
-# command line interface
-def cli(arguments):
+# Output
+def output(data, output): 
+    if data:
+        if data[1] == True and data[1]:
+            #File
+            if output:
+                with open(output, 'w') as f:
+                    f.write(data[0])
+                print(f'{b.SUCCESS}[✓] File Output Successful{b.END}')
 
-    # if arguments exist
-    if arguments:
-
-        ciphering_option = sys.argv[1]
-        remaining_arguments = sys.argv[2:]
-        
-        if '-t' in remaining_arguments:
-            text_input = remaining_arguments[remaining_arguments.index("-t") + 1]
-            remaining_arguments.pop(remaining_arguments.index("-t") + 1)
-            string_args = (' '.join(remaining_arguments)).replace('-t', f'-t "{text_input}"')
-        else:
-            string_args = ' '.join(remaining_arguments)
-
-        try:
-            if ciphering_option == '--help' or ciphering_option == '-h':
-                print(help_menu)
-
-            elif ciphering_option == '-u' or ciphering_option == '--update':
-                update()
-
-            elif ciphering_option == '--version' or ciphering_option == '-v':
-                print(version)
+            #CLI
             else:
-                os.system(f'python3 {cipher}{ciphering_option[1:]}.py {string_args}')
-                
+                print(f'\n{b.SUCCESS}[✓] Output:{b.END}\n{data[0]}\n')
+        else:
+            #Fail Catch
+                print(f'\n{b.FAIL}[✖] Failed:{b.END}\n{data[0]}\n')
 
-        # catches unspecified arguments
-        except TypeError:
-            print(f'[!!] No Key or Argument was specified\n{help_menu}')
 
-    # crypt console
+# Main
+def cli(args_exist):
+
+    if args_exist:
+        if sys.argv[1] == '-h' or sys.argv[1] == '--help':
+            print(b.help_menu)
+        else:
+            parser = argparse.ArgumentParser(add_help=False, usage="")
+            parser.add_argument('cipher', type=str)
+            parser.add_argument('-e', '--encode', dest='encode', action='store_true')
+            parser.add_argument('-d', '--decode', dest='decode', action='store_true')
+            parser.add_argument('-b', '--brute', dest='brute', action='store_true')
+            parser.add_argument('-i', '--input', dest='input', type=str)
+            parser.add_argument('-o', '--output', dest='output', type=str)
+            parser.add_argument('-t', '--text', help='String Input\n', dest='text', type=str)
+            parser.add_argument('-k', '--key', help='Int Key\n', dest='key', type=str)
+            parser.add_argument('-ex', '--exclude', help='Exclude Character\n', dest='exclude', type=str)
+            parser.add_argument('-w', '--wordlist', help='Wordlist File\n', dest='wordlist', type=str)
+            parser.add_argument('-r', '--range', help='Range\n', dest='range', type=str)
+            args = parser.parse_args()
+
+            if args.input:
+                args.text = open(args.input, 'r').read()
+
+            try:
+                module = importlib.import_module(f'ciphers.{args.cipher}')
+            except:
+                print(f"{b.FAIL}\n[✖] Cipher May Not Exist\nTry 'cryptex -h' to see all ciphers{b.END}\n")
+            else:
+                if args.encode:
+                    output(module.encode(args), args.output)
+                elif args.decode:
+                    output(module.decode(args), args.output)
+                elif args.brute:
+                    output(module.brute(args), args.output)
+                else:
+                    print(module.help_menu)
     else:
-
         # display banner
-        print(banner)
-        print('[~] Type "help" for help menu :\n')
+        print(b.banner)
+        print('[~] Type "help" for help menu :')
 
         # loop code
         while True:
             # get user input
-            user_input = input('\n'+header)
+            user_input = input('\n'+b.header)
 
             if user_input == 'help':
-                print(help_menu)
+                print(b.help_menu)
 
             elif user_input == 'version':
                 print(version)
@@ -189,37 +119,26 @@ def cli(arguments):
                 update()
 
             elif user_input == 'clear':
-                clear_screen()
+                os.system('clear')
 
             else:
-                # get path to cipher file
-                ciphering_options = user_input.split(" ")
-                path = f'{cipher}{ciphering_options[0].replace("-", "")}.py'
-
-                # if file exists, run appropiate cipher
-                if os.path.exists(path):
-                    os.system(f'python3 {path} {" ".join(ciphering_options[1:])}')
+                # Runs Main Again With Console ARGS
+                
+                os.system(f'python3 main.py {user_input.replace("cryptex", "")}')
                         
                 # otherwise, run input through the commandline
-                else:
-                    os.system(user_input)
+                # else:
+                #     os.system(user_input)
 
-# main code
 def main():
-    # clear screen
-    # clear_screen()
-
-    # checks for arguments
     try:
         sys.argv[1]
     except IndexError:
-        arguments_exist = False
+        args_exist = False
     else:
-        arguments_exist = True
+        args_exist = True
+    
+    cli(args_exist)
 
-    # run command line interface
-    cli(arguments_exist)
-
-# run main code
 if __name__ == '__main__':
     main()

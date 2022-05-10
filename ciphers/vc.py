@@ -2,34 +2,33 @@
 # vigenere cipher package for the the codex project
 # created by : C0SM0
 
+# imports
+import os
+
 # credits:
 # - Andrew Paul for frequency formula
 
-# imports
-import sys
-import getopt
-
-# help menu
+# help menu for cipheringing process
 help_menu = """
-      +--------------------------------------------------------------+
-      |  [+] ARGUMENTS Vigenere Cipher                               |
-      |  [+] ARG 1. Ciphering Process                                |
-      |          [-e] ---------- Encrypt                             |
-      |          [-d] ---------- Decrypt                             |
-      |          [-b] ---------- Brute Force                         |
-      +--------------------------------------------------------------+ 
-      |  [+] ARG 2. Additional Aruments                              |
-      |          [-k <key>] --------------- Key                      | 
-      |              [not required for bruteforcing '-b']            |
-      |          [-t <plaintext>] --------- Input Text               |
-      |          [-i <input file>] -------- Input File [.txt]        |
-      |          [-o <output file>] ------- Output File              |
-      |          [-l <max key length>] ---- Max Key Length [for '-b']|
-      +--------------------------------------------------------------+
-      |  [+] Example:                                                |
-      |          cryptex -vc -e -k 5 -t hello -k world               |
-      +--------------------------------------------------------------+
-    """
++---------------------------------------------------------------+
+|  [+] ARGUMENTS Vigenere Cipher                                |
+|  [+] ARG 1. Ciphering Process                                 |
+|          [-e] ---------- Encrypt                              |
+|          [-d] ---------- Decrypt                              |
+|          [-b] ---------- Brute Force                          |
++---------------------------------------------------------------+ 
+|  [+] ARG 2. Additional Aruments                               |
+|          [-k <key>] --------------- Key                       | 
+|              [not required for bruteforcing '-b']             |
+|          [-t <plaintext>] --------- Input Text                |
+|          [-i <input file>] -------- Input File [.txt]         |
+|          [-o <output file>] ------- Output File               |
+|          [-l <max key length>] ---- Max Key Length [for '-b'] |
++---------------------------------------------------------------+
+|  [+] Example:                                                 |
+|          cryptex vc -e -t hello -k world                      |
++---------------------------------------------------------------+
+"""
 
 # letters for encryption process
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -48,107 +47,95 @@ english_frequences = [0.08167, 0.01492, 0.02782, 0.04253, 0.12702, 0.02228, 0.02
 					  0.07507, 0.01929, 0.00095, 0.05987, 0.06327, 0.09056, 0.02758,
 					  0.00978, 0.02360, 0.00150, 0.01974, 0.00074]
 
-# encrypt vigenere
-def encrypt_vigenere(plain_content, encryption_key, print_cnt):
-    # output variable
+# encode vigenere
+def encode(input):
     output = []
+    text = input.text
+    key = input.key
+    index = 0
+   
+    if text and key:
+        # format key
+        key = key.upper()
+        # ciphering process
+        for character in text:
+            num = LETTERS.find(character.upper())
+
+            # starts encryption
+            if num != -1:
+                num += LETTERS.find(key[index])
+                num %= len(LETTERS)
+                
+                # check for symbols
+                if character in SYMBOLS:
+                    output.append(character)
+
+                # check for uppercase
+                elif character.isupper():
+                    output.append(LETTERS[num])
+
+                # check for lowercase and others
+                else:
+                    output.append(LETTERS[num].lower())
+
+                # update index
+                index += 1
+                
+                # stop process when ciphering is done
+                if index == len(key):
+                    index = 0
+
+            # adds character in case of error
+            else:
+                output.append(character)
+        return ["".join(output), True]
+    else:
+        return ["Please provide -k <key> argument", False]
+
+# decode process
+def decode(input):
+    output = []
+    text = input.text
+    key = input.key
     index = 0
 
-    # format key
-    key = encryption_key.upper()
-   
-    # ciphering process
-    for character in plain_content:
-        num = LETTERS.find(character.upper())
+    if text and key:
+        # format key
+        key = key.upper()
+        # ciphering process
+        for character in text:
+            num = LETTERS.find(character.upper())
 
-        # starts encryption
-        if num != -1:
-            num += LETTERS.find(key[index])
-            num %= len(LETTERS)
-            
-            # check for symbols
-            if character in SYMBOLS:
-                output.append(character)
+            # starts encrypiton
+            if num != -1:
+                num -= LETTERS.find(key[index])
+                num %= len(LETTERS)
+                
+                # check for symbols
+                if character in SYMBOLS:
+                    output.append(character)
 
-            # check for uppercase
-            elif character.isupper():
-                output.append(LETTERS[num])
+                # check for uppercase
+                elif character.isupper():
+                    output.append(LETTERS[num])
 
-            # check for lowercase and others
+                # check for lowercase and others
+                else:
+                    output.append(LETTERS[num].lower())
+
+                # update index
+                index += 1
+                
+                # stop process when ciphering is done
+                if index == len(key):
+                    index = 0
+
+            # adds character in case of error
             else:
-                output.append(LETTERS[num].lower())
-
-            # update index
-            index += 1
-            
-            # stop process when ciphering is done
-            if index == len(key):
-                index = 0
-
-        # adds character in case of error
-        else:
-            output.append(character)
-    
-    # outputs content to cli
-    if print_cnt == True:
-        print(f'Encrypted Content:\n{("".join(output))}\n')
-
-    # outputs content to file
-    else:
-        with open(print_cnt, 'w') as f:
-            f.write(''.join(output))
-        print('Output written to file sucessfully')
-
-# decryption process
-def decrypt_vigenere(plain_content, encryption_key, print_cnt):
-    # output variable
-    output = [] 
-    index = 0
-
-    # format key
-    key = encryption_key.upper()
-   
-    # ciphering process
-    for character in plain_content:
-        num = LETTERS.find(character.upper())
-
-        # starts encrypiton
-        if num != -1:
-            num -= LETTERS.find(key[index])
-            num %= len(LETTERS)
-            
-            # check for symbols
-            if character in SYMBOLS:
                 output.append(character)
-
-            # check for uppercase
-            elif character.isupper():
-                output.append(LETTERS[num])
-
-            # check for lowercase and others
-            else:
-                output.append(LETTERS[num].lower())
-
-            # update index
-            index += 1
-            
-            # stop process when ciphering is done
-            if index == len(key):
-                index = 0
-
-        # adds character in case of error
-        else:
-            output.append(character)
-    
-    # outputs content to cli
-    if print_cnt == True:
-        print(f'Decrypted Content:\n{("".join(output))}\n')
-
-    # outputs content to file
+        return ["".join(output), True]
     else:
-        with open(print_cnt, 'w') as f:
-            f.write(''.join(output))
-        print('Output written to file sucessfully')
+        return ["Please provide -k <key> argument", False]
 
 # gets index through councidence
 def get_index_c(ciphertext):
@@ -237,125 +224,24 @@ def get_key(ciphertext, key_length):
 
 	return key
 
-# decrypts viginere with unkown key
-def unkown_key(plain_content, print_cnt):
-    ciphertext = ''.join(x.lower() for x in plain_content if x.isalpha())
+def brute(input):
+    text = ''.join(x.lower() for x in input.text if x.isalpha())
 
     # tries to get key
     try:
         # calculating the key data
-        key_length = get_key_length(ciphertext)
-        key = get_key(ciphertext, key_length)
+        key_length = get_key_length(text)
+        key = get_key(text, key_length)
 
         # outputting key data
         print(f'Most Probable Key Length: {key_length}')
         print(f'Key: {key}\n')
 
         # decrypting vigenere
-        decrypt_vigenere(ciphertext, key, print_cnt)
+        input.key = key
+        print(input.key)
+        decode(input)
     
     # if the plaintext was too small
     except ZeroDivisionError:
         print('The ciphertext you entered was to small for this algorithm\nPlease add more ciphertext')
-
-# parses arguments
-def vigenere_parser():
-    opts, args = getopt.getopt(sys.argv[2:], 'k:i:t:o:r:', ['key', 'inputFile', 'inputText', 'outputFile', 'range'])
-    arg_dict = {}
-
-    # loop through arguments, assign them to dict [arg_dict]
-    for opt, arg in opts:
-        # processing options
-        if opt == '-k':
-            arg_dict['-k'] = arg
-        # input options
-        if opt == '-i':
-            arg_dict['-i'] = arg
-        if opt == '-t':
-            arg_dict['-t'] = arg
-        # output options
-        if opt == '-o':
-            arg_dict['-o'] = arg
-
-    return arg_dict
-    
-# command line interface
-def cli(argument_check):
-
-    # one liners
-    if argument_check == True:
-        
-        # trying to get all args
-        try:
-            arguments = vigenere_parser()
-
-        # catches arguments with no value
-        except getopt.GetoptError:
-            print(f'[!!] No value was given to your argument\n{help_menu}')
-
-        # continues with recieved arguments
-        else:    
-            # getting variables for ciphering process
-            key = arguments.get('-k')
-            inputted_content = arguments.get('-t')
-            print_content = True
-            
-            # checks users output type
-            if ('-i' in arguments):
-                # tries to read file
-                try:
-                    inputted_content = open(arguments.get('-i'), 'r').read()
-
-                # file does not exist
-                except FileNotFoundError:
-                    print('[!!] The attached file does not exist')
-
-            # checks if output was specified
-            if ('-o' in arguments):
-                print_content = arguments.get('-o')
-
-            # check ciphering process
-            ciphering_process = sys.argv[1]
-
-            # attempts to run cipher
-            try:
-                # encrypts vigenere
-                if ciphering_process == '-e':
-                    encrypt_vigenere(inputted_content, key, print_content)
-
-                # decrypts vigenere
-                elif ciphering_process == '-d':
-                    decrypt_vigenere(inputted_content, key, print_content)
-
-                # decrypts with unkown key
-                elif  ciphering_process == '-b':
-                    unkown_key(inputted_content, print_content)
-
-                # exeption
-                else:
-                    print(f'[!!] No Key or Argument was specified\n{help_menu}')
-
-            # catches unspecified arguments
-            except TypeError:
-                print(f'[!!] No Key or Argument was specified\n{help_menu}')
-
-    # help menu
-    else:
-        print(help_menu)
-
-# main code
-def vigenere_main():
-
-    # checks for arguments
-    try:
-        sys.argv[1]
-    except IndexError:
-        arguments_exist = False
-    else:
-        arguments_exist = True
-
-    cli(arguments_exist)
-
-# runs main code when ran
-if __name__ == '__main__':
-    vigenere_main()

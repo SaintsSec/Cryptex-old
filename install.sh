@@ -43,9 +43,9 @@ echo -e "${green}[+] Completed${reset}"
 
 # set up alias workflow
 echo -e "${blue}[*] Setting up alias...${reset}"
-echo "alias cryptex=\"python3 $(pwd)/main.py\"" >> ~/.bashrc
-echo "alias cryptex=\"python3 $(pwd)/main.py\"" >> ~/.zshrc
-echo -e "${green}[+] }Completed${reset}"
+echo "alias cryptex=\"python3 $(pwd)/.Cryptex/main.py\"" >> ~/.bashrc
+echo "alias cryptex=\"python3 $(pwd)/.Cryptex/main.py\"" >> ~/.zshrc
+echo -e "${green}[+] Completed${reset}"
 
 # clean up
 echo -e "${green}[+] Installation Successful"

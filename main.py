@@ -103,7 +103,7 @@ def cli(args_exist):
         # loop code
         while True:
             # get user input
-            user_input = input('\n'+b.header)
+            user_input = input(b.header)
 
             if user_input == 'help':
                 print(b.help_menu)

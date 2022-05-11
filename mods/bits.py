@@ -38,48 +38,48 @@ banner = f'''
      \___/_/  \_, / .__/\__/\__/_\_\ 
              /___/_/
 Locks only exist to keep honest people honest
-            Version : 0.{version}
+            Version : 0.{version}\n
 '''
 
 help_menu = """
-    +-------------------------------------------------------------+
-    | [+] EXAMPLE cryptex cc -d -t 'This is a string to encrypt'  |
-    | [+] ARG 1. Cipher                                           |                                         
-    |       [cc] --------- Caesar Cipher                          |
-    |       [vc] --------- Vingenere Cipher                       |
-    |       [rc] --------- Reverse Cipher                         |
-    |       [mc] --------- Multiplicative Cipher                  |
-    |       [dh] --------- Diffie Hellman Key Exchange            |
-    |       [xor] -------- XOR Cipher                             |
-    |       [r13] -------- ROT 13                                 |
-    |       [r47] -------- ROT 47                                 |
-    |       [b64] -------- Base64                                 |
-    |       [bin] -------- Binary                                 |
-    |       [hex] -------- Hex                                    |
-    |       [oct] -------- Octal                                  |
-    |       [1337] ------- L33T 5P34K                             | 
-    |       [mor] -------- Morse Code                             | 
-    |       [pho] -------- Phonetic Alphabet                      |
-    |       [md5] -------- MD5                                    |
-    |       [sha256] ----- Sha256                                 |
-    |       [menc] ------- MENC                                   |
-    +-------------------------------------------------------------+ 
-    | [+] ARG 2. Cipher Method                                    |
-    |       [-e] ---------- Encrypt                               |
-    |       [-d] ---------- Decrypt                               |
-    |       [-b] ---------- Break                                 |
-    +-------------------------------------------------------------+
-    | [+] Additional Arguments                                    |
-    |       [-t] ---------- Input Text                            |
-    |       [-i] ---------- Input File                            |
-    |       [-o] ---------- Output File                           | 
-    |       [-k] ---------- Encryption Key                        | 
-    |       [-r] ---------- Range                                 | 
-    |       [-w] ---------- Wordlist                              |
-    +-------------------------------------------------------------+
-    | [+] Cryptex Arguments                                       |
-    |       [--help] ------ help                                  |
-    |       [--version] --- version                               |    
-    |       [--update] ---- update                                |
-    +-------------------------------------------------------------+
++-------------------------------------------------------------+
+| [+] EXAMPLE cryptex cc -d -t 'This is a string to encrypt'  |
+| [+] ARG 1. Cipher                                           |
+|       [cc] --------- Caesar Cipher                          |
+|       [vc] --------- Vingenere Cipher                       |
+|       [rc] --------- Reverse Cipher                         |
+|       [mc] --------- Multiplicative Cipher                  |
+|       [dh] --------- Diffie Hellman Key Exchange            |
+|       [xor] -------- XOR Cipher                             |
+|       [r13] -------- ROT 13                                 |
+|       [r47] -------- ROT 47                                 |
+|       [b64] -------- Base64                                 |
+|       [bin] -------- Binary                                 |
+|       [hex] -------- Hex                                    |
+|       [oct] -------- Octal                                  |
+|       [1337] ------- L33T 5P34K                             | 
+|       [mor] -------- Morse Code                             |
+|       [pho] -------- Phonetic Alphabet                      |
+|       [md5] -------- MD5                                    |
+|       [sha256] ----- Sha256                                 |
+|       [menc] ------- MENC                                   |
++-------------------------------------------------------------+ 
+| [+] ARG 2. Cipher Method                                    |
+|       [-e] ---------- Encrypt                               |
+|       [-d] ---------- Decrypt                               |
+|       [-b] ---------- Break                                 |
++-------------------------------------------------------------+
+| [+] Additional Arguments                                    |
+|       [-t] ---------- Input Text                            |
+|       [-i] ---------- Input File                            |
+|       [-o] ---------- Output File                           | 
+|       [-k] ---------- Encryption Key                        | 
+|       [-r] ---------- Range                                 | 
+|       [-w] ---------- Wordlist                              |
++-------------------------------------------------------------+
+| [+] Cryptex Arguments                                       |
+|       [--help] ------ help                                  |
+|       [--version] --- version                               |    
+|       [--update] ---- update                                |
++-------------------------------------------------------------+
 """

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # New Arg Parse and Cipher Call
-# created by : Fyzz
+# created by : Fyzz | C0SM0
 
 import argparse
 import mods.bits as b

@@ -15,6 +15,10 @@
 - [x] binary
 - [x] ROT 13
 - [x] hexadecimal
+- [x] XOR cipher
+- [x] ROT 47
+- [x] morse code
+- [x] phonetic alphabet
 - [ ] wiki
 - [ ] Kayr Integration
 - [ ] update documentation
@@ -24,12 +28,8 @@
 - [ ] multi string text input
 - [ ] symbols [direct to, layered encryption]
 - [ ] diffie hellman key exchange
-- [ ] XOR cipher
-- [ ] ROT 47
 - [ ] dings 
 - [ ] octal
-- [ ] morse code
-- [ ] phonetic alphabet
 - [ ] MD5
 - [ ] SHA256
 - [ ] google translate

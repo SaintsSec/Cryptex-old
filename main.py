@@ -9,7 +9,6 @@ import readline
 import sys
 import os
 
-
 def update():
 
     print("\n[*] Checking for updates...")
@@ -109,7 +108,7 @@ def cli(args_exist):
                 print(b.help_menu)
 
             elif user_input == 'version':
-                print(version)
+                print(b.version)
 
             elif user_input == 'exit' or user_input == 'quit':
                 exit()

@@ -16,7 +16,6 @@ FAIL = '\033[91m'
 END = '\033[0m'
 
 version = open(f'{local_path}/version.txt').read().strip()
-version = 0.5
 banner = f'''
 
                  .--------.

@@ -30,7 +30,9 @@
 - [ ] symbols [direct to, layered encryption]
 - [ ] diffie hellman key exchange
 - [ ] dings 
-- [ ] MD5
-- [ ] SHA256
 - [ ] google translate
 - [ ] hash release
+    - [ ] MD5
+    - [ ] SHA256
+    - [ ] hashid
+    - [ ] hash cracking

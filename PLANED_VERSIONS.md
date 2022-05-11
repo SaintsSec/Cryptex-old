@@ -13,6 +13,7 @@
 | 0.4     | Tentacle Grape        |
 | 0.5     | Cryptic Fun Facts     |
 | 0.6     | Knowloon Showdown     |
+| 0.9     | The Game              |
 | 1.0     | Industry Invader      |
 
 ---

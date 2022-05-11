@@ -96,6 +96,18 @@ cryptex
 [~] root@crytpex $ update
 ```
 
+## Uninstalling Cryptex:
+If at anypoint you are unsatisfied or need to rid of the cryptex project [and its awesomeness]. You can run the following to get it off of your computer.
+- Argument Parsing
+```
+cryptex --remove
+```
+- CryptConsoloe
+```
+cryptex
+[~] root@crytpex $ remove
+```
+
 ## About Us
 **[Cythes](https://twitter.com/CythesOut): Project Manager**
 I started learning computers around middle school age with my discovery & passion of PC Gaming.  A few years later I'd stumbled into Ubuntu 8.04 soon started learning programming, hacking on and off, while over the next decade working on projects ranging from Android personal safety applications to light game development.

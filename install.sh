@@ -37,9 +37,28 @@ pip install Cryptography
 echo -e "${green}[+] Completed${reset}"
 
 # set up alias workflow
+
+# check if it already exists in bashrc
+if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
 echo -e "${blue}[*] Setting up alias...${reset}"
-echo "alias cryptex=\"python3 $(pwd)/main.py\"" >> ~/.bashrc
-echo "alias cryptex=\"python3 $(pwd)/main.py\"" >> ~/.zshrc
+cat << EOF >> ~/.bashrc
+
+# Cryptex alias and path
+export CRYPTEX_PATH="~/.Cryptex"
+alias cryptex="python3 ${CRYPTEX_PATH}/main.py"
+EOF
+fi
+
+#check if it already exists in zshrc
+if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
+cat << EOF >> ~/.zshrc
+
+# Cryptex alias and path
+export CRYPTEX_PATH="~/.Cryptex"
+alias cryptex="python3 ${CRYPTEX_PATH}/main.py"
+EOF
+fi
+
 echo -e "${green}[+] Completed${reset}"
 
 # clean up

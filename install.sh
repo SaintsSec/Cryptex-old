@@ -45,7 +45,7 @@ cat << EOF >> ~/.bashrc
 
 # Cryptex alias and path
 export CRYPTEX_PATH="~/.Cryptex"
-alias cryptex="python3 $CRYPTEX_PATH/main.py"
+alias cryptex="python3 ${CRYPTEX_PATH}/main.py"
 EOF
 fi
 
@@ -55,7 +55,7 @@ cat << EOF >> ~/.zshrc
 
 # Cryptex alias and path
 export CRYPTEX_PATH="~/.Cryptex"
-alias cryptex="python3 $CRYPTEX_PATH/main.py"
+alias cryptex="python3 ${CRYPTEX_PATH}/main.py"
 EOF
 fi
 

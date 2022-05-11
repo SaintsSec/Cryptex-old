@@ -39,17 +39,21 @@ echo -e "${green}[+] Completed${reset}"
 # set up alias workflow
 
 # check if it already exists in bashrc
-if ! cat ~/.bashrc | greo "CRYPTEX_PATH" > /dev/null; then
+if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
 echo -e "${blue}[*] Setting up alias...${reset}"
 cat << EOF >> ~/.bashrc
+
+# Cryptex alias and path
 export CRYPTEX_PATH="~/.Cryptex"
 alias cryptex="python3 $CRYPTEX_PATH/main.py"
 EOF
 fi
 
 #check if it already exists in zshrc
-if ! cat ~/.bashrc | greo "CRYPTEX_PATH" > /dev/null; then
+if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
 cat << EOF >> ~/.zshrc
+
+# Cryptex alias and path
 export CRYPTEX_PATH="~/.Cryptex"
 alias cryptex="python3 $CRYPTEX_PATH/main.py"
 EOF

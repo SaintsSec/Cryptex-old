@@ -9,11 +9,6 @@ blue="\e[0;94m"
 bold="\e[1m"
 reset="\e[0m"
 
-# check if run with sudo
-if [ "$EUID" -ne 0 ]
-    then echo -e "${red}Please run as root${reset}"
-    exit 0
-fi
 
 # staging
 # echo -e "${blue}[*] Staging process...${reset}"
@@ -43,8 +38,8 @@ echo -e "${green}[+] Completed${reset}"
 
 # set up alias workflow
 echo -e "${blue}[*] Setting up alias...${reset}"
-echo "alias cryptex=\"python3 $(pwd)/.Cryptex/main.py\"" >> ~/.bashrc
-echo "alias cryptex=\"python3 $(pwd)/.Cryptex/main.py\"" >> ~/.zshrc
+echo "alias cryptex=\"python3 $(pwd)/main.py\"" >> ~/.bashrc
+echo "alias cryptex=\"python3 $(pwd)/main.py\"" >> ~/.zshrc
 echo -e "${green}[+] Completed${reset}"
 
 # clean up

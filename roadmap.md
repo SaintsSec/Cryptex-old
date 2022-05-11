@@ -33,3 +33,4 @@
 - [ ] MD5
 - [ ] SHA256
 - [ ] google translate
+- [ ] hash release

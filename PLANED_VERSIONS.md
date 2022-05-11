@@ -1,4 +1,9 @@
-# All Release Versions
+<img src="https://github.com/AlexKollar/Cryptex/blob/gh-pages/Gallery/Lock.png" width="285"/></p>
+# Cryptex
+> "Locks only exist to keep honest people honest"
+---
+
+## All Release Versions
 
 | Version | Name                  |
 |---------|-----------------------|
@@ -12,7 +17,7 @@
 
 ---
 
-# Current
+## Current
 
 ## 0.05
 
@@ -21,7 +26,7 @@
 | 0.05    |                       |
 ---
 
-# Next
+## Next
 
 | Version | Name                  |
 |---------|-----------------------|

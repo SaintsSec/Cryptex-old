@@ -56,6 +56,17 @@ def output(data, output):
             #Fail Catch
                 print(f'\n{b.FAIL}[✖] Failed:{b.END}\n{data[0]}\n')
 
+# uninstalls cryptex
+def remove():
+    # confirmation
+    print("\n[~] Are you sure you want to remove Cryptex? [y/n]\n")
+
+    # user input
+    option = input(b.header)
+
+    # delete OnlyRAT
+    if option == "y":
+        os.system("rm -rf ~/.Cryptex")
 
 # Main
 def cli(args_exist):
@@ -63,6 +74,10 @@ def cli(args_exist):
     if args_exist:
         if sys.argv[1] == '-h' or sys.argv[1] == '--help':
             print(b.help_menu)
+        elif sys.argv[1] == '-u' or sys.argv[1] == '--update':
+            update()
+        elif sys.argv[1] == '-rm' or sys.argv[1] == '--remove' or sys.argv[1] == '--uninstall':
+            remove()
         else:
             parser = argparse.ArgumentParser(add_help=False, usage="")
             parser.add_argument('cipher', type=str)
@@ -116,6 +131,9 @@ def cli(args_exist):
 
             elif user_input == 'update':
                 update()
+            
+            elif user_input == 'uninstall' or user_input == 'remove':
+                remove()
 
             elif user_input == 'clear':
                 os.system('clear')

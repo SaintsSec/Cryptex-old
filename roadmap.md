@@ -19,17 +19,17 @@
 - [x] ROT 47
 - [x] morse code
 - [x] phonetic alphabet
+- [x] multi string text input
+- [x] octal
 - [ ] wiki
 - [ ] Kayr Integration
 - [ ] update documentation
 - [ ] cipher identifier
 - [ ] automatic decryption/breaking
 - [ ] cryptographic payloads
-- [ ] multi string text input
 - [ ] symbols [direct to, layered encryption]
 - [ ] diffie hellman key exchange
 - [ ] dings 
-- [ ] octal
 - [ ] MD5
 - [ ] SHA256
 - [ ] google translate

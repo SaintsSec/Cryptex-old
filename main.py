@@ -1,15 +1,19 @@
 #!/usr/bin/python
 # New Arg Parse and Cipher Call
-# created by : Fyzz | C0SM0
+# created by : Fyzz | C0SM0 | Soul
 
 import argparse
+from ast import For
 import mods.bits as b
 import importlib
 import readline
 import sys
 import os
+from colorama import Fore, Back, Style
 
 def update():
+
+    cmd_prefix = Fore.GREEN + '[~] ' + Fore.RESET
 
     print("\n[*] Checking for updates...")
 
@@ -26,7 +30,7 @@ def update():
     # if new version is available, update
     if latest_version > current_version:
         print("\n[+] Update found")
-        print("[~] Update Cryptex? [y/n]\n")
+        print(cmd_prefix + "Update Cryptex? [y/n]\n")
 
         # user input, option
         option = input(f"{b.header}")
@@ -58,18 +62,23 @@ def output(data, output):
 
 # uninstalls cryptex
 def remove():
+
+    cmd_prefix = Fore.RED + '[~] ' + Fore.RESET
+
     # confirmation
-    print("\n[~] Are you sure you want to remove Cryptex? [y/n]\n")
+    print("\n" + cmd_prefix + "Are you sure you want to remove Cryptex? [y/n]\n")
 
     # user input
     option = input(b.header)
 
-    # delete OnlyRAT
+    # delete Cryptex
     if option == "y":
         os.system("rm -rf ~/.Cryptex")
 
 # Main
 def cli(args_exist):
+
+    cmd_prefix = Fore.BLUE + '[~] ' + Fore.RESET
 
     if args_exist:
         if sys.argv[1] == '-h' or sys.argv[1] == '--help':
@@ -99,7 +108,7 @@ def cli(args_exist):
             try:
                 module = importlib.import_module(f'ciphers.{args.cipher}')
             except:
-                print(f"{b.FAIL}\n[✖] Cipher May Not Exist\nTry 'cryptex -h' to see all ciphers{b.END}\n")
+                print(f"{b.FAIL}\n" + Fore.RED + f"[✖] Cipher May Not Exist\nTry 'cryptex -h' to see all ciphers{b.END}\n" + Fore.RESET)
             else:
                 if args.encode:
                     output(module.encode(args), args.output)
@@ -111,13 +120,13 @@ def cli(args_exist):
                     print(module.help_menu)
     else:
         # display banner
-        print(b.banner)
-        print('[~] Type "help" for help menu :')
+        print(Fore.RED + b.banner + Fore.RESET)
+        print(cmd_prefix + 'Type "help" for help menu :')
 
         # loop code
         while True:
             # get user input
-            user_input = input(b.header)
+            user_input = input(Fore.CYAN + b.header + Fore.RESET)
 
             if user_input == 'help':
                 print(b.help_menu)

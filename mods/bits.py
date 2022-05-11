@@ -5,7 +5,7 @@ import getpass
 
 # Variables
 username = getpass.getuser() # Get username
-header = f'[~] {username}@cryptex $ ' # header for user input
+header = f'{username}@cryptex $ ' # header for user input
 remote_path = 'raw.githubusercontent.com/AlexKollar/Cryptex/master' # remote url path
 local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cryptex' # local path to cryptex
 cipher = f'{local_path}/ciphers/' # local path to ciphers

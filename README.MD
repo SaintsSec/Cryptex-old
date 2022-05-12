@@ -1,6 +1,6 @@
 <!-- variables -->
 [ccs]: https://www.cosmodiumcs.com
-[saints]: https://www.twitch.tv/cosmodiumcs
+[saints]: https://www.saintssec.com
 [youtube]: https://www.youtube.com/c/CosmodiumCS
 
 <!-- title -->
@@ -122,6 +122,9 @@ Started Cosmodium at 17 and since then has made significant changes in the cyber
 
 **[Mart](): Developer**
 I started tinkering with computers I think around primary school, then in junior high school I started doing more tech stuff, then in high school I started learning more proper programming, and I began to do a lot of programming in my spare time, and at school, but I was always at least 10 steps ahead of what my class was learning, and eventually I ended up finding this place.
+
+**[Soul](): Developer**
+...
 
 **Enjoy! If you like what you see, consider hitting that sponosor button! :)**
 

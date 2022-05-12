@@ -106,7 +106,20 @@ cryptex --remove
 cryptex
 [~] root@crytpex $ remove
 ```
-## All Release Versions
+
+## Current Version
+
+| Version | Name                         |
+|---------|------------------------------|
+| 0.0.6   | I cant belive its not broken |
+
+## Next
+
+| Version | Name                  |
+|---------|-----------------------|
+| 0.1     | Earth Invader         |
+
+## Future Release Versions
 
 | Version | Name                  |
 |---------|-----------------------|
@@ -118,18 +131,6 @@ cryptex
 | 0.6     | Knowloon Showdown     |
 | 0.9     | The Game              |
 | 1.0     | Industry Invader      |
-
-## Current
-
-| Version | Name                         |
-|---------|------------------------------|
-| 0.0.5   | I cant belive its not broken |
-
-## Next
-
-| Version | Name                  |
-|---------|-----------------------|
-| 0.1     | Earth Invader         |
 
 ## About Us
 **[Cythes](https://twitter.com/CythesOut): Project Manager**

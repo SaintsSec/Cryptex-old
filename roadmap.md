@@ -1,0 +1,38 @@
+# ROADMAP
+- [x] argument parsing
+- [x] crypt console | consolex
+- [x] packages and indexing
+- [x] alias and shortcutting
+- [x] incorporate codex code
+- [x] fix UI 
+- [x] dynamic updates
+- [x] caesar cipher
+- [x] vigenere cipher
+- [x] multiplicative cipher
+- [x] reverse cipher
+- [x] 1337 5P34K
+- [x] base64
+- [x] binary
+- [x] ROT 13
+- [x] hexadecimal
+- [x] XOR cipher
+- [x] ROT 47
+- [x] morse code
+- [x] phonetic alphabet
+- [x] multi string text input
+- [x] octal
+- [ ] wiki
+- [ ] Kayr Integration
+- [ ] update documentation
+- [ ] cipher identifier
+- [ ] automatic decryption/breaking
+- [ ] cryptographic payloads
+- [ ] symbols [direct to, layered encryption]
+- [ ] diffie hellman key exchange
+- [ ] dings 
+- [ ] google translate
+- [ ] hash release
+    - [ ] MD5
+    - [ ] SHA256
+    - [ ] hashid
+    - [ ] hash cracking

@@ -109,22 +109,20 @@ cryptex
 
 ## Current Version
 
-| Version | Name                         |
-|---------|------------------------------|
-| 0.0.6   | I cant belive its not broken |
+| Version | Name                  |
+|---------|-----------------------|
+| 0.1.0   | Earth Invader         |
 
 ## Next
 
 | Version | Name                  |
 |---------|-----------------------|
-| 0.1     | Earth Invader         |
+| 0.2     | Oven Sandwich         |
 
 ## Future Release Versions
 
 | Version | Name                  |
 |---------|-----------------------|
-| 0.1     | Earth Invader         |
-| 0.2     | Oven Sandwich         |
 | 0.3     | Back Door Bytes       |
 | 0.4     | Tentacle Grape        |
 | 0.5     | Cryptic Fun Facts     |

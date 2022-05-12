@@ -5,7 +5,6 @@
 
 <!-- title -->
 # Cryptex [INCOMPLETE]
----
 
 <!-- image -->
 <img src="https://github.com/AlexKollar/Cryptex/blob/gh-pages/Gallery/Lock.png" width="285"/></p>

@@ -13,6 +13,17 @@ import sys
 import os
 from colorama import Fore, Back, Style
 
+# gets list of available ciphers
+def get_ciphers():
+    output_list = []
+    directory = os.fsencode(b.cipher)
+        
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        output_list.append(filename[:-3])
+
+    return output_list
+
 # updates cryptex
 def update():
 
@@ -77,7 +88,7 @@ def remove():
     if option == "y":
         os.system("rm -rf ~/.Cryptex")
 
-# main code
+# command line interface
 def cli(args_exist):
 
     cmd_prefix = Fore.BLUE + '[~] ' + Fore.RESET
@@ -107,13 +118,19 @@ def cli(args_exist):
             parser.add_argument('-r', '--range', help='Range\n', dest='range', type=str)
             args = parser.parse_args()
 
+            # reads input files for argument parsing
             if args.input:
                 args.text = open(args.input, 'r').read()
 
+            # execute cryptex libraries
             try:
                 module = importlib.import_module(f'ciphers.{args.cipher}')
+
+            # exception handling
             except:
                 print(f"{b.FAIL}\n" + Fore.RED + f"[✖] Cipher May Not Exist\nTry 'cryptex -h' to see all ciphers{b.END}\n" + Fore.RESET)
+
+            # executes libraries
             else:
                 if args.encode:
                     output(module.encode(args), args.output)
@@ -133,34 +150,36 @@ def cli(args_exist):
             # get user input
             user_input = input(Fore.CYAN + b.header + Fore.RESET)
 
+            # display help menu
             if user_input == 'help':
                 print(b.help_menu)
 
+            # display version number
             elif user_input == 'version':
                 print(b.version)
 
+            # exit cryptex
             elif user_input == 'exit' or user_input == 'quit':
                 exit()
                 break
 
+            # update current version
             elif user_input == 'update':
                 update()
             
+            # uninstalls cryptex
             elif user_input == 'uninstall' or user_input == 'remove':
                 remove()
 
-            elif user_input == 'clear':
-                os.system('clear')
+            #  runs unrecogonized commands into bash
+            elif user_input.split(' ')[0] not in get_ciphers():
+                os.system(user_input)
 
+            # runs crytpex libraries
             else:
-                # Runs Main Again With Console ARGS
-                
                 os.system(f'python3 ~/.Cryptex/main.py {user_input.replace("cryptex", "")}')
-                        
-                # otherwise, run input through the commandline
-                # else:
-                #     os.system(user_input)
 
+# main code
 def main():
     try:
         sys.argv[1]
@@ -171,5 +190,6 @@ def main():
     
     cli(args_exist)
 
+# executes main code
 if __name__ == '__main__':
     main()

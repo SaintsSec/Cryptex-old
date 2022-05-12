@@ -49,7 +49,6 @@ help_menu = Fore.CYAN + """
 |       [vc] --------- Vingenere Cipher                       |
 |       [rc] --------- Reverse Cipher                         |
 |       [mc] --------- Multiplicative Cipher                  |
-|       [dh] --------- Diffie Hellman Key Exchange            |
 |       [xor] -------- XOR Cipher                             |
 |       [r13] -------- ROT 13                                 |
 |       [r47] -------- ROT 47                                 |
@@ -57,11 +56,9 @@ help_menu = Fore.CYAN + """
 |       [bin] -------- Binary                                 |
 |       [hex] -------- Hex                                    |
 |       [oct] -------- Octal                                  |
-|       [1337] ------- L33T 5P34K                             | 
 |       [mor] -------- Morse Code                             |
 |       [pho] -------- Phonetic Alphabet                      |
-|       [md5] -------- MD5                                    |
-|       [sha256] ----- Sha256                                 |
+|       [1337] ------- L33T 5P34K                             | 
 |       [menc] ------- MENC                                   |
 +-------------------------------------------------------------+ 
 | [+] ARG 2. Cipher Method                                    |

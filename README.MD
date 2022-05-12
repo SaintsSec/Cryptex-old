@@ -139,7 +139,7 @@ I started learning computers around middle school age with my discovery & passio
 My current obsession being the development of a cryptography toolkit aptly named CrypteX as part of CICADA while attempting to avoid SVT from all the caffeine I main line in a given day.
 
 **[BlueCosmo](https://twitter.com/CosmodiumCS): Lead Developer**
-Started Cosmodium at 17 and since then has made significant changes in the cybersecurity community.  A reasonably known content creator and python programming whiz to say the least.    
+Started Cosmodium at 17 and since then has made significant changes in the cybersecurity community. A reasonably known content creator and python programming whiz to say the least.    
   
 **[Fyzz](): Lead Developer**   
 ...

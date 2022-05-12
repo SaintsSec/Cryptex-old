@@ -23,9 +23,7 @@
 - [x] octal
 - [ ] wiki
 - [ ] Kayr Integration
-- [ ] update documentation
-- [ ] cipher identifier
-- [ ] automatic decryption/breaking
+- [ ] cipher identifier [automatic]
 - [ ] cryptographic payloads
 - [ ] symbols [direct to, layered encryption]
 - [ ] diffie hellman key exchange

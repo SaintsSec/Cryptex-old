@@ -2,6 +2,7 @@
 # New Arg Parse and Cipher Call
 # created by : Fyzz | C0SM0 | Soul
 
+# imports
 import argparse
 from ast import For
 import mods.bits as b
@@ -11,10 +12,10 @@ import sys
 import os
 from colorama import Fore, Back, Style
 
+# updates cryptex
 def update():
 
     cmd_prefix = Fore.GREEN + '[~] ' + Fore.RESET
-
     print("\n[*] Checking for updates...")
 
     # get latest version nubmer
@@ -43,21 +44,21 @@ def update():
     else:
         print("\n[+] Cryptex already up to date")
 
-# Output
+# output function
 def output(data, output): 
     if data:
         if data[1] == True and data[1]:
-            #File
+            # file
             if output:
                 with open(output, 'w') as f:
                     f.write(data[0])
                 print(f'{b.SUCCESS}[✓] File Output Successful{b.END}')
 
-            #CLI
+            # command line interface
             else:
                 print(f'\n{b.SUCCESS}[✓] Output:{b.END}\n{data[0]}\n')
         else:
-            #Fail Catch
+            # exception
                 print(f'\n{b.FAIL}[✖] Failed:{b.END}\n{data[0]}\n')
 
 # uninstalls cryptex
@@ -75,11 +76,12 @@ def remove():
     if option == "y":
         os.system("rm -rf ~/.Cryptex")
 
-# Main
+# main code
 def cli(args_exist):
 
     cmd_prefix = Fore.BLUE + '[~] ' + Fore.RESET
 
+    # default arguments
     if args_exist:
         if sys.argv[1] == '-h' or sys.argv[1] == '--help':
             print(b.help_menu)
@@ -87,6 +89,8 @@ def cli(args_exist):
             update()
         elif sys.argv[1] == '-rm' or sys.argv[1] == '--remove' or sys.argv[1] == '--uninstall':
             remove()
+            
+        # flags for argument parsing
         else:
             parser = argparse.ArgumentParser(add_help=False, usage="")
             parser.add_argument('cipher', type=str)

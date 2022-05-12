@@ -60,11 +60,15 @@ help_menu = Fore.CYAN + """
 |       [pho] -------- Phonetic Alphabet                      |
 |       [1337] ------- L33T 5P34K                             | 
 |       [menc] ------- MENC                                   |
+|       [translate] -- Google Translate API                   |
 +-------------------------------------------------------------+ 
 | [+] ARG 2. Cipher Method                                    |
 |       [-e] ---------- Encrypt                               |
 |       [-d] ---------- Decrypt                               |
 |       [-b] ---------- Break                                 |
+| [+] Google Translate API                                    |
+|       [-tr] --------- Translate                             |
+|       [-lang] ------- List Languages                        |
 +-------------------------------------------------------------+
 | [+] Additional Arguments                                    |
 |       [-t] ---------- Input Text                            |
@@ -73,6 +77,8 @@ help_menu = Fore.CYAN + """
 |       [-k] ---------- Encryption Key                        | 
 |       [-r] ---------- Range                                 | 
 |       [-w] ---------- Wordlist                              |
+|       [-src] -------- Source Language                       |
+|       [-dest] ------- Destination Language                  |
 +-------------------------------------------------------------+
 | [+] Cryptex Arguments                                       |
 |       [--help] ------ help                                  |

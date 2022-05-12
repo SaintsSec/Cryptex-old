@@ -4,6 +4,7 @@
 
 import argparse
 from ast import For
+from multiprocessing.context import ForkServerProcess
 import mods.bits as b
 import importlib
 import readline
@@ -117,10 +118,10 @@ def cli(args_exist):
                 elif args.brute:
                     output(module.brute(args), args.output)
                 else:
-                    print(module.help_menu)
+                    print(Fore.BLUE + module.help_menu + Fore.RESET)
     else:
         # display banner
-        print(Fore.RED + b.banner + Fore.RESET)
+        print(b.banner)
         print(cmd_prefix + 'Type "help" for help menu :')
 
         # loop code

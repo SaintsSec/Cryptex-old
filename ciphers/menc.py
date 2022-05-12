@@ -47,7 +47,7 @@ def encode(_Input, alphabet, _Output):
 
     # Calculate the encryption/decryption key
     key = ""
-    for i, val, _ in enumerate(inputArr):
+    for i, val in enumerate(inputArr):
         inputCharIndex = val
         outputCharIndex = outputArr[i % len(outputArr)]
 
@@ -77,8 +77,8 @@ def decode(plain_content, alphabet, key):
     # key
     n = 2
     key = [key[i:i+n] for i in range(0, len(key), n)]
-    for i, val, arr in enumerate(key):
-        arr[i] = int(val, 16)
+    for i, val in enumerate(key):
+        key[i] = int(val, 16)
 
     # Calculate the indexes of the characters in the encrypted text, based of the alphabet variable
     encryptedTextCharIndex = []
@@ -91,8 +91,8 @@ def decode(plain_content, alphabet, key):
 
     # Decrypt the text
     decrypted = ""
-    for _, val, _ in enumerate(key):
-        charIndex = (encryptedTextCharIndex[i % len(encryptedTextCharIndex)] - val) % len(alphabet)
+    for i in range(len(key)):
+        charIndex = (encryptedTextCharIndex[i % len(encryptedTextCharIndex)] - key[i]) % len(alphabet)
         char = alphabet[charIndex]
         decrypted += char
 

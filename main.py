@@ -151,7 +151,7 @@ def cli(args_exist):
             else:
                 # Runs Main Again With Console ARGS
                 
-                os.system(f'python3 ~/Cryptex/main.py {user_input.replace("cryptex", "")}')
+                os.system(f'python3 ~/.Cryptex/main.py {user_input.replace("cryptex", "")}')
                         
                 # otherwise, run input through the commandline
                 # else:

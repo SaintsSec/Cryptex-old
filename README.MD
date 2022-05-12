@@ -119,24 +119,17 @@ cryptex
 | 0.9     | The Game              |
 | 1.0     | Industry Invader      |
 
----
-
 ## Current
 
-## 0.05
-
-| Version | Name                  |
-|---------|-----------------------|
-| 0.05    |                       |
----
+| Version | Name                         |
+|---------|------------------------------|
+| 0.0.5   | I cant belive its not broken |
 
 ## Next
 
 | Version | Name                  |
 |---------|-----------------------|
 | 0.1     | Earth Invader         |
-
----
 
 ## About Us
 **[Cythes](https://twitter.com/CythesOut): Project Manager**

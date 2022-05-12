@@ -34,6 +34,7 @@ sudo apt-get install python3
 sudo apt-get install python3-pip python-dev
 pip install qrcode
 pip install Cryptography
+pip install googletrans==3.1.0a0
 echo -e "${green}[+] Completed${reset}"
 
 # set up alias workflow

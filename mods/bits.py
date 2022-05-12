@@ -2,6 +2,7 @@
 import sys
 import os
 import getpass
+from colorama import Fore, Back, Style
 
 # Variables
 username = getpass.getuser() # Get username
@@ -16,7 +17,7 @@ FAIL = '\033[91m'
 END = '\033[0m'
 
 version = open(f'{local_path}/version.txt').read().strip()
-banner = f'''
+banner = Fore.RED + f'''
 
                  .--------.
                 / .------. \\
@@ -38,9 +39,9 @@ banner = f'''
              /___/_/
 Locks only exist to keep honest people honest
             Version : 0.{version}\n
-'''
+''' + Fore.RESET
 
-help_menu = """
+help_menu = Fore.CYAN + """
 +-------------------------------------------------------------+
 | [+] EXAMPLE cryptex cc -d -t 'This is a string to encrypt'  |
 | [+] ARG 1. Cipher                                           |
@@ -81,4 +82,4 @@ help_menu = """
 |       [--version] --- version                               |    
 |       [--update] ---- update                                |
 +-------------------------------------------------------------+
-"""
+""" + Fore.RESET

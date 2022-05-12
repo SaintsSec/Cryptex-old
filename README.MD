@@ -4,7 +4,7 @@
 [youtube]: https://www.youtube.com/c/CosmodiumCS
 
 <!-- title -->
-# Cryptex [INCOMPLETE]
+# Cryptex [BETA]
 
 <!-- image -->
 <img src="https://github.com/AlexKollar/Cryptex/blob/gh-pages/Gallery/Lock.png" width="285"/></p>

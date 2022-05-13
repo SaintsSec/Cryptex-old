@@ -35,7 +35,7 @@ git clone https://github.com/AlexKollar/Cryptex.git
   - **YES** the Cryptex directory **IS** supposed to dissapear
 ```
 cd Cryptex
-#DO NOT RUN INSTALL.SH AS SUDO
+#DO NOT RUN INSTALL.SH WITH SUDO
 sh install.sh
 ```
 3. Restart your terminal

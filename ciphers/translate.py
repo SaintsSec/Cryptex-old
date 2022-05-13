@@ -29,13 +29,13 @@ help_menu = """
 """
 
 # decode function [!] Each Cipher Must Have This <---------- [!]
-def translate(input):
+def translate(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = input.text
-    src_lang = input.src
-    dest_lang = input.dest
+    text = args.text
+    src_lang = args.src
+    dest_lang = args.dest
     
     if text and src_lang in LANGUAGES and dest_lang in LANGUAGES:
         # Run Decode
@@ -72,11 +72,11 @@ def translate(input):
         return ['Unknow Error', False]
 
 # brute function [!] Optional Per Cipher <----------------- [!]
-def brute(input):
+def brute(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = input.text 
+    text = args.text
     
     if text:
         # Run Decode
@@ -107,7 +107,7 @@ def languages():
 
     output = "----- Short ----- Long -----\n"
 
-    for i, lang in enumerate(LANGUAGES):
+    for _, lang in enumerate(LANGUAGES):
         output += f'    - {lang}  \t- {LANGUAGES[lang]}\n'
 
     return [output, True]

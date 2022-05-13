@@ -109,17 +109,22 @@ def cli(args_exist):
             parser.add_argument('-e', '--encode', dest='encode', action='store_true')
             parser.add_argument('-d', '--decode', dest='decode', action='store_true')
             parser.add_argument('-b', '--brute', dest='brute', action='store_true')
-            parser.add_argument('-i', '--input', dest='input', type=str)
+            parser.add_argument('-i', '--inputFile', dest='inputFile', type=str)
             parser.add_argument('-o', '--output', dest='output', type=str)
             parser.add_argument('-t', '--text', help='String Input\n', dest='text', type=str)
             parser.add_argument('-k', '--key', help='Int Key\n', dest='key', type=str)
             parser.add_argument('-ex', '--exclude', help='Exclude Character\n', dest='exclude', type=str)
             parser.add_argument('-w', '--wordlist', help='Wordlist File\n', dest='wordlist', type=str)
             parser.add_argument('-r', '--range', help='Range\n', dest='range', type=str)
+            # Google Translate
+            parser.add_argument('-tr', '--translate', dest='translate', action='store_true')
+            parser.add_argument('-lang', '--languages', dest='lang', action='store_true')
+            parser.add_argument('-src', '--src', help='Source Language code\n', dest='src', type=str)
+            parser.add_argument('-dest', '--dest', help='Destination Language code\n', dest='dest', type=str)
             args = parser.parse_args()
 
             # reads input files for argument parsing
-            if args.input:
+            if args.inputFile:
                 args.text = open(args.input, 'r').read()
 
             # execute cryptex libraries
@@ -138,6 +143,10 @@ def cli(args_exist):
                     output(module.decode(args), args.output)
                 elif args.brute:
                     output(module.brute(args), args.output)
+                elif args.translate:
+                    output(module.translate(args), args.output)
+                elif args.lang:
+                    output(module.languages(), args.output)
                 else:
                     print(Fore.BLUE + module.help_menu + Fore.RESET)
     else:

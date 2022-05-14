@@ -25,11 +25,11 @@ help_menu = """
 """
 
 # decode function [!] Each Cipher Must Have This <---------- [!]
-def encode(input):
+def encode(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = input.text
+    text = args.text
 
     if text:
         # Run Decode
@@ -48,12 +48,12 @@ def encode(input):
         return [f'"{text}" is not a valid input for -t', False]
 
 # brute function [!] Optional Per Cipher <----------------- [!]
-def brute(input):
+def brute(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = input.text
-    wordlist = input.wordlist
+    text = args.text
+    wordlist = args.wordlist
 
     # TODO (Mart): Find a way to brute force the hash using the utf-8 charset and a length/range
 

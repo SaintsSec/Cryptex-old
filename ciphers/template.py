@@ -18,11 +18,11 @@ help_menu = """
 """
 
 # decode function [!] Each Cipher Must Have This <---------- [!]
-def encode(input):
+def encode(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = input.text
+    text = args.text
     
     if text:
         # Run Decode
@@ -37,11 +37,11 @@ def encode(input):
         return ['Custom Fail Message', False]
 
 # decode function [!] Each Cipher Must Have This <---------- [!]
-def decode(input):
+def decode(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = input.text 
+    text = args.text
     
     if text:
         # Run Decode
@@ -56,11 +56,11 @@ def decode(input):
         return ['Custom Fail Message', False]
 
 # brute function [!] Optional Per Cipher <----------------- [!]
-def brute(input):
+def brute(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = input.text 
+    text = args.text
     
     if text:
         # Run Decode

@@ -6,6 +6,8 @@
 help_menu = """
 +-------------------------------------------------------+
 |  [+] ARGUMENTS Hexadecimal                            |
+|          [-e] -------- Encrypt                        |
+|          [-d] -------- Decrypt                        |
 |  [+] ARG 2. Additional Aruments                       |
 |          [-t <plaintext>] --------- Input Text        |
 |          [-i <input file>] -------- Input File [.txt] |

@@ -31,7 +31,7 @@ def update():
     print("\n[*] Checking for updates...")
 
     # get latest version nubmer
-    os.system(f"curl https://raw.githubusercontent.com/AlexKollar/Cryptex/master/version.txt | tee ~/.Cryptex/latest.txt")
+    os.system("curl https://raw.githubusercontent.com/AlexKollar/Cryptex/master/version.txt | tee ~/.Cryptex/latest.txt")
 
     # save version nubmers to memory
     current_version = float(open(f"{b.local_path}/version.txt", "r").read())
@@ -125,7 +125,17 @@ def cli(args_exist):
 
             # reads input files for argument parsing
             if args.inputFile:
-                args.text = open(args.input, 'r').read()
+                tmpFileVar = open(args.inputFile, 'r')
+                args.text = tmpFileVar.read()
+                tmpFileVar.close()
+
+            # reads input file for wordlist
+            if args.wordlist:
+                tmpFileVar = open(args.wordlist, 'r')
+                args.wordlist = tmpFileVar.read().split('\n')
+                args.wordlist = list(filter(lambda x : len(x) > 0, args.wordlist))
+                # ^ removes empty lines from the array
+                tmpFileVar.close()
 
             # execute cryptex libraries
             try:

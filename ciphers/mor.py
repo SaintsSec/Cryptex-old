@@ -61,6 +61,8 @@ def encode(input):
     for character in text:
         if character in morseAlphabet:
             output.append(morseAlphabet[character])
+        else:
+            output.append(character)
     
     return [" ".join(output), True]
 

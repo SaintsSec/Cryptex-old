@@ -5,7 +5,7 @@
 # help menu for cipheringing process
 help_menu = """
 +-------------------------------------------------------+
-|  [+] ARGUMENTS Template                               |
+|  [+] ARGUMENTS Xor                                    |
 |  [+] ARG 1. Process                                   |
 |          [-e] ---------- Encrypt                      |
 |          [-d] ---------- Decrypt                      |

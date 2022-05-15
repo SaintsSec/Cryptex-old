@@ -61,7 +61,7 @@ help_menu = Fore.CYAN + """
 |       [1337] ------- L33T 5P34K                             | 
 |       [menc] ------- MENC                                   |
 |       [translate] -- Google Translate API                   |
-|       [md5] -------- MD5
+|       [md5] -------- MD5                                    |
 +-------------------------------------------------------------+ 
 | [+] ARG 2. Cipher Method                                    |
 |       [-e] ---------- Encrypt                               |

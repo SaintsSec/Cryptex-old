@@ -90,7 +90,6 @@ def remove():
 
 # command line interface
 def cli(args_exist):
-
     cmd_prefix = Fore.BLUE + '[~] ' + Fore.RESET
 
     # default arguments
@@ -101,7 +100,22 @@ def cli(args_exist):
             update()
         elif sys.argv[1] == '-rm' or sys.argv[1] == '--remove' or sys.argv[1] == '--uninstall':
             remove()
-            
+        elif '+' in sys.argv:
+            args = " ".join(sys.argv[1:])
+            layers = args.split(' + ')
+            text = ''
+            for index, layer in enumerate(layers):
+                if index == 0:
+                    os.system(f'python3 ~/.Cryptex/main.py {layer} -lay')
+                elif index != len(layers) - 1:
+                    with open('temp_storage.txt', 'r') as temp:
+                            layerd_storage = temp.read()
+                    os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}" -lay')
+                else:
+                    with open('temp_storage.txt', 'r') as temp:
+                            layerd_storage = temp.read()
+                    os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}"')
+                    os.remove('temp_storage.txt')
         # flags for argument parsing
         else:
             parser = argparse.ArgumentParser(add_help=False, usage="")
@@ -116,6 +130,8 @@ def cli(args_exist):
             parser.add_argument('-ex', '--exclude', help='Exclude Character\n', dest='exclude', type=str)
             parser.add_argument('-w', '--wordlist', help='Wordlist File\n', dest='wordlist', type=str)
             parser.add_argument('-r', '--range', help='Range\n', dest='range', type=str)
+            # Layerd Encryption
+            parser.add_argument('-lay', '--layerd', dest='layerd', action='store_true')
             # Google Translate
             parser.add_argument('-tr', '--translate', dest='translate', action='store_true')
             parser.add_argument('-lang', '--languages', dest='lang', action='store_true')
@@ -147,7 +163,16 @@ def cli(args_exist):
 
             # executes libraries
             else:
-                if args.encode:
+                if args.layerd:
+                    if args.encode:
+                        layerd_storage = module.encode(args)[0]
+                        with open('temp_storage.txt', 'w') as temp:
+                            temp.write(layerd_storage)
+                    if args.decode:
+                        layerd_storage = module.decode(args)[0]
+                        with open('temp_storage.txt', 'w') as temp:
+                            temp.write(layerd_storage)
+                elif args.encode:
                     output(module.encode(args), args.output)
                 elif args.decode:
                     output(module.decode(args), args.output)

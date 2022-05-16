@@ -108,14 +108,22 @@ def cli(args_exist):
                 if index == 0:
                     os.system(f'python3 ~/.Cryptex/main.py {layer} -lay')
                 elif index != len(layers) - 1:
-                    with open('temp_storage.txt', 'r') as temp:
+                    try:
+                        with open('temp_storage.txt', 'r') as temp:
                             layerd_storage = temp.read()
-                    os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}" -lay')
+                    except:
+                        pass
+                    else:
+                        os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}" -lay')
                 else:
-                    with open('temp_storage.txt', 'r') as temp:
+                    try:
+                        with open('temp_storage.txt', 'r') as temp:
                             layerd_storage = temp.read()
-                    os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}"')
-                    os.remove('temp_storage.txt')
+                    except:
+                        pass
+                    else:
+                        os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}"')
+                        os.remove('temp_storage.txt')
         # flags for argument parsing
         else:
             parser = argparse.ArgumentParser(add_help=False, usage="")
@@ -168,10 +176,16 @@ def cli(args_exist):
                         layerd_storage = module.encode(args)[0]
                         with open('temp_storage.txt', 'w') as temp:
                             temp.write(layerd_storage)
-                    if args.decode:
+                    elif args.decode:
                         layerd_storage = module.decode(args)[0]
                         with open('temp_storage.txt', 'w') as temp:
                             temp.write(layerd_storage)
+                    else:
+                        output(["For now '-tr' or '-b' can only be the final step in layerd encryption", False], False)
+                        try:
+                            os.remove('temp_storage.txt')
+                        except:
+                            pass
                 elif args.encode:
                     output(module.encode(args), args.output)
                 elif args.decode:

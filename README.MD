@@ -129,6 +129,7 @@ cryptex
 | 0.5     | Cryptic Fun Facts              |
 | 0.6     | Knowloon Showdown              |
 | 0.7     | Ekke Ekke Ekke Ptang Zoo Boing |
+| 0.8     | Tis But A Scratch              |
 | 0.9     | The Game                       |
 | 1.0     | Industry Invader               |
 

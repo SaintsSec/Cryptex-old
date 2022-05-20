@@ -26,9 +26,16 @@ def brute(args):
     text = args.text
     range_ = args.range.split(",")
     increment = 1
-    
-    if not range_[1]:
-        range_[1] = range_[0] + 1
+
+    if not range:
+        return['Please enter a range \'-r\'', False]
+
+    try:
+        if not range_[1]:
+            range_[1] = range_[0] + 1
+    except:
+        range_[1] = range[0] + 1
+
     if range_[1] < range_[0]:
         increment = -1
 

@@ -24,15 +24,11 @@ help_menu = """
 # brute function [!] Optional Per Cipher <----------------- [!]
 def brute(args):
     text = args.text
-    range_ = [i.strip() for i in args.range.split(",")]
+    range_ = [i.strip() for i in args.range.split(",") if i.strip().isdigit()]
     increment = 1
 
     if not range_:
         return['Please enter a range \'-r\'', False]
-
-    for i, val in enumerate(range_):
-        if not val:
-            range_[i] = range_[0] + 1
     
     if len(range_) < 2:
         range_.append(range_[0] + 1)

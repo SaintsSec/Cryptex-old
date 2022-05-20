@@ -24,17 +24,18 @@ help_menu = """
 # brute function [!] Optional Per Cipher <----------------- [!]
 def brute(args):
     text = args.text
-    range_ = args.range.split(",")
+    range_ = [i.strip() for i in args.range.split(",")]
     increment = 1
 
-    if not range:
+    if not range_:
         return['Please enter a range \'-r\'', False]
 
-    try:
-        if not range_[1]:
-            range_[1] = range_[0] + 1
-    except:
-        range_[1] = range[0] + 1
+    for i, val in enumerate(range_):
+        if not val:
+            range_[i] = range_[0] + 1
+    
+    if len(range_) < 2:
+        range_.append(range_[0] + 1)
 
     if range_[1] < range_[0]:
         increment = -1

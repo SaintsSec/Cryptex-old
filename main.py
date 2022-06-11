@@ -13,6 +13,7 @@ import sys
 import os
 from colorama import Fore, Back, Style
 
+
 # gets list of available ciphers
 def get_ciphers():
     output_list = []
@@ -35,7 +36,7 @@ def update():
 
     # save version nubmers to memory
     current_version = float(open(f"{b.local_path}/version.txt", "r").read())
-    latest_version = float(open(f"{b.local_path}/latest.txt", "r").read())
+    latest_version = float(open (f"{b.local_path}/latest.txt", "r").read())
 
     # remove version number file
     os.system("rm -rf ~/.Cryptex/latest.txt")
@@ -90,7 +91,7 @@ def remove():
 
 # command line interface
 def cli(args_exist):
-    cmd_prefix = Fore.BLUE + '[~] ' + Fore.RESET
+    cmd_prefix = Fore.CYAN + '[~] ' + Fore.RESET
 
     # default arguments
     if args_exist:
@@ -197,7 +198,7 @@ def cli(args_exist):
                 elif args.lang:
                     output(module.languages(), args.output)
                 else:
-                    print(Fore.BLUE + module.help_menu + Fore.RESET)
+                    print(Fore.CYAN + module.help_menu + Fore.RESET)
     else:
         # display banner
         print(b.banner)

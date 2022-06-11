@@ -10,11 +10,12 @@
 # imports
 import sys
 import os
+from colorama import Fore, Back, Style
 
 # NOTE: '--' for long args
 
 # help menu
-help_menu = """
+help_menu = Fore.CYAN + """
 _________            .___     ____  ___
 \\_   ___ \\  ____   __| _/____ \\   \\/  /
 /    \\  \\/ /  _ \\ / __ |/ __ \\ \\     / 
@@ -100,7 +101,7 @@ _________            .___     ____  ___
             Example:
             main.py -v -e -t hello -k world
             main.py -v -u -i file.txt 
-        """
+        """ + Fore.RESET
 
 # command line interface
 def cli(argument_check):

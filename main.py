@@ -100,6 +100,8 @@ def cli(args_exist):
             update()
         elif sys.argv[1] == '-rm' or sys.argv[1] == '--remove' or sys.argv[1] == '--uninstall':
             remove()
+
+        # layered encryption
         elif '+' in sys.argv:
             args = " ".join(sys.argv[1:])
             layers = args.split(' + ')
@@ -124,6 +126,7 @@ def cli(args_exist):
                     else:
                         os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}"')
                         os.remove('temp_storage.txt')
+                        
         # flags for argument parsing
         else:
             parser = argparse.ArgumentParser(add_help=False, usage="")

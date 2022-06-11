@@ -23,7 +23,7 @@ Cryptex is capable of advanced encryption, decryption, and breaking ciphers thro
 - [Cosmodium Site][ccs]
 
 ## Requirements:
-- Debian based Linux OS
+- Debian/Void/Arch based Linux OS
 - Python 3.x
 
 ## Set-Up & Installation:
@@ -35,9 +35,11 @@ git clone https://github.com/AlexKollar/Cryptex.git
   - **YES** the Cryptex directory **IS** supposed to dissapear
 ```
 cd Cryptex
-#DO NOT RUN INSTALL.SH WITH SUDO
-sh install.sh
+chmod +x
+./install.sh {ex. --debian}
 ```
+see `--help` for a list of supported distros.
+
 3. Restart your terminal
 
 ## Executing Cryptex

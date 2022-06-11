@@ -101,6 +101,8 @@ def cli(args_exist):
         elif sys.argv[1] == '-rm' or sys.argv[1] == '--remove' or sys.argv[1] == '--uninstall':
             remove()
         elif '+' in sys.argv:
+            text = sys.argv[sys.argv.index('-t') + 1]
+            sys.argv[sys.argv.index('-t') + 1] = f'"{text}"'
             args = " ".join(sys.argv[1:])
             layers = args.split(' + ')
             text = ''
@@ -186,6 +188,7 @@ def cli(args_exist):
                             os.remove('temp_storage.txt')
                         except:
                             pass
+
                 elif args.encode:
                     output(module.encode(args), args.output)
                 elif args.decode:

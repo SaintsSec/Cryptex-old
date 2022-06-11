@@ -26,7 +26,7 @@ Cryptex is capable of advanced encryption, decryption, and breaking ciphers thro
 - [Cosmodium Site][ccs]
 
 ## Requirements:
-- Debian based Linux OS
+- Debian/Void/Arch based Linux OS
 - Python 3.x
 
 ## Set-Up & Installation:
@@ -38,9 +38,11 @@ git clone https://github.com/AlexKollar/Cryptex.git
   - **YES** the Cryptex directory **IS** supposed to dissapear
 ```
 cd Cryptex
-#DO NOT RUN INSTALL.SH WITH SUDO
-sh install.sh
+chmod +x
+./install.sh {ex. --debian}
 ```
+see `--help` for a list of supported distros.
+
 3. Restart your terminal
 
 ## Executing Cryptex
@@ -155,8 +157,8 @@ Started Cosmodium at 17 and since then has made significant changes in the cyber
 **[Mart](): Developer**
 I started tinkering with computers I think around primary school, then in junior high school I started doing more tech stuff, then in high school I started learning more proper programming, and I began to do a lot of programming in my spare time, and at school, but I was always at least 10 steps ahead of what my class was learning, and eventually I ended up finding this place.
 
-**[Soul](): Developer**
-...
+**[Soul](https://soulsender.github.io): Developer**
+Credited with giving Cryptex its colors. Also might or might not have had something to do with the original beta name "Earth Invader". Helped with multi-distro (debian/arch/void) installer support for `install.sh`. 
 
 ---
 

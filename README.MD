@@ -8,7 +8,7 @@
 # Cryptex [BETA] v0.1.0 EARTH INVADER
 
 <!-- image -->
-<img src="https://github.com/AlexKollar/Cryptex/blob/gh-pages/Gallery/Lock.png" width="285"/></p>
+<img src="https://raw.githubusercontent.com/AlexKollar/Cryptex/master/assets/earth-invader.png" width="285"/></p>
 
 > "Locks only exist to keep honest people honest" 
 

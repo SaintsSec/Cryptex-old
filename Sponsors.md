@@ -3,6 +3,5 @@ We would like to take a moment to formally recognize people who have donated fin
 On behalf of the team, thank you so much.  
 You have our eternal gratitude!
 
----  
 ## Sponsors:  
 - GamerChillz

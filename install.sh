@@ -16,6 +16,14 @@ if [[ $# -eq 0 ]] ; then
     exit 0
 fi
 
+# check if run with sudo
+if [ "$EUID" -ne 0 ]; then
+    continue
+else
+    echo -e "${red}Do not run as root. The script will prompt you for root access.${reset}"
+    exit 0
+fi
+
 debian=false
 arch=false
 void=false

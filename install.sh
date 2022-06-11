@@ -125,14 +125,20 @@ echo -e "${blue}[*] Setting up alias...${reset}"
 
 # check if it already exists in bashrc
 if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
-echo "export CRYPTEX_PATH=\"~/.Cryptex\"" >> ~/.bashrc
-echo "alias cryptex=\"python3 ~/.Cryptex/main.py\"" >> ~/.bashrc
+# Do it in one command instead of repeating yourself.
+echo "
+export CRYPTEX_PATH=\"~/.Cryptex\"
+alias cryptex=\"python3 ~/.Cryptex/main.py\"
+" >> ~/.bashrc
 fi
 
 #check if it already exists in zshrc
 if ! cat ~/.zshrc | grep "CRYPTEX_PATH" > /dev/null; then
-echo "export CRYPTEX_PATH=\"~/.Cryptex\"" >> ~/.zshrc
-echo "alias cryptex=\"python3 ~/.Cryptex/main.py\"" >> ~/.zshrc
+# Do it in one command instead of repeating yourself.
+echo "
+export CRYPTEX_PATH=\"~/.Cryptex\"
+alias cryptex=\"python3 ~/.Cryptex/main.py\"
+" >> ~/.zshrc
 fi
 
 echo -e "${green}[+] Completed${reset}"

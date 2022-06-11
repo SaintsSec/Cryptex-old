@@ -90,6 +90,8 @@ if [ "$debian" = true ]
     pip install Cryptography
     pip install googletrans==3.1.0a0
     pip install colorama
+    pip install pillow
+    pip install numpy
     echo -e "${green}[+] Completed${reset}"
 fi
 

@@ -13,11 +13,12 @@ import sys
 import os
 from colorama import Fore, Back, Style
 
+
 # gets list of available ciphers
 def get_ciphers():
     output_list = []
     directory = os.fsencode(b.cipher)
-        
+
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
         output_list.append(filename[:-3])
@@ -35,7 +36,7 @@ def update():
 
     # save version nubmers to memory
     current_version = float(open(f"{b.local_path}/version.txt", "r").read())
-    latest_version = float(open(f"{b.local_path}/latest.txt", "r").read())
+    latest_version = float(open (f"{b.local_path}/latest.txt", "r").read())
 
     # remove version number file
     os.system("rm -rf ~/.Cryptex/latest.txt")
@@ -90,7 +91,7 @@ def remove():
 
 # command line interface
 def cli(args_exist):
-    cmd_prefix = Fore.BLUE + '[~] ' + Fore.RESET
+    cmd_prefix = Fore.CYAN + '[~] ' + Fore.RESET
 
     # default arguments
     if args_exist:
@@ -100,6 +101,8 @@ def cli(args_exist):
             update()
         elif sys.argv[1] == '-rm' or sys.argv[1] == '--remove' or sys.argv[1] == '--uninstall':
             remove()
+
+        # layered encryption
         elif '+' in sys.argv:
             text = sys.argv[sys.argv.index('-t') + 1]
             sys.argv[sys.argv.index('-t') + 1] = f'"{text}"'
@@ -126,6 +129,7 @@ def cli(args_exist):
                     else:
                         os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}"')
                         os.remove('temp_storage.txt')
+
         # flags for argument parsing
         else:
             parser = argparse.ArgumentParser(add_help=False, usage="")
@@ -147,6 +151,9 @@ def cli(args_exist):
             parser.add_argument('-lang', '--languages', dest='lang', action='store_true')
             parser.add_argument('-src', '--src', help='Source Language code\n', dest='src', type=str)
             parser.add_argument('-dest', '--dest', help='Destination Language code\n', dest='dest', type=str)
+            # Color Encryption
+            parser.add_argument('-f', '--file', help="Give a file path\n", dest='file', type=str)
+            parser.add_argument('-iw', '--image_width', help="Image width used for CE", dest="image_width", type=int)
             args = parser.parse_args()
 
             # reads input files for argument parsing
@@ -200,7 +207,7 @@ def cli(args_exist):
                 elif args.lang:
                     output(module.languages(), args.output)
                 else:
-                    print(Fore.BLUE + module.help_menu + Fore.RESET)
+                    print(Fore.CYAN + module.help_menu + Fore.RESET)
     else:
         # display banner
         print(b.banner)
@@ -209,7 +216,7 @@ def cli(args_exist):
         # loop code
         while True:
             # get user input
-            user_input = input(Fore.CYAN + b.header + Fore.RESET)
+            user_input = input(b.header)
 
             # display help menu
             if user_input == 'help':

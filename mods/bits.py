@@ -6,7 +6,7 @@ from colorama import Fore, Back, Style
 
 # Variables
 username = getpass.getuser() # Get username
-header = f'{username}@cryptex $ ' # header for user input
+header = Fore.RED + f'{username}' + Fore.WHITE + '@' + Fore.RED + 'cryptex $ ' + Fore.RESET # header for user input
 remote_path = 'raw.githubusercontent.com/AlexKollar/Cryptex/master' # remote url path
 local_path = f'/home/{username}/.Cryptex' if username != 'root' else '/root/.Cryptex' # local path to cryptex
 cipher = f'{local_path}/ciphers/' # local path to ciphers
@@ -58,11 +58,12 @@ help_menu = Fore.CYAN + """
 |       [oct] -------- Octal                                  |
 |       [mor] -------- Morse Code                             |
 |       [pho] -------- Phonetic Alphabet                      |
-|       [1337] ------- L33T 5P34K                             | 
+|       [1337] ------- L33T 5P34K                             |
 |       [menc] ------- MENC                                   |
 |       [translate] -- Google Translate API                   |
 |       [md5] -------- MD5                                    |
-+-------------------------------------------------------------+ 
+|       [ce] --------- Color Encryption                       |
++-------------------------------------------------------------+
 | [+] ARG 2. Cipher Method                                    |
 |       [-e] ---------- Encrypt                               |
 |       [-d] ---------- Decrypt                               |
@@ -74,16 +75,16 @@ help_menu = Fore.CYAN + """
 | [+] Additional Arguments                                    |
 |       [-t] ---------- Input Text                            |
 |       [-i] ---------- Input File                            |
-|       [-o] ---------- Output File                           | 
-|       [-k] ---------- Encryption Key                        | 
-|       [-r] ---------- Range                                 | 
+|       [-o] ---------- Output File                           |
+|       [-k] ---------- Encryption Key                        |
+|       [-r] ---------- Range                                 |
 |       [-w] ---------- Wordlist                              |
 |       [-src] -------- Source Language                       |
 |       [-dest] ------- Destination Language                  |
 +-------------------------------------------------------------+
 | [+] Cryptex Arguments                                       |
 |       [--help] ------ help                                  |
-|       [--version] --- version                               |    
+|       [--version] --- version                               |
 |       [--update] ---- update                                |
 +-------------------------------------------------------------+
 """ + Fore.RESET

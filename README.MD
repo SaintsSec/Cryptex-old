@@ -2,6 +2,7 @@
 [ccs]: https://www.cosmodiumcs.com
 [saints]: https://www.saintssec.com
 [youtube]: https://www.youtube.com/c/CosmodiumCS
+[onlyrat]: https://github.com/CosmodiumCS/OnlyRAT
 
 <!-- title -->
 # Cryptex [BETA] v0.1.0 EARTH INVADER
@@ -16,8 +17,10 @@ Cryptex is an advanced cryptography hacking tool created by a joint development 
 
 Cryptex is capable of advanced encryption, decryption, and breaking ciphers through various mehtods. These methods include but are not limited to bruteforcing, cryptographic wordlising, letter frequencies, plaintext formatting, and cracking.
 
+<!-- EMBED YOUTUBE VIDEO HERE -->
+
 ## Resources:
-- [YouTube Video]()
+- [YouTube Playlist](https://www.youtube.com/playlist?list=PL_dk67mLCSFGK2FgY0IIoB3JBcsOvmgEI)
 - [YouTube Channel][youtube]
 - [Saints Site][saints]
 - [Cosmodium Site][ccs]
@@ -66,7 +69,7 @@ cryptex cc -e -t "hello world" -k 5
 ```
 
 ## Cryptconsole:
-The Cryptconsole is a more expansive way of using Cryptex. It allows the user to open a console in their terminal connected to the Cryptex libraries; comparable to [Metasploit](https://www.metasploit.com/) or [OnlyRAT](https://github.com/CosmodiumCS/OnlyRAT). The Cryptconsole can allow users to run multiple ciphers back to back to back.
+The Cryptconsole is a more expansive way of using Cryptex. It allows the user to open a console in their terminal connected to the Cryptex libraries; comparable to [Metasploit](https://www.metasploit.com/) or [OnlyRAT][onlyrat]. The Cryptconsole can allow users to run multiple ciphers back to back to back.
 - We can execute the cryptconsole by running the following
 ```
 cryptex
@@ -108,6 +111,8 @@ cryptex
 [~] root@crytpex $ remove
 ```
 
+---
+
 ## Current Version
 
 | Version | Name                  |
@@ -133,6 +138,8 @@ cryptex
 | 0.9     | The Game                       |
 | 1.0     | Industry Invader               |
 
+---
+
 ## About Us
 **[Cythes](https://twitter.com/CythesOut): Project Manager**
 I started learning computers around middle school age with my discovery & passion of PC Gaming.  A few years later I'd stumbled into Ubuntu 8.04 soon started learning programming, hacking on and off, while over the next decade working on projects ranging from Android personal safety applications to light game development.
@@ -150,6 +157,17 @@ I started tinkering with computers I think around primary school, then in junior
 
 **[Soul](): Developer**
 ...
+
+---
+
+## Credits:
+As an open source project, Cryptex does use snippets of code inspired and based on other projects such as the following:
+
+- [OnlyRAT][onlyrat]
+- [Nirsoft](https://www.nirsoft.net)
+- [Satux](https://cosmodiumcs.com/coming-soon)
+
+---
 
 **Enjoy! If you like what you see, consider hitting that sponosor button! :)**
 

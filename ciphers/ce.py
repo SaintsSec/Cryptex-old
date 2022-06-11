@@ -12,9 +12,11 @@ help_menu = """
 | [✓] ARG 2. Additional Aruments                       |
 |         [-t <plaintext>] --------- Input Text        |
 |         [-f <file path>] --------- File Path         |
+|         [-iw <number>] ------------ Image Width      |
 +------------------------------------------------------+
 | [✓] Example:                                         |
 |  cryptex ce -e -t 'Hello, World!' -f image.png       |
+|  cryptex ce -e -t 'Hello, World!' -f image.png -iw 3 |
 |  cryptex ce -d -f image.png                          |
 +------------------------------------------------------+
 """
@@ -48,6 +50,7 @@ def encode(args):
     # Example key = input.key | range = input.range
     text = args.text
     image_path = args.file
+    image_width = 1
 
     if not image_path:
         return ['You must suply file path for cryptext to make an image (-f)', False]
@@ -55,29 +58,40 @@ def encode(args):
     if not text:
         return ['You must suply an input text for this to work', False]
 
+    if args.image_width:
+        image_width = int(args.image_width)
+
     output = f'Encoding | {text}'
 
     pixels = []
-    # Loop over the input text in groups of 3
-    for i in range(0, len(text), 3):
-        # The group of 3 chars
-        chars = text[i:i+3]
-        # If there are not enough chars to make only groups of 3, then ths will say how many extra we will need (2, or 3)
-        extra = 3 - len(chars)
-        # Empty pixel array
-        pixel = []
+    for i in range(0, len(text), image_width * 3):
+        row = text[i:i+(3*image_width)]
+        rowArr = []
+        # Loop over the input text in groups of 3
+        for i in range(0, len(row), 3):
+            # The group of 3 chars
+            chars = row[i:i+3]
+            # If there are not enough chars to make only groups of 3, then ths will say how many extra we will need (2, or 3)
+            extra = 3 - len(chars)
+            # Empty pixel array
+            pixel = []
 
-        # Get the ASCII values of the chars and add them to the pixel array
-        for _, char in enumerate(chars):
-            pixel.append(ord(char))
+            # Get the ASCII values of the chars and add them to the pixel array
+            for _, char in enumerate(chars):
+                pixel.append(ord(char))
 
-        # Add the extra value
+            # Add the extra value
+            for i in range(extra):
+                pixel.append(0)
+
+            # Convert the pixel array to an array with a tupel inside
+            pixel = (pixel[0], pixel[1], pixel[2])
+            rowArr.append(pixel)
+
+        extra = image_width - len(rowArr)
         for i in range(extra):
-            pixel.append(0)
-
-        # Convert the pixel array to an array with a tupel inside
-        pixel = [(pixel[0], pixel[1], pixel[2])]
-        pixels.append(pixel)
+            rowArr.append((0,0,0)) # add black pixel if there are to few
+        pixels.append(rowArr)
 
     gen_image(image_path, pixels)
 

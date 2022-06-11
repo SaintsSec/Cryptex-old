@@ -153,6 +153,7 @@ def cli(args_exist):
             parser.add_argument('-dest', '--dest', help='Destination Language code\n', dest='dest', type=str)
             # Color Encryption
             parser.add_argument('-f', '--file', help="Give a file path\n", dest='file', type=str)
+            parser.add_argument('-iw', '--image_width', help="Image width used for CE", dest="image_width", type=int)
             args = parser.parse_args()
 
             # reads input files for argument parsing

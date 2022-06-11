@@ -58,11 +58,12 @@ help_menu = Fore.CYAN + """
 |       [oct] -------- Octal                                  |
 |       [mor] -------- Morse Code                             |
 |       [pho] -------- Phonetic Alphabet                      |
-|       [1337] ------- L33T 5P34K                             | 
+|       [1337] ------- L33T 5P34K                             |
 |       [menc] ------- MENC                                   |
 |       [translate] -- Google Translate API                   |
 |       [md5] -------- MD5                                    |
-+-------------------------------------------------------------+ 
+|       [ce] --------- Color Encryption                       |
++-------------------------------------------------------------+
 | [+] ARG 2. Cipher Method                                    |
 |       [-e] ---------- Encrypt                               |
 |       [-d] ---------- Decrypt                               |
@@ -74,16 +75,16 @@ help_menu = Fore.CYAN + """
 | [+] Additional Arguments                                    |
 |       [-t] ---------- Input Text                            |
 |       [-i] ---------- Input File                            |
-|       [-o] ---------- Output File                           | 
-|       [-k] ---------- Encryption Key                        | 
-|       [-r] ---------- Range                                 | 
+|       [-o] ---------- Output File                           |
+|       [-k] ---------- Encryption Key                        |
+|       [-r] ---------- Range                                 |
 |       [-w] ---------- Wordlist                              |
 |       [-src] -------- Source Language                       |
 |       [-dest] ------- Destination Language                  |
 +-------------------------------------------------------------+
 | [+] Cryptex Arguments                                       |
 |       [--help] ------ help                                  |
-|       [--version] --- version                               |    
+|       [--version] --- version                               |
 |       [--update] ---- update                                |
 +-------------------------------------------------------------+
 """ + Fore.RESET

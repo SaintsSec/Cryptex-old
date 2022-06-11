@@ -213,7 +213,7 @@ def cli(args_exist):
         # loop code
         while True:
             # get user input
-            user_input = input(Fore.CYAN + b.header + Fore.RESET)
+            user_input = input(b.header)
 
             # display help menu
             if user_input == 'help':

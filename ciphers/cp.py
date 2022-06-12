@@ -21,6 +21,7 @@ help_menu = """
 +----------------------------------------------------------+
 | [✓] ARG 2. Additional Aruments                           |
 |         [-wh <webhook>] ------------ Discord Webhook     |
+|             - Saved after first use                      |
 |         [-wc] ---------------------- Web Credentials     |
 |         [-ml] ---------------------- Mail Credentials    |
 |         [-wf] ---------------------- WiFi Credentials    |

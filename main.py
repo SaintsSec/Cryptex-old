@@ -151,6 +151,9 @@ def cli(args_exist):
             parser.add_argument('-lang', '--languages', dest='lang', action='store_true')
             parser.add_argument('-src', '--src', help='Source Language code\n', dest='src', type=str)
             parser.add_argument('-dest', '--dest', help='Destination Language code\n', dest='dest', type=str)
+            # cryptographic payloads
+            parser.add_argument('-wh', '--webhook', help='Destination Language code\n', dest='dest', type=str)
+
             args = parser.parse_args()
 
             # reads input files for argument parsing

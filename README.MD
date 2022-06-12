@@ -161,6 +161,12 @@ I started tinkering with computers I think around primary school, then in junior
 Credited with giving Cryptex its colors. Also might or might not have had something to do with the original beta name "Earth Invader". Helped with multi-distro (debian/arch/void) installer support for `install.sh`. 
 
 ---
+## Sponsors Hall of Fame
+We would like to take a moment to formally recognize people who have donated financially to the Cryptex Project. On behalf of the team, thank you so much. You have our eternal gratitude!
+
+## Sponsors:  
+- GamerChillz
+---
 
 ## Credits:
 As an open source project, Cryptex does use snippets of code inspired and based on other projects such as the following:

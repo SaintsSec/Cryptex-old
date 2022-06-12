@@ -62,7 +62,7 @@ help_menu = Fore.CYAN + """
 |       [menc] ------- MENC                                   |
 |       [translate] -- Google Translate API                   |
 |       [md5] -------- MD5                                    |
-|       [ce] --------- Color Encryption                       |
+|       [se] --------- Static Encryption                      |
 +-------------------------------------------------------------+
 | [+] ARG 2. Cipher Method                                    |
 |       [-e] ---------- Encrypt                               |

@@ -8,16 +8,16 @@ import numpy as np
 # help menu for cipheringing process
 help_menu = """
 +------------------------------------------------------+
-| [✓] ARGUMENTS Color Encryption                       |
+| [✓] ARGUMENTS Static Encryption                       |
 | [✓] ARG 2. Additional Aruments                       |
 |         [-t <plaintext>] --------- Input Text        |
 |         [-f <file path>] --------- File Path         |
 |         [-iw <number>] ------------ Image Width      |
 +------------------------------------------------------+
 | [✓] Example:                                         |
-|  cryptex ce -e -t 'Hello, World!' -f image.png       |
-|  cryptex ce -e -t 'Hello, World!' -f image.png -iw 3 |
-|  cryptex ce -d -f image.png                          |
+|  cryptex se -e -t 'Hello, World!' -f image.png       |
+|  cryptex se -e -t 'Hello, World!' -f image.png -iw 3 |
+|  cryptex se -d -f image.png                          |
 +------------------------------------------------------+
 """
 

@@ -151,6 +151,9 @@ def cli(args_exist):
             parser.add_argument('-lang', '--languages', dest='lang', action='store_true')
             parser.add_argument('-src', '--src', help='Source Language code\n', dest='src', type=str)
             parser.add_argument('-dest', '--dest', help='Destination Language code\n', dest='dest', type=str)
+            # Static Encryption
+            parser.add_argument('-f', '--file', help="Give a file path\n", dest='file', type=str)
+            parser.add_argument('-iw', '--image_width', help="Image width used for SE", dest="image_width", type=int)
             # cryptographic payloads
             parser.add_argument('-g', '--generate', help='Choose Payload Generation Method\n', dest='generate', type=str)
             parser.add_argument('-p', '--payload', help='Choose Payload\n', dest='payload', type=str)

@@ -151,9 +151,11 @@ def cli(args_exist):
             parser.add_argument('-lang', '--languages', dest='lang', action='store_true')
             parser.add_argument('-src', '--src', help='Source Language code\n', dest='src', type=str)
             parser.add_argument('-dest', '--dest', help='Destination Language code\n', dest='dest', type=str)
-            # Color Encryption
-            parser.add_argument('-f', '--file', help="Give a file path\n", dest='file', type=str)
-            parser.add_argument('-iw', '--image_width', help="Image width used for CE", dest="image_width", type=int)
+            # cryptographic payloads
+            parser.add_argument('-g', '--generate', help='Choose Payload Generation Method\n', dest='generate', type=str)
+            parser.add_argument('-p', '--payload', help='Choose Payload\n', dest='payload', type=str)
+            parser.add_argument('-wc', '--webcredentials', dest='webcredentials', action='store_true')
+
             args = parser.parse_args()
 
             # reads input files for argument parsing
@@ -206,6 +208,11 @@ def cli(args_exist):
                     output(module.translate(args), args.output)
                 elif args.lang:
                     output(module.languages(), args.output)
+
+                # cryptograhic payloads
+                elif args.payload:
+                    output(module.payload(args), args.output)
+
                 else:
                     print(Fore.CYAN + module.help_menu + Fore.RESET)
     else:

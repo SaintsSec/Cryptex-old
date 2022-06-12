@@ -18,7 +18,7 @@ from colorama import Fore, Back, Style
 def get_ciphers():
     output_list = []
     directory = os.fsencode(b.cipher)
-        
+
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
         output_list.append(filename[:-3])
@@ -129,7 +129,7 @@ def cli(args_exist):
                     else:
                         os.system(f'python3 ~/.Cryptex/main.py {layer} -t "{layerd_storage}"')
                         os.remove('temp_storage.txt')
-                        
+
         # flags for argument parsing
         else:
             parser = argparse.ArgumentParser(add_help=False, usage="")
@@ -152,7 +152,9 @@ def cli(args_exist):
             parser.add_argument('-src', '--src', help='Source Language code\n', dest='src', type=str)
             parser.add_argument('-dest', '--dest', help='Destination Language code\n', dest='dest', type=str)
             # cryptographic payloads
-            parser.add_argument('-wh', '--webhook', help='Destination Language code\n', dest='dest', type=str)
+            parser.add_argument('-g', '--generate', help='Choose Payload Generation Method\n', dest='generate', type=str)
+            parser.add_argument('-p', '--payload', help='Choose Payload\n', dest='payload', type=str)
+            parser.add_argument('-wc', '--webcredentials', dest='webcredentials', action='store_true')
 
             args = parser.parse_args()
 
@@ -206,6 +208,11 @@ def cli(args_exist):
                     output(module.translate(args), args.output)
                 elif args.lang:
                     output(module.languages(), args.output)
+
+                # cryptograhic payloads
+                elif args.payload:
+                    output(module.payload(args), args.output)
+
                 else:
                     print(Fore.CYAN + module.help_menu + Fore.RESET)
     else:

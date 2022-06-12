@@ -39,9 +39,20 @@ git clone https://github.com/AlexKollar/Cryptex.git
 ```
 cd Cryptex
 chmod +x
-./install.sh {ex. --debian}
+./install.sh
 ```
-see `--help` for a list of supported distros.
+
+### Supported Distros
+ - Debian (debian-based)
+    - Kali
+    - Parrot
+    - Ubuntu
+ - Arch
+ - Void
+
+See `--help` on `install.sh`.
+
+See the [wiki](https://github.com/AlexKollar/Cryptex/wiki/1.)-Prereqs-and-Installing#unsupported-distros) for installation on unsupported distros.
 
 3. Restart your terminal
 

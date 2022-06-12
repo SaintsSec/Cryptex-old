@@ -73,13 +73,11 @@ def brute(input):
     output = []
     text = input.text
     exclude = input.exclude if input.exclude else "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789"
-    range_ = input.range.split(",") if input.range else [0,27]
+    range_ = input.range.split(",") if input.range else [0, 27]
     shift_key = int(range_[0])
 
     if text:
-        text = input.text
-        exclude = input.exclude if input.exclude else ""
-        range_ = input.range.split(",") if input.range else [0,27]
+        range_ = input.range.split(",") if input.range else [0, 27]
         shift_key = int(range_[0])
 
         for shift in range(int(range_[0]), int(range_[1])):
@@ -87,14 +85,15 @@ def brute(input):
             inner_output = ''
             for character in text:
                 if character in exclude:
-                    output += character
+                    inner_output += character
                 elif character.isupper():
-                    inner_output += chr((ord(character) - shift - 65) % 26 + 65)
+                    inner_output += chr((ord(character) -
+                                        shift - 65) % 26 + 65)
                 else:
-                    inner_output += chr((ord(character) - shift - 97) % 26 + 97)
+                    inner_output += chr((ord(character) -
+                                        shift - 97) % 26 + 97)
             if inner_output != text:
                 output.append(f'Key [{shift_key -1}] | {inner_output}')
-
         return ["\n".join(output), True]
     else:
         return ["Please provide -t <string input> argument", False]

@@ -31,7 +31,7 @@ def encode(input):
     output = ''
     text = input.text
     key = input.key
-    exclude = input.exclude if input.exclude else ""
+    exclude = input.exclude if input.exclude else "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789"
 
     # encryption process
     if text and key:
@@ -52,7 +52,7 @@ def decode(input):
     output = ''
     text = input.text
     key = input.key
-    exclude = input.exclude if input.exclude else ""
+    exclude = input.exclude if input.exclude else "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789"
 
     # decryption process
     if text and key:
@@ -72,7 +72,7 @@ def decode(input):
 def brute(input):
     output = []
     text = input.text
-    exclude = input.exclude if input.exclude else ""
+    exclude = input.exclude if input.exclude else "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789"
     range_ = input.range.split(",") if input.range else [0,27]
     shift_key = int(range_[0])
 

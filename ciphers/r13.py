@@ -24,10 +24,12 @@ help_menu = """
 +-------------------------------------------------------+
 """
 
-def encode(input):
-    text = input.text
-    os.system(f'python3 ~/.Cryptex/main.py cc -e -t "{text}" -k 13')
+def encode(args):
+    from ciphers.cc import encode
+    args.key = 13
+    return encode(args)
 
-def decode(input):
-    text = input.text
-    os.system(f'python3 ~/.Cryptex/main.py cc -d -t "{text}" -k 13')
+def decode(args):
+    from ciphers.cc import decode
+    args.key = 13
+    return decode(args)

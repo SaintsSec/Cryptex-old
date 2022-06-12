@@ -26,8 +26,8 @@ help_menu = """
 
 def encode(input):
     text = input.text
-    os.system(f'python3 main.py cc -e -t "{text}" -k 13')
+    os.system(f'python3 ~/.Cryptex/main.py cc -e -t "{text}" -k 13')
 
 def decode(input):
     text = input.text
-    os.system(f'python3 main.py cc -d -t "{text}" -k 13')
+    os.system(f'python3 ~/.Cryptex/main.py cc -d -t "{text}" -k 13')

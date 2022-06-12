@@ -52,7 +52,7 @@ chmod +x
 
 See `--help` on `install.sh`.
 
-See the [wiki](https://github.com/AlexKollar/Cryptex/wiki/1.)-Prereqs-and-Installing#unsupported-distros) for installation on unsupported distros.
+See the installation guide on the [wiki](https://github.com/AlexKollar/Cryptex/wiki) for installation on unsupported distros.
 
 3. Restart your terminal
 
@@ -170,6 +170,11 @@ I started tinkering with computers I think around primary school, then in junior
 
 **[Soul](https://soulsender.github.io): Developer**
 Credited with giving Cryptex its colors. Also might or might not have had something to do with the original beta name "Earth Invader". Helped with multi-distro (debian/arch/void) installer support for `install.sh`. 
+
+---
+
+## Sponsors:  
+- GamerChillz
 
 ---
 

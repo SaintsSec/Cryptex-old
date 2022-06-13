@@ -10,6 +10,37 @@ blue="\e[0;94m"
 bold="\e[1m"
 reset="\e[0m"
 
+function alias_workflow {
+    # set up alias workflow
+    echo -e "${blue}[*] Setting up alias...${reset}"
+
+    # check if it already exists in bashrc
+    if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
+        # Do it in one command instead of repeating yourself.
+        echo "
+        export CRYPTEX_PATH=\"~/.Cryptex\"
+        alias cryptex=\"python3 ~/.Cryptex/main.py\"
+        " >> ~/.bashrc
+    fi
+
+    #check if it already exists in zshrc
+    if ! cat ~/.zshrc | grep "CRYPTEX_PATH" > /dev/null; then
+        # Do it in one command instead of repeating yourself.
+        echo "
+        export CRYPTEX_PATH=\"~/.Cryptex\"
+        alias cryptex=\"python3 ~/.Cryptex/main.py\"
+        " >> ~/.zshrc
+    fi
+
+    echo -e "${green}[+] Completed${reset}"
+
+    # clean up
+    echo -e "${green}[+] Installation Successful"
+    echo -e "[+] Please Restart your terminal"
+    echo -e "[+] type 'cryptex' launch Cryptex${reset}"
+    bash
+}
+
 # check if run with sudo
 if [ "$EUID" -ne 0 ]; then
     continue
@@ -36,35 +67,8 @@ case "$1" in
 ;;
 
 --unsupported-distro)
-    # set up alias workflow
-    echo -e "${blue}[*] Setting up alias...${reset}"
-
-    # check if it already exists in bashrc
-    if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
-    # Do it in one command instead of repeating yourself.
-    echo "
-    export CRYPTEX_PATH=\"~/.Cryptex\"
-    alias cryptex=\"python3 ~/.Cryptex/main.py\"
-    " >> ~/.bashrc
-    fi
-
-    #check if it already exists in zshrc
-    if ! cat ~/.zshrc | grep "CRYPTEX_PATH" > /dev/null; then
-    # Do it in one command instead of repeating yourself.
-    echo "
-    export CRYPTEX_PATH=\"~/.Cryptex\"
-    alias cryptex=\"python3 ~/.Cryptex/main.py\"
-    " >> ~/.zshrc
-    fi
-
-    echo -e "${green}[+] Completed${reset}"
-
-    # clean up
-    echo -e "${green}[+] Installation Successful"
-    echo -e "[+] Please Restart your terminal"
-    echo -e "[+] type 'cryptex' launch Cryptex${reset}"
-    bash
-    exit 0
+    # call alias workflow function
+    alias_workflow
 ;;
 
 esac
@@ -91,7 +95,7 @@ cp Cryptex/* ~/.Cryptex -r
 cd ~/.Cryptex
 echo -e "${green}[+] Completed${reset}"
 
-if [[ "$distro" == "Debian" || "Ubuntu" || "Parrot" || "Kali" || "Mint" ]]; then
+if [[ "$distro" == "Debian" ]] || [[ "$distro" == "Parrot" ]] || [[ "$distro" == "Ubuntu" ]] || [[ "$distro" == "Mint" ]] || [[ "$distro" == "Kali" ]]; then
     # installing tools for debian
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo apt update
@@ -115,7 +119,7 @@ elif [[ "$distro" == "Void" ]]; then
     pip install colorama
     echo -e "${green}[+] Completed${reset}"
 
-elif [[ "$arch" = "Arch" || "Garuda" || "Artix" ]]; then
+elif [[ "$arch" = "Arch" ]]; then
     # installing tools for arch
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo pacman -Syu
@@ -131,31 +135,5 @@ else
     exit 0
 fi
 
-# set up alias workflow
-echo -e "${blue}[*] Setting up alias...${reset}"
-
-# check if it already exists in bashrc
-if ! cat ~/.bashrc | grep "CRYPTEX_PATH" > /dev/null; then
-# Do it in one command instead of repeating yourself.
-echo "
-export CRYPTEX_PATH=\"~/.Cryptex\"
-alias cryptex=\"python3 ~/.Cryptex/main.py\"
-" >> ~/.bashrc
-fi
-
-#check if it already exists in zshrc
-if ! cat ~/.zshrc | grep "CRYPTEX_PATH" > /dev/null; then
-# Do it in one command instead of repeating yourself.
-echo "
-export CRYPTEX_PATH=\"~/.Cryptex\"
-alias cryptex=\"python3 ~/.Cryptex/main.py\"
-" >> ~/.zshrc
-fi
-
-echo -e "${green}[+] Completed${reset}"
-
-# clean up
-echo -e "${green}[+] Installation Successful"
-echo -e "[+] Please Restart your terminal"
-echo -e "[+] type 'cryptex' launch Cryptex${reset}"
-bash
+# call alias workflow
+alias_workflow

@@ -91,49 +91,7 @@ cp Cryptex/* ~/.Cryptex -r
 cd ~/.Cryptex
 echo -e "${green}[+] Completed${reset}"
 
-if [[ "$distro" == "Debian" ]]; then
-    # installing tools for debian
-    echo -e "${blue}[*] Installing tools...${reset}"
-    sudo apt update
-    sudo apt-get install python3
-    sudo apt-get install python3-pip python-dev
-    pip install qrcode
-    pip install Cryptography
-    pip install googletrans==3.1.0a0
-    pip install colorama
-    pip install pillow
-    pip install numpy
-    echo -e "${green}[+] Completed${reset}"
-
-elif [[ "$distro" == "Ubuntu" ]]; then
-    # installing tools for debian
-    echo -e "${blue}[*] Installing tools...${reset}"
-    sudo apt update
-    sudo apt-get install python3
-    sudo apt-get install python3-pip python-dev
-    pip install qrcode
-    pip install Cryptography
-    pip install googletrans==3.1.0a0
-    pip install colorama
-    pip install pillow
-    pip install numpy
-    echo -e "${green}[+] Completed${reset}"
-
-elif [[ "$distro" == "Kali" ]]; then
-    # installing tools for debian
-    echo -e "${blue}[*] Installing tools...${reset}"
-    sudo apt update
-    sudo apt-get install python3
-    sudo apt-get install python3-pip python-dev
-    pip install qrcode
-    pip install Cryptography
-    pip install googletrans==3.1.0a0
-    pip install colorama
-    pip install pillow
-    pip install numpy
-    echo -e "${green}[+] Completed${reset}"
-
-elif [[ "$distro" == "Parrot" ]]; then
+if [[ "$distro" == "Debian" || "Ubuntu" || "Parrot" || "Kali" || "Mint" ]]; then
     # installing tools for debian
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo apt update
@@ -157,7 +115,7 @@ elif [[ "$distro" == "Void" ]]; then
     pip install colorama
     echo -e "${green}[+] Completed${reset}"
 
-elif [[ "$arch" = "Arch" ]]; then
+elif [[ "$arch" = "Arch" || "Garuda" || "Artix" ]]; then
     # installing tools for arch
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo pacman -Syu

@@ -1,6 +1,6 @@
 #!/bin/bash
 # installer for Cryptex
-# created by : C0SM0
+# created by : Soulsender and C0SM0
 # DO NOT FUCK WITH THIS SCRIPT
 
 # color variables

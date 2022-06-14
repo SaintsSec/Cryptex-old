@@ -136,20 +136,20 @@ cryptex
 
 | Version | Name                  |
 |---------|-----------------------|
-| 0.2     | Oven Sandwich         |
+| 1.0     | Industry Invader      |
 
 ## Future Release Versions
 
 | Version | Name                           |
 |---------|--------------------------------|
-| 0.3     | Back Door Bytes                |
-| 0.4     | Tentacle Grape                 |
-| 0.5     | Cryptic Fun Facts              |
-| 0.6     | Knowloon Showdown              |
-| 0.7     | Ekke Ekke Ekke Ptang Zoo Boing |
-| 0.8     | Tis But A Scratch              |
-| 0.9     | The Game                       |
-| 1.0     | Industry Invader               |
+| 2.0     | Oven Sandwich                  |
+| 3.0     | Back Door Bytes                |
+| 4.0     | Tentacle Grape                 |
+| 5.0     | Cryptic Fun Facts              |
+| 6.0     | Kowloon Showdown               |
+| 7.0     | Ekke Ekke Ekke Ptang Zoo Boing |
+| 8.0     | Tis But A Scratch              |
+| 9.0     | The Game                       |
 
 ---
 

@@ -142,9 +142,9 @@ cryptex
 
 | Version | Name                           |
 |---------|--------------------------------|
-| 2.0     | Oven Sandwich                  |
-| 3.0     | Back Door Bytes                |
-| 4.0     | Tentacle Grape                 |
+| 2.0     | Electric Boogaloo              |
+| 3.0     | Oven Sandwich                  |
+| 4.0     | Back Door Bytes                |
 | 5.0     | Cryptic Fun Facts              |
 | 6.0     | Kowloon Showdown               |
 | 7.0     | Ekke Ekke Ekke Ptang Zoo Boing |

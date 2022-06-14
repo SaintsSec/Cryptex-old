@@ -52,7 +52,6 @@ def encode(args):
     text = args.text
     image_path = args.file
     image_width = 1
-    mono = args.mono
 
     if not image_path:
         return ['You must suply file path for cryptext to make an image (-f)', False]
@@ -107,7 +106,6 @@ def decode(args):
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
     image_path = args.file
-    mono = args.mono
 
     if not image_path:
         return ['You must suply an image path for this to work (-f)', False]

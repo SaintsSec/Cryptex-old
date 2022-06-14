@@ -18,9 +18,7 @@ help_menu = """
 | [✓] Example:                                         |
 |  cryptex se -e -t 'Hello, World!' -f image.png       |
 |  cryptex se -e -t 'Hello, World!' -f image.png -iw 3 |
-|  cryptex se -e -t 'Hello, World!' -f image.png -m    |
 |  cryptex se -d -f image.png                          |
-|  cryptex se -d -f image.png -m                       |
 +------------------------------------------------------+
 """
 
@@ -88,14 +86,9 @@ def encode(args):
             for i in range(extra):
                 pixel.append(0)
 
-            if mono:
-                # use monocromatic
-                for _, val in enumerate(pixel):
-                    rowArr.append(val)
-            else:
-                # Convert the pixel array to an array with a tupel inside
-                pixel = (pixel[0], pixel[1], pixel[2])
-                rowArr.append(pixel)
+            # Convert the pixel array to an array with a tupel inside
+            pixel = (pixel[0], pixel[1], pixel[2])
+            rowArr.append(pixel)
 
         extra = image_width - len(rowArr)
         for i in range(extra):
@@ -127,14 +120,10 @@ def decode(args):
     # Make empty string for the decoded text to be in
     decrypted = ""
     for _, height in enumerate(pixels): # Vertical
-        if mono:
-            for _, val in enumerate(height):
+        for _, width in enumerate(height): # Horizontal
+            for _, val in enumerate(width): # Pixel
+                # Convert the ASCII value to char and add it to the decrypted variable
                 decrypted += chr(val)
-        else:
-            for _, width in enumerate(height): # Horizontal
-                for _, val in enumerate(width): # Pixel
-                    # Convert the ASCII value to char and add it to the decrypted variable
-                    decrypted += chr(val)
 
     output += f'\nText | {decrypted}'
 

@@ -154,7 +154,7 @@ def cli(args_exist):
             # Static Encryption
             parser.add_argument('-f', '--file', help="Give a file path\n", dest='file', type=str)
             parser.add_argument('-iw', '--image_width', help="Image width used for SE", dest="image_width", type=int)
-            parser.add_argument('-m', '--mono', help="Make SE use monocromatic mode", dest="mono", action="store_true")
+            #parser.add_argument('-m', '--mono', help="Make SE use monocromatic mode", dest="mono", action="store_true")
             # cryptographic payloads
             parser.add_argument('-g', '--generate', help='Choose Payload Generation Method\n', dest='generate', type=str)
             parser.add_argument('-p', '--payload', help='Choose Payload\n', dest='payload', type=str)

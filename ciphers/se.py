@@ -8,16 +8,19 @@ import numpy as np
 # help menu for cipheringing process
 help_menu = """
 +------------------------------------------------------+
-| [✓] ARGUMENTS Static Encryption                       |
+| [✓] ARGUMENTS Static Encryption                      |
 | [✓] ARG 2. Additional Aruments                       |
 |         [-t <plaintext>] --------- Input Text        |
 |         [-f <file path>] --------- File Path         |
-|         [-iw <number>] ------------ Image Width      |
+|         [-iw <number>] ----------- Image Width       |
+|         [-m ] -------------------- Use monocromatic  |
 +------------------------------------------------------+
 | [✓] Example:                                         |
 |  cryptex se -e -t 'Hello, World!' -f image.png       |
 |  cryptex se -e -t 'Hello, World!' -f image.png -iw 3 |
+|  cryptex se -e -t 'Hello, World!' -f image.png -m    |
 |  cryptex se -d -f image.png                          |
+|  cryptex se -d -f image.png -m                       |
 +------------------------------------------------------+
 """
 
@@ -51,6 +54,7 @@ def encode(args):
     text = args.text
     image_path = args.file
     image_width = 1
+    mono = args.mono
 
     if not image_path:
         return ['You must suply file path for cryptext to make an image (-f)', False]
@@ -61,7 +65,7 @@ def encode(args):
     if args.image_width:
         image_width = int(args.image_width)
 
-    output = f'Encoding | {text}'
+    output = f"Encoding | {text}"
 
     pixels = []
     for i in range(0, len(text), image_width * 3):
@@ -84,9 +88,14 @@ def encode(args):
             for i in range(extra):
                 pixel.append(0)
 
-            # Convert the pixel array to an array with a tupel inside
-            pixel = (pixel[0], pixel[1], pixel[2])
-            rowArr.append(pixel)
+            if mono:
+                # use monocromatic
+                for _, val in enumerate(pixel):
+                    rowArr.append(val)
+            else:
+                # Convert the pixel array to an array with a tupel inside
+                pixel = (pixel[0], pixel[1], pixel[2])
+                rowArr.append(pixel)
 
         extra = image_width - len(rowArr)
         for i in range(extra):
@@ -105,6 +114,7 @@ def decode(args):
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
     image_path = args.file
+    mono = args.mono
 
     if not image_path:
         return ['You must suply an image path for this to work (-f)', False]
@@ -117,10 +127,14 @@ def decode(args):
     # Make empty string for the decoded text to be in
     decrypted = ""
     for _, height in enumerate(pixels): # Vertical
-        for _, width in enumerate(height): # Horizontal
-            for _, val in enumerate(width): # Pixel
-                # Convert the ASCII value to char and add it to the decrypted variable
+        if mono:
+            for _, val in enumerate(height):
                 decrypted += chr(val)
+        else:
+            for _, width in enumerate(height): # Horizontal
+                for _, val in enumerate(width): # Pixel
+                    # Convert the ASCII value to char and add it to the decrypted variable
+                    decrypted += chr(val)
 
     output += f'\nText | {decrypted}'
 

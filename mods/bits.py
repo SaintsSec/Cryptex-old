@@ -63,6 +63,7 @@ help_menu = Fore.CYAN + """
 |       [translate] -- Google Translate API                   |
 |       [md5] -------- MD5                                    |
 |       [se] --------- Static Encryption                      |
+|       [cleartext] -- Just Cleartext                         |
 +-------------------------------------------------------------+
 | [+] ARG 2. Cipher Method                                    |
 |       [-e] ---------- Encrypt                               |

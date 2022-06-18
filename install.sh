@@ -95,7 +95,7 @@ cp Cryptex/* ~/.Cryptex -r
 cd ~/.Cryptex
 echo -e "${green}[+] Completed${reset}"
 
-if [[ "$distro" == "Debian" ]] || [[ "$distro" == "Parrot" ]] || [[ "$distro" == "Ubuntu" ]] || [[ "$distro" == "Mint" ]] || [[ "$distro" == "Kali" ]]; then
+if [[ "$distro" == "Debian" ]] || [[ "$distro" == "Parrot" ]] || [[ "$distro" == "Ubuntu" ]] || [[ "$distro" == "Linux" ]] || [[ "$distro" == "Kali" ]]; then
     # installing tools for debian
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo apt update

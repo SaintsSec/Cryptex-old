@@ -11,6 +11,8 @@ import importlib
 import readline
 import sys
 import os
+import importlib.machinery as implib
+import re
 from colorama import Fore, Back, Style
 
 
@@ -88,6 +90,12 @@ def remove():
     # delete Cryptex
     if option == "y":
         os.system("rm -rf ~/.Cryptex")
+
+# Get path of file, and remove file after last /
+def getPath(file):
+    path = os.path.realpath(file)
+    path = re.sub('/[^/]*$', '/', path)
+    return path
 
 # command line interface
 def cli(args_exist):
@@ -186,6 +194,8 @@ def cli(args_exist):
 
             # executes libraries
             else:
+                func = None
+
                 if args.layerd:
                     if args.encode:
                         layerd_storage = module.encode(args)[0]
@@ -203,22 +213,25 @@ def cli(args_exist):
                             pass
 
                 elif args.encode:
-                    output(module.encode(args), args.output)
+                    func = module.encode
                 elif args.decode:
-                    output(module.decode(args), args.output)
+                    func = module.decode
                 elif args.brute:
-                    output(module.brute(args), args.output)
+                    func = module.brute
                 elif args.translate:
-                    output(module.translate(args), args.output)
+                    func = module.translate
                 elif args.lang:
                     output(module.languages(), args.output)
 
                 # cryptograhic payloads
                 elif args.payload:
-                    output(module.payload(args), args.output)
+                    func = module.payload
 
                 else:
                     print(Fore.CYAN + module.help_menu + Fore.RESET)
+
+                if func:
+                    output(func(args), args.output)
     else:
         # display banner
         print(b.banner)
@@ -245,7 +258,7 @@ def cli(args_exist):
             # update current version
             elif user_input == 'update':
                 update()
-            
+
             # uninstalls cryptex
             elif user_input == 'uninstall' or user_input == 'remove':
                 remove()

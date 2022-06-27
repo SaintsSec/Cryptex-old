@@ -11,8 +11,6 @@ import importlib
 import readline
 import sys
 import os
-import importlib.machinery as implib
-import re
 from colorama import Fore, Back, Style
 
 
@@ -90,12 +88,6 @@ def remove():
     # delete Cryptex
     if option == "y":
         os.system("rm -rf ~/.Cryptex")
-
-# Get path of file, and remove file after last /
-def getPath(file):
-    path = os.path.realpath(file)
-    path = re.sub('/[^/]*$', '/', path)
-    return path
 
 # command line interface
 def cli(args_exist):

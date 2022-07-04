@@ -1,6 +1,6 @@
 <!-- variables -->
 [ccs]: https://www.cosmodiumcs.com
-[saints]: https://www.saintssec.com
+[ssg]: https://www.saintssec.com
 [youtube]: https://www.youtube.com/c/CosmodiumCS
 [onlyrat]: https://github.com/CosmodiumCS/OnlyRAT
 
@@ -13,16 +13,14 @@
 > "Locks only exist to keep honest people honest" 
 
 ## Overview:
-Cryptex is an advanced cryptography hacking tool created by a joint development between [The SAINTS][saints] and [Cosmodium CyberSecurity][ccs]. It was originally two seperate tools, one reffered to as "Cryptex" and the other as "[The Codex Project](https://github.com/CosmodiumCS/the-codex-project)". But on May 2, 2022, the lead developers [Cythes](https://github.com/AlexKollar) and [Blue Cosmo](https://github.com/CosmodiumCS) joined forces to build a central cryptography tool. Since then, plenty of others have joined the project to build it into what we one day hope to be, the "Metasploit of Cryptography".
+Cryptex is an advanced cryptography hacking tool created by a joint development between [The Societal Security Guild][saints] and [Cosmodium CyberSecurity][ccs]. It was originally two seperate tools, one reffered to as "Cryptex" and the other as "[The Codex Project](https://github.com/CosmodiumCS/the-codex-project)". But on May 2, 2022, the lead developers [Cythes](https://github.com/AlexKollar) and [Blue Cosmo](https://github.com/CosmodiumCS) joined forces to build a central cryptography tool. Since then, plenty of others have joined the project to build it into what we one day hope to be, the "Metasploit of Cryptography".
 
 Cryptex is capable of advanced encryption, decryption, and breaking ciphers through various mehtods. These methods include but are not limited to bruteforcing, cryptographic wordlising, letter frequencies, plaintext formatting, and cracking.
 
 <!-- EMBED YOUTUBE VIDEO HERE -->
 
 ## Resources:
-- [YouTube Playlist](https://www.youtube.com/playlist?list=PL_dk67mLCSFGK2FgY0IIoB3JBcsOvmgEI)
-- [YouTube Channel](https://www.youtube.com/c/CosmodiumCS)
-- [Cosmodium Site](https://cosmodiumcs.com)
+- [Discord](https://discord.gg/tTKv8w8sHH)
 
 ## Requirements:
 - Debian/Void/Arch based Linux OS

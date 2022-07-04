@@ -120,13 +120,11 @@ cryptex --remove
 cryptex
 [~] root@crytpex $ remove
 ```
----
+
 ## Earth Invader Discord Bot
 The Earth Invader bot is a Discord API extension of Cryptex, bringing the same cryptography tools to Discord as if it was your own cryptography console!
 
 See the repository [here](https://github.com/Soulsender/Earth-Invader).
-
----
 
 ## Current Version
 
@@ -153,8 +151,6 @@ See the repository [here](https://github.com/Soulsender/Earth-Invader).
 | 8.0     | Tis But A Scratch              |
 | 9.0     | The Game                       |
 
----
-
 ## About Us
 **[Cythes](https://twitter.com/CythesOut): Project Manager**
 I started learning computers around middle school age with my discovery & passion of PC Gaming.  A few years later I'd stumbled into Ubuntu 8.04 soon started learning programming, hacking on and off, while over the next decade working on projects ranging from Android personal safety applications to light game development.
@@ -173,12 +169,9 @@ I started tinkering with computers I think around primary school, then in junior
 **[Soul](https://soulsender.github.io): Developer**
 Credited with giving Cryptex its colors. Also might or might not have had something to do with the original beta name "Earth Invader". Helped with multi-distro (debian/arch/void) installer support for `install.sh`. Lead developer on the [Earth Invader](https://github.com/Soulsender/Earth-Invader) discord bot.
 
----
 
 ## Sponsors:  
 - GamerChillz
-
----
 
 ## Credits:
 As an open source project, Cryptex does use snippets of code inspired and based on other projects such as the following:
@@ -187,7 +180,6 @@ As an open source project, Cryptex does use snippets of code inspired and based 
 - [Nirsoft](https://www.nirsoft.net)
 - [Satux](https://cosmodiumcs.com/coming-soon)
 
----
 
 **Enjoy! If you like what you see, consider hitting that sponosor button! :)**
 

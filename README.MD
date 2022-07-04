@@ -21,9 +21,8 @@ Cryptex is capable of advanced encryption, decryption, and breaking ciphers thro
 
 ## Resources:
 - [YouTube Playlist](https://www.youtube.com/playlist?list=PL_dk67mLCSFGK2FgY0IIoB3JBcsOvmgEI)
-- [YouTube Channel][youtube]
-- [Saints Site][saints]
-- [Cosmodium Site][ccs]
+- [YouTube Channel](https://www.youtube.com/c/CosmodiumCS)
+- [Cosmodium Site](https://cosmodiumcs.com)
 
 ## Requirements:
 - Debian/Void/Arch based Linux OS
@@ -123,6 +122,11 @@ cryptex --remove
 cryptex
 [~] root@crytpex $ remove
 ```
+---
+## Earth Invader Discord Bot
+The Earth Invader bot is a Discord API extension of Cryptex, bringing the same cryptography tools to Discord as if it was your own cryptography console!
+
+See the repository [here](https://github.com/Soulsender/Earth-Invader).
 
 ---
 
@@ -169,7 +173,7 @@ Started Cosmodium at 17 and since then has made significant changes in the cyber
 I started tinkering with computers I think around primary school, then in junior high school I started doing more tech stuff, then in high school I started learning more proper programming, and I began to do a lot of programming in my spare time, and at school, but I was always at least 10 steps ahead of what my class was learning, and eventually I ended up finding this place.
 
 **[Soul](https://soulsender.github.io): Developer**
-Credited with giving Cryptex its colors. Also might or might not have had something to do with the original beta name "Earth Invader". Helped with multi-distro (debian/arch/void) installer support for `install.sh`. 
+Credited with giving Cryptex its colors. Also might or might not have had something to do with the original beta name "Earth Invader". Helped with multi-distro (debian/arch/void) installer support for `install.sh`. Lead developer on the [Earth Invader](https://github.com/Soulsender/Earth-Invader) discord bot.
 
 ---
 

@@ -10,15 +10,14 @@ help_menu = """
 +------------------------------------------------------+
 | [✓] ARGUMENTS Static Encryption                      |
 | [✓] ARG 2. Additional Aruments                       |
-|         [-t <plaintext>] --------- Input Text        |
-|         [-f <file path>] --------- File Path         |
 |         [-iw <number>] ----------- Image Width       |
 |         [-m ] -------------------- Use monocromatic  |
 +------------------------------------------------------+
 | [✓] Example:                                         |
-|  cryptex se -e -t 'Hello, World!' -f image.png       |
-|  cryptex se -e -t 'Hello, World!' -f image.png -iw 3 |
-|  cryptex se -d -f image.png                          |
+|  cryptex se -e                                       |
+|  cryptex se -e -iw 3                                 |
+|  cryptex se -d                                       |
+|  cryptex se -d -iw 3                                 |
 +------------------------------------------------------+
 """
 
@@ -49,8 +48,8 @@ def encode(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    text = args.text
-    image_path = args.file
+    text = input("Please enter the string you want to encode \n(example: Hello)\n > ")
+    image_path = input("Please enter what you want the output file to be \n(example: file.png)\n > ")
     image_width = 1
 
     if not image_path:
@@ -105,7 +104,7 @@ def decode(args):
     # Getting text from all passed in args
     # All other args can be grabbed the same way
     # Example key = input.key | range = input.range
-    image_path = args.file
+    image_path = input("Please enter the path to the file you want to decode \n(example: test.png)\n > ")
 
     if not image_path:
         return ['You must suply an image path for this to work (-f)', False]

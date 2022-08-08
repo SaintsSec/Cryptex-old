@@ -97,6 +97,7 @@ echo -e "${green}[+] Completed${reset}"
 
 if [[ "$distro" == "Debian" ]] || [[ "$distro" == "Parrot" ]] || [[ "$distro" == "Ubuntu" ]] || [[ "$distro" == "Linux" ]] || [[ "$distro" == "Kali" ]]; then
     # installing tools for debian
+    echo -e "${red}Debian${reset} system detected."
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo apt update
     sudo apt-get install python3
@@ -111,6 +112,7 @@ if [[ "$distro" == "Debian" ]] || [[ "$distro" == "Parrot" ]] || [[ "$distro" ==
 
 elif [[ "$distro" == "Void" ]]; then
     # installing tools for void
+    echo -e "${green}Void${reset} system detected."
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo xbps-install -S python3
     pip install qrcode
@@ -119,8 +121,9 @@ elif [[ "$distro" == "Void" ]]; then
     pip install colorama
     echo -e "${green}[+] Completed${reset}"
 
-elif [[ "$arch" = "Arch" ]]; then
+elif [[ "$distro" = "Arch" ]]; then
     # installing tools for arch
+    echo -e "${blue}Arch${reset} system detected."
     echo -e "${blue}[*] Installing tools...${reset}"
     sudo pacman -Syu
     sudo pacman -S python python-pip

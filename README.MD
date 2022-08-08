@@ -49,7 +49,15 @@ chmod +x
 
 See `--help` on `install.sh`.
 
-See the installation guide on the [wiki](https://github.com/AlexKollar/Cryptex/wiki) for installation on unsupported distros.
+### Unsupported Distros
+Any unsupported distros you can use `--unsupported-distro` on `install.sh`.
+
+In addition, you will need to install:
+ - System Packages:
+    - Python3
+    - Python Pip
+ - Python Packages
+    - these can be installed after installing python pip, with `pip3 install -r requirements.txt`
 
 3. Restart your terminal
 

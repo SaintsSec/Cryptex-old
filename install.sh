@@ -60,6 +60,7 @@ case "$1" in
             - Parrot
             - Ubuntu
             - Kali
+            - Mint
         - Arch
         - Void
   "
